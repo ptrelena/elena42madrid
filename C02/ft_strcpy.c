@@ -26,7 +26,6 @@ char	*ft_strcpy(char *dest, char *src)
 	}   
 }
 
-ELENA
 int	main()
 {
 	char    *src;
@@ -41,4 +40,5 @@ int	main()
 	return 0;
 }
 
-ELENAAAAAA
+	ELENA
+	
