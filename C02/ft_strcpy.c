@@ -6,7 +6,7 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 10:20:01 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/20 10:21:31 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:32:45 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,4 @@ int	main()
 	*ft_strcpy(dest, src);
 	printf("%c", b); 
 	return 0;
-}
-
-	ELENA
-	
+}	
