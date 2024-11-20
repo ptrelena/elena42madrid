@@ -6,36 +6,27 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 10:20:01 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/20 13:32:45 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/20 15:47:02 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <string.h>
-
 char	*ft_strcpy(char *dest, char *src)
 {
-	int size;
 	int i;
 
 	i = 0;
-	size = 5;
-	while (i < size && src[i] != '\0')
-	{   
+	while (src[i] != '\0')
+	{
 		dest[i] = src[i];
 		i++;
 	}   
+	return (dest);
 }
 
-int	main()
+/*int   main()
 {
-	char    *src;
-	char    *dest;
-	char    src [] = "hello";
-	char    dest []; 
-	int size;
+	char    src[] = "hello";
+	char    dest[20];
 
-	size = 5;
-	*ft_strcpy(dest, src);
-	printf("%c", b); 
-	return 0;
-}	
+	printf("%s", ft_strcpy(dest, src));
+	return (0);
+}*/
