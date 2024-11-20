@@ -26,6 +26,7 @@ char	*ft_strcpy(char *dest, char *src)
 	}   
 }
 
+ELENA
 int	main()
 {
 	char    *src;
