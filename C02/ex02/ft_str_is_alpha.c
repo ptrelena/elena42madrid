@@ -6,7 +6,7 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:08:34 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/21 10:38:46 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/21 10:59:04 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ int	ft_str_is_alpha(char *str)
 	return (1);
 }
 
+#include <stdio.h>
+
 int	main(void)
 {
-	char	str [] = "hello";
+	char	str [] = " ";
 	
-	ft_str_is_alpha(str);
+	printf("%d", ft_str_is_alpha(str));
 	return (0);
 }
