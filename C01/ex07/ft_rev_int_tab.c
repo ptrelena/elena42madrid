@@ -28,7 +28,7 @@ void	ft_rev_int_tab(int *tab, int size)
 	}
 }
 
-/*
+
 int	main(void)
 {
 	int	array[] = {1,2,3,4,5,6};
@@ -42,4 +42,4 @@ int	main(void)
 		size ++;
 	}
 	return (0);
-}*/
+}
