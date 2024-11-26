@@ -6,22 +6,22 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:44:34 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/21 10:44:37 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/26 10:57:51 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_str_is_uppercase(char *str)
+int	ft_str_is_uppercase(char *str)
 {
-    int i = 0;
+	int	i;
 
-    while (str[i] != '\0')
-    {
-        if (!(str[i] >= 'A' && str[i] <= 'Z'))
-            return (0);
-        i++;
-    }
-
-    return (1);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 /*

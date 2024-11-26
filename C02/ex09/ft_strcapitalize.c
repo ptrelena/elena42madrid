@@ -6,13 +6,13 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:40:12 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/26 10:07:11 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:00:07 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcapitalize(char *str)
 {
-	int i;
+	int	i;
 	int	word;
 
 	i = 0;
@@ -38,7 +38,7 @@ char	*ft_strcapitalize(char *str)
 
 int	main()
 {
-	char	str [] = "salut, coMMent tu vas ? 42mots quarante-deux; cinquante+et+un";
+	char	str [] = "salut, coMMent tu vas ? 42mots quarante-deux; cinquante+";
 
 	printf("%s", ft_strcapitalize(str));
 	return (0);

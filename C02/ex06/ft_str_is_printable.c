@@ -6,13 +6,13 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:44:56 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/21 10:44:59 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/26 10:58:40 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_str_is_printable(char *str)
+int	ft_str_is_printable(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -23,7 +23,7 @@ int ft_str_is_printable(char *str)
 			return (0);
 		i++;
 	}
-	return(1);
+	return (1);
 }
 /*
 #include <stdio.h>
