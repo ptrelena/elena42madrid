@@ -6,7 +6,7 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:44:34 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/26 10:57:51 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:21:16 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int main()
     char str4[] = "123";
     char str5[] = "";
 
-    printf("%d\n", ft_str_is_uppercase(str));
-    printf("%d\n", ft_str_is_uppercase(str1));
-    printf("%d\n", ft_str_is_uppercase(str2));
-    printf("%d\n", ft_str_is_uppercase(str3));
-    printf("%d\n", ft_str_is_uppercase(str4));
-    printf("%d\n", ft_str_is_uppercase(str5));
+    printf("%d", ft_str_is_uppercase(str));
+    printf("%d", ft_str_is_uppercase(str1));
+    printf("%d", ft_str_is_uppercase(str2));
+    printf("%d", ft_str_is_uppercase(str3));
+    printf("%d", ft_str_is_uppercase(str4));
+    printf("%d", ft_str_is_uppercase(str5));
     return (0);
 }*/

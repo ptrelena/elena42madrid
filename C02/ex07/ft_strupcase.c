@@ -6,7 +6,7 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:45:21 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/25 09:09:48 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:25:20 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char	*ft_strupcase(char *str)
 	}
 	return (str);
 }
+
 /*
 #include <stdio.h>
 

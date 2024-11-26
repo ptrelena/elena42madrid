@@ -6,7 +6,7 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:44:56 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/26 10:58:40 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:24:04 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,20 @@ int	ft_str_is_printable(char *str)
 
 int	main()
 {
-	char	str [] = "\n";
+	char	str [] = "abc";
+	char	str1 [] = "ABC";
+	char	str2 [] = "123";
+	char	str3 [] = " ";
+	char	str4 [] = "";
+	char	str5 [] = "\n";
+	char	str6 [] = "ç";
 
 	printf("%d", ft_str_is_printable(str));
+	printf("%d", ft_str_is_printable(str1));
+	printf("%d", ft_str_is_printable(str2));
+	printf("%d", ft_str_is_printable(str3));
+	printf("%d", ft_str_is_printable(str4));
+	printf("%d", ft_str_is_printable(str5));
+	printf("%d", ft_str_is_printable(str6));
 	return (0);
 }*/

@@ -6,11 +6,9 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:50:49 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/20 16:10:32 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:05:40 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
@@ -24,7 +22,10 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	}
 	return (dest);
 }
+
 /*
+#include <stdio.h>
+
 int	main(void)
 {
 	char	src[] = "hello";
