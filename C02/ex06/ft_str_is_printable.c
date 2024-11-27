@@ -6,7 +6,7 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:44:56 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/26 11:24:04 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/27 11:27:20 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ int	ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!(str[i] <= 31) || (str[i] == 127))
-			return (1);
-		else
+		if (!(str[i] < ' ') || (str[i] > '~'))
 			return (0);
 		i++;
 	}
