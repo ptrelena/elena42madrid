@@ -6,7 +6,7 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:50:49 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/27 10:55:27 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/27 11:40:37 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	while (i < n )
+	while (i < n)
 	{
 		dest[i] = '\0';
 		i++;

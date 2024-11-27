@@ -6,7 +6,7 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:45:21 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/26 11:25:20 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/27 11:39:31 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@ char	*ft_strupcase(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\n')
+	while (str[i] != '\0')
 	{
-		if ((str[i] >= 97) && (str[i] <= 121))
+		if ((str[i] >= 'a') && (str[i] <= 'z'))
+		{
 			str[i] = str[i] - 32;
-		else
-			str[i] = str[i];
+		}
 		i++;
 	}
 	return (str);
