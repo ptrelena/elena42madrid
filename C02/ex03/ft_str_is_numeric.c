@@ -6,7 +6,7 @@
 /*   By: elenpere <elenpere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:43:46 by elenpere          #+#    #+#             */
-/*   Updated: 2024/11/26 11:14:59 by elenpere         ###   ########.fr       */
+/*   Updated: 2024/11/27 11:14:28 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ int	ft_str_is_numeric(char	*str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			return (1);
-		else
+		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
 		i++;
 	}
