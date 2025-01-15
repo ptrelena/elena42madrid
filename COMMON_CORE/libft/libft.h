@@ -16,12 +16,13 @@
 
 // Llamamos a las librerías necesarias para tus funciones
 #include <ctype.h>
+#include <stdio.h>
 
 
 // Declaras funciones de los archivos a entregar - parte 1, parte 2, bonus
 int ft_isalpha(int c);
 int ft_isalnum(int c);
-int ft_isalnum(int c);
+int ft_isdigit(int c);
 
 // Cerramos el condicional if
 #endif

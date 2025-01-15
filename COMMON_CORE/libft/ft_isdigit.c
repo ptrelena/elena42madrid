@@ -13,28 +13,26 @@
 // Incluímos nuestra librería
 #include "libft.h"
 
-// Incluímos las librerías necesarias
-#include <ctype.h>
-#include <stdio.h>
-
 // Escribimos el prototipo de la función indicado en el manual
 int ft_isdigit(int c)
 {
-    while (c != '\0')
-    {
-        if (c >= 0 && c <= 9)
-            return (1);
-        return (0);
-    }
+    if (c >= '0' && c <= '9')
+        return (1);
     return (0);
 }
 
-// Escribimos la main funciton
+/*
 int main(void)
 {
+    int a;
+    int b;
     int c;
 
-    c = 'a';
+    a = 'a';
+    b = 'A';
+    c = '1';
+    printf("%d", ft_isdigit(a));
+    printf("%d", ft_isdigit(b));
     printf("%d", ft_isdigit(c));
 	return (0);
-}
+}*/

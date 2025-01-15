@@ -13,26 +13,16 @@
 // Llamamos a nuestra librería
 #include "libft.h"
 
-// Llamamos a las librerías necesarias
-#include <ctype.h>
-#include <stdio.h>
-
 // Escribimos el prototipo de la función indicado en el manual
 int ft_isalnum(int c)
 {
-    while (c != '\0')
-    {
-        if (c >= 65 && c <= 90)
-            return (1);
-        if (c >= 97 && c <= 122)
-            return (1);
-        if (c >= 0 && c <= 9)
-            return (1);
-        return (0);
-    }
+    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') 
+        || (c >= '0' && c <= '9'))
+        return (1);
     return (0);
 }
 
+/*
 int main(void)
 {
     int a;
@@ -41,9 +31,9 @@ int main(void)
 
     a = '@';
     b = 'A';
-    c = 5;
+    c = '5';
     printf("%d", ft_isalnum(a));
     printf("%d", ft_isalnum(b));
     printf("%d", ft_isalnum(c));
     return (0);
-}
+}*/
