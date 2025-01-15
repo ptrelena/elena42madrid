@@ -10,9 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Llamamos a nuestra librería
 #include "libft.h"
+
+// Llamamos a las librerías necesarias
+#include <ctype.h>
+#include <stdio.h>
 
 int ft_isalpha(int c)
 {
-    
+    while (c != '\0')
+    {
+        if (c >= 101 && c <= 170)
+            return (1);
+    }
+    return(0);
+}
+
+int main(void)
+{
+    int c;
+	
+    c = 'E';
+	printf("%d", ft_isalpha(c));
+	return (0);
 }
