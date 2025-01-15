@@ -14,19 +14,23 @@
 NAME = libft.a
 
 # Comando para compilar
-CC = gcc
+CC = cc
 # Flags para compilar
 CFLAGS = -Wall -Wextra -Werror
 
 # Archivos .c que se van a compilar
-SRC = ft_isalpha.c, 
+SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c 
+
+# separar SRC con espacios solo y cuando se acaba linea de 42 acabar con \
 
 # Transformación de los archivos de SRC de .c a .o
-OBJ = $(SRC: .c .o)
+OBJ = $(SRC: .c = .o)
 
 # Definimos all para compilar - Llamamos a NAME > Dentro incluimos OBJ + comandos
 all: $(NAME)
-	ar rcs $(OBJ)
+
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 # ar: Crea, modifica y extrae archivos de librerías estáticas (normalmente con extensión .a en sistemas UNIX)
 # r: Reemplaza archivos existentes en la librería con versiones nuevas, o agrega nuevos archivos si no existen ya en la librería
@@ -37,8 +41,8 @@ all: $(NAME)
 clean: 
 	rm -f $(OBJ)
 
-# Definimos fclean para eliminar todo (archivos .o y .a) - solo indicamos $(NAME) ya que $(OBJ) esta includido en $(NAME)
-fclean: 
+# Definimos fclean para eliminar todo (archivos .o y .a) - clean elimina obj y rm -f 
+fclean: clean
 	rm -f $(NAME)
 	
 # Definimos re para eliminar todo y volver a compilar
