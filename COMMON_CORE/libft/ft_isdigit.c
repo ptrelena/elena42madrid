@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-01-15 11:44:02 by elenpere          #+#    #+#             */
-/*   Updated: 2025-01-15 11:44:02 by elenpere         ###   ########.fr       */
+/*   Created: 2025-01-15 16:17:42 by elenpere          #+#    #+#             */
+/*   Updated: 2025-01-15 16:17:42 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Llamamos a nuestra librería
+// Incluímos nuestra librería
 #include "libft.h"
 
-// Llamamos a las librerías necesarias
+// Incluímos las librerías necesarias
 #include <ctype.h>
 #include <stdio.h>
 
 // Escribimos el prototipo de la función indicado en el manual
-int ft_isalpha(int c)
+int ft_isdigit(int c)
 {
     while (c != '\0')
     {
-        if (c >= 65 && c <= 90)
-            return (1);
-        if (c >= 97 && c <= 122)
+        if (c >= 0 && c <= 9)
             return (1);
         return (0);
     }
-    return(0);
+    return (0);
 }
 
+// Escribimos la main funciton
 int main(void)
 {
     int c;
-	
-    c = 'e';
-	printf("%d", ft_isalpha(c));
+
+    c = 'a';
+    printf("%d", ft_isdigit(c));
 	return (0);
 }
