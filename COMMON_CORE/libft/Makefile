@@ -19,7 +19,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 # Archivos .c que se van a compilar
-SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c 
+SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
+	ft_strlen.c
 
 # separar SRC con espacios solo y cuando se acaba linea de 42 acabar con \
 
