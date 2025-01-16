@@ -10,7 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Incluímos nuestra librería
+#include "libft.h"
+
 int ft_tolower(int c)
 {
-    
+    if (c >= 'A' && c <= 'Z'){
+        c = c + 32;
+        return (c);
+    }
+    else if (c >= 'a' && c <= 'z')
+        return (c);
+    else
+        return (0);
 }
+
+/*
+int main()
+{
+    int a;
+    int b;
+
+    a = 'a';
+    b = 'B';
+    printf ("%c", ft_tolower(a));
+    printf ("%c", ft_tolower(b));
+    return (0);
+}*/
