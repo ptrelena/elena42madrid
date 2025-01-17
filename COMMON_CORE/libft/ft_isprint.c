@@ -19,7 +19,7 @@ int ft_isprint(int c)
     return (0);
 }
 
-
+/*
 int main(void)
 {
     int a;
@@ -39,4 +39,4 @@ int main(void)
     printf("%d", ft_isprint(d));
     printf("%d", ft_isprint(e));
 	return (0);
-}
+}*/

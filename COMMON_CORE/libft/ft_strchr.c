@@ -15,5 +15,24 @@
 
 char    *ft_strchr(const char *s, int c)
 {
+    int i;
 
+    i = 0;
+    while (s[i] != '\0')
+    {
+        if (s[i] == (char)c)
+            return ((char *)&s[i]); // Se usa el '&' para indicar la posición exacta del puntero
+        i++;
+    }
+
+    if ((char)c == '\0')
+        return ((char *)&s[i]);
+
+    return (0);
 }
+/*
+int main()
+{
+    printf("%c", *ft_strchr("Hola", 'o'));
+    return (0);
+}*/
