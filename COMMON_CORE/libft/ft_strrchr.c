@@ -13,7 +13,28 @@
 // Incluímos nuestra librería
 #include "libft.h"
 
- char   *ft_strrchr(const char *s, int c)
- {
+char   *ft_strrchr(const char *s, int c)
+{
+int	len;
+int	i;
 
- }
+len = ft_strlen(s);
+while (s[len] != '\0')
+{
+	if (s[len] == (char)c)
+		return ((char *)&s[len]);
+	len--;
+}
+
+i = 0;
+if (s[i] == '\0')
+	return((char *)&s[i]);
+
+return (0);
+}
+
+int	main ()
+{
+	printf("%c", *ft_strrchr("Elena", 'n'));
+	return (0);
+}

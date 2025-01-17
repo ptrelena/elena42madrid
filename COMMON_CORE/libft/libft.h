@@ -23,6 +23,8 @@
 
 
 // Declaras funciones de los archivos a entregar - parte 1, parte 2, bonus
+
+// PARTE 1
 int ft_isalpha(int c);
 int ft_isdigit(int c);
 int ft_isalnum(int c);
@@ -44,6 +46,10 @@ void    *ft_memchr(const void *s, int c, size_t n);
 char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 int ft_atoi(const char *str);
 void *ft_calloc(size_t count, size_t size);
+
+// PARTE 2
+
+// BONUS
 
 // Cerramos el condicional if
 #endif
