@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Converts an upper-case letter to the corresponding lower-case letter. 
+The argument must be representable as an unsigned char or the value of EOF.*/
+
 // Incluímos nuestra librería
 #include "libft.h"
 

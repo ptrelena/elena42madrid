@@ -18,6 +18,10 @@ CC = cc
 # Flags para compilar
 CFLAGS = -Wall -Wextra -Werror
 
+EXTRA_FLAGS = -c -I.
+
+A_C = ar rc
+
 # Archivos .c que se van a compilar
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c 
@@ -35,7 +39,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	$(A_C) $(NAME) $(OBJ)
 
 # ar: Crea, modifica y extrae archivos de librerías estáticas (normalmente con extensión .a en sistemas UNIX)
 # r: Reemplaza archivos existentes en la librería con versiones nuevas, o agrega nuevos archivos si no existen ya en la librería
@@ -54,7 +58,7 @@ fclean: clean
 re: fclean all
 
 # Declara estas reglas como "falsas" para que siempre se ejecuten, incluso si existen archivos en el directorio con los mismos nombres.
-#.PHONY: clean fclean re
+PHONY: clean fclean re
 
 # make clean: Limpia archivos intermedios.
 # make fclean: Limpia todo, incluyendo ejecutables.

@@ -33,8 +33,11 @@ if (s[i] == '\0')
 return (0);
 }
 
-int	main ()
+int main()
 {
-	printf("%c", *ft_strrchr("Elena", 'n'));
-	return (0);
+    const char *str = "Elena";
+    char c = 'n';
+  
+    printf("%s", ft_strrchr(str, c));
+    return 0;
 }

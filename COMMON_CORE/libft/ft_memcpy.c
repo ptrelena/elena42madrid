@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Copies n bytes from memory area src to memory area dst. Returns the original value of dst.*/
+
 // Incluímos nuestra librería
 #include "libft.h"
 

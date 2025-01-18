@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Locates the first occurrence of c (converted to an unsigned char) in string s. 
+Returns a pointer to the byte located, or NULL if no such byte exists within n bytes.*/
+
 // Incluímos nuestra librería
 #include "libft.h"
 

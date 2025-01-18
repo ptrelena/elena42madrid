@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// DESCRIPTION - Converts the initial portion of the string pointed to by str to int representation.
+// Transforma str a int
+
 // Incluímos nuestra librería
 #include "libft.h"
 

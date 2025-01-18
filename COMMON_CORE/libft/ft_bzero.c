@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// DESCRIPTION - Writes n zeroed bytes to the string s. If n is zero, bzero() does nothing.
+// Incluye bytes '0' al string apuntado por s.
+
 // Incluímos nuestra librería
 #include "libft.h"
 

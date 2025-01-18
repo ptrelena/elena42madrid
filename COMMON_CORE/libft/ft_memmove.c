@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Copies len bytes from string src to string dst. Returns the original value of dst.*/
+
 // Incluímos nuestra librería
 #include "libft.h"
 
