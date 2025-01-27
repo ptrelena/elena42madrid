@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*The isprint() function tests for any printing character, including space (‘ ’).
-The value of the argument must be representable as an unsigned char or the value of EOF.*/
+The value of the argument must be representable as an unsigned char or the value of EOF */
 
 // Incluímos nuestra librería
 #include "libft.h"

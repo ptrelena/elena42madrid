@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*The isalpha() function tests for any character for which isupper(3) or islower(3) is true. 
-The value of the argument must be representable as an unsigned char or thevalue of EOF. */
+The value of the argument must be representable as an unsigned char or thevalue of EOF */
 
 // Llamamos a nuestra librería
 #include "libft.h"

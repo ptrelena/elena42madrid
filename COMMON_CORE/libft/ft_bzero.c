@@ -16,8 +16,24 @@
 // Incluímos nuestra librería
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    (void)s
-    (void)n
+	size_t			i;
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = 0;
+		i++;
+	}
 }
+/*#include <stdio.h>
+int	main(void)
+{
+	char str[10] = "patatita";
+	printf("%s\n", str);
+	ft_bzero(str, 10);
+	printf("%s\n", str);
+}*/

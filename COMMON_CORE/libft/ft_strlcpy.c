@@ -22,7 +22,35 @@ original dst string was longer than dstsize (in practice this should not happen 
 // Incluímos nuestra librería
 #include "libft.h"
 
-size_t  ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    
+	size_t	i;
+
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] && i < (size - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
+/*#include <string.h>
+#include <bsd/string.h>
+#include <stdio.h>
+
+int	main(void)
+{
+	char *s1;
+	char *s2;
+	
+	s1 = strdup("Picota");
+	s2 = strdup("Patata");
+	printf("%zu\n", ft_strlcpy(s1, s2, 7));
+	printf("%s\n", s1);
+	free(s1);
+	free(s2);
+	return(0);
+}*/
