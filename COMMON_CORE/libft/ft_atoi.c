@@ -18,7 +18,7 @@ to int representation. Transforma str a int */
 // Incluímos nuestra librería
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *np tr)
 {
 	int		i;
 	int		sig;
