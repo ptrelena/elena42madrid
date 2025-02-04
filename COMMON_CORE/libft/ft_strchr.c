@@ -10,8 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Locates the first occurrence of c (converted to a char) in the string pointed to by s. If c is ‘\0’, the functions locate the terminating ‘\0’. 
-Returns a pointer to the located character, or NULL if the character does not appear in the string */
+/* Locates the first occurrence of c (converted to a char) in the string
+pointed to by s. If c is ‘\0’, the functions locate the terminating ‘\0’.
+Returns a pointer to the located character, or NULL if the character does not
+appear in the string */
 
 // Incluímos nuestra librería
 #include "libft.h"
@@ -33,9 +35,10 @@ char    *ft_strchr(const char *s, int c)
 
     return (0);
 }
-/*
+
+
 int main()
 {
     printf("%c", *ft_strchr("Hola", 'o'));
     return (0);
-}*/
+}

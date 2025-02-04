@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// DESCRIPTION - Writes n zeroed bytes to the string s. If n is zero, bzero() does nothing.
-// Incluye bytes '0' al string apuntado por s.
+/* Writes n zeroed bytes to the string s. If n is zero, bzero() does nothing.
+Incluye bytes '0' al string apuntado por s. */
 
 // Incluímos nuestra librería
 #include "libft.h"
@@ -29,11 +29,11 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-/*#include <stdio.h>
+#include <stdio.h>
 int	main(void)
 {
 	char str[10] = "patatita";
 	printf("%s\n", str);
 	ft_bzero(str, 10);
 	printf("%s\n", str);
-}*/
+}

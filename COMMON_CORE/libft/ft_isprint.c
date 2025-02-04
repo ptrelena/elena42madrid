@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The isprint() function tests for any printing character, including space (‘ ’).
-The value of the argument must be representable as an unsigned char or the value of EOF */
+/*The isprint() function tests for any printing character, including space
+(‘ ’). The value of the argument must be representable as an unsigned char or
+the value of EOF */
 
 // Incluímos nuestra librería
 #include "libft.h"
@@ -23,7 +24,7 @@ int ft_isprint(int c)
     return (0);
 }
 
-/*
+
 int main(void)
 {
     int a;
@@ -43,4 +44,4 @@ int main(void)
     printf("%d", ft_isprint(d));
     printf("%d", ft_isprint(e));
 	return (0);
-}*/
+}

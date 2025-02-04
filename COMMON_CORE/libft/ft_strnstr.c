@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Locates the first occurrence of the null-terminated string needle in the string haystack, where not more than len characters are searched. 
-Characters that appear after a ‘\0’ character are not searched.  Since the strnstr() function is a FreeBSD specific API, it should only be used when portability is not a concern.
-If needle is an empty string, haystack is returned; if needle occurs nowhere in haystack, NULL is returned; otherwise a pointer to the first character of the first occurrence of needle is returned.*/
+/* Locates the first occurrence of the null-terminated string needle in the
+string haystack, where not more than len characters are searched. Characters
+that appear after a ‘\0’ character are not searched.  Since the strnstr()
+function is a FreeBSD specific API, it should only be used when portability is
+not a concern. If needle is an empty string, haystack is returned; if needle
+occurs nowhere in haystack, NULL is returned; otherwise a pointer to the first
+character of the first occurrence of needle is returned.*/
 
 // Incluímos nuestra librería
 #include "libft.h"
@@ -37,10 +41,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-/*#include <stdio.h>
+
+
+#include <stdio.h>
 int	main(void)
 {
 	printf("%s\n", ft_strnstr("la rica patata amarilla","", 25));
 	//char *r = ft_strnstr("","", 26);
 	//printf ("%s\n", r);
-}*/
+}

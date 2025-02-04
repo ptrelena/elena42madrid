@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Copies n bytes from memory area src to memory area dst. Returns the original value of dst.*/
+/* Copies n bytes from memory area src to memory area dst. Returns the original
+value of dst.*/
 
 // Incluímos nuestra librería
 #include "libft.h"
@@ -31,7 +32,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*#include <stdio.h>
+
+
+#include <stdio.h>
 #include <string.h>
 
 int	main(void)
@@ -43,4 +46,4 @@ int	main(void)
 	char str4[6] = "Picota";
 	printf("%s\n", (char *)memcpy(str3, str4, 14));
 	return (0);
-}*/
+}

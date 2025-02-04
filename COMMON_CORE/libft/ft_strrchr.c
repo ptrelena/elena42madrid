@@ -10,7 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Incluímos nuestra librería
+/*The strchr() function locates the first occurrence of c (converted to a char)
+in the string pointed to by s.  The terminating null character is considered to
+be part of the string; therefore if c is ‘\0’, the functions locate the
+terminating ‘\0’. The strrchr() function is identical to strchr(), except it
+locates the last occurrence of c.*/
+
+/*// Incluímos nuestra librería
 #include "libft.h"
 
 char   *ft_strrchr(const char *s, int c)
@@ -40,7 +46,7 @@ int main()
   
     printf("%s", ft_strrchr(str, c));
     return 0;
-}
+}*/
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -59,11 +65,13 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (0);
 }
-/*#include <stdio.h>
+
+
+#include <stdio.h>
 int	main(void)
 {
 	//const char *s = "picotichuela";
 	//printf("%c\n", *s);
 	printf("%s\n", ft_strrchr("picotichuela", 'c'));
 	return (0);
-}*/
+}

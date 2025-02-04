@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Writes len bytes of value c (converted to an unsigned char) to the string b. Returns its first argument.*/
+/* Writes len bytes of value c (converted to an unsigned char) to the string b.
+Returns its first argument.*/
 
 // Incluímos nuestra librería
 #include "libft.h"
@@ -29,7 +30,9 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*#include <stdio.h>
+
+
+#include <stdio.h>
 int	main(void)
 {
 	char str[8] = "patatita";
@@ -38,6 +41,6 @@ int	main(void)
 	//ft_memset(str+4, '*', 4);
 	printf("%s\n", str);
 	return (0);
-}*/
+}
 //todo lo que cambias en el ptr tabén se cambia en la s porque no está
 //haciendo una copia, esta está apuntando a esa dirección de memoria.

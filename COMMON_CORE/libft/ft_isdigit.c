@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The isdigit() function tests for a decimal digit character.  Regardless of locale, this includes only characters from 0-9 */
+/*The isdigit() function tests for a decimal digit character.  Regardless of
+locale, this includes only characters from 0-9 */
 
 // Incluímos nuestra librería
 #include "libft.h"
@@ -23,7 +24,7 @@ int ft_isdigit(int c)
     return (0);
 }
 
-/*
+
 int main(void)
 {
     int a;
@@ -37,4 +38,4 @@ int main(void)
     printf("%d", ft_isdigit(b));
     printf("%d", ft_isdigit(c));
 	return (0);
-}*/
+}

@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The isalpha() function tests for any character for which isupper(3) or islower(3) is true. 
-The value of the argument must be representable as an unsigned char or thevalue of EOF */
+/*The isalpha() function tests for any character for which isupper(3) or
+islower(3) is true. The value of the argument must be representable as an
+unsigned char or thevalue of EOF */
 
 // Llamamos a nuestra librería
 #include "libft.h"
@@ -24,7 +25,7 @@ int ft_isalpha(int c)
     return (0);
 }
 
-/*
+
 int main(void)
 {
     int a;
@@ -38,4 +39,4 @@ int main(void)
     printf("%d", ft_isalpha(b));
 	printf("%d", ft_isalpha(c));
 	return (0);
-}*/
+}

@@ -30,7 +30,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, (nmemb * size));
 	return (ptr);
 }
-/*
+
 #include <stdio.h>
 int	main(void)
 {
@@ -39,4 +39,4 @@ int	main(void)
 	printf("%p\n", calloc( 2, 2));
 	return(0);
 	//i = malloc(5 * sizeof(int));
-}*/
+}

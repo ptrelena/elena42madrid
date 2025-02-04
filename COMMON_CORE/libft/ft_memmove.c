@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Copies len bytes from string src to string dst. Returns the original value of dst.*/
+/* Copies len bytes from string src to string dst. Returns the original value
+of dst.*/
 
 // Incluímos nuestra librería
 #include "libft.h"
@@ -43,7 +44,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (d);
 }
-/*#include <stdio.h>
+
+
+#include <stdio.h>
 #include <string.h>
 
 int	main(void)
@@ -55,4 +58,4 @@ int	main(void)
 	char str4[] = "PicotaTeta";
 	printf("%s Original\n", (char *)memmove(str3, str4, 9));
 	return (0);
-}*/
+}

@@ -26,7 +26,7 @@ int ft_tolower(int c)
     return (c);
 }
 
-/*
+
 int main()
 {
     int a;
@@ -37,4 +37,4 @@ int main()
     printf ("%c", ft_tolower(a));
     printf ("%c", ft_tolower(b));
     return (0);
-}*/
+}

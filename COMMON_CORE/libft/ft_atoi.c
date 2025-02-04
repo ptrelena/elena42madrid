@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// DESCRIPTION - Converts the initial portion of the string pointed to by str to int representation.
-// Transforma str a int
+/* Converts the initial portion of the string pointed to by str
+to int representation. Transforma str a int */
 
+
+/*
 // Incluímos nuestra librería
 #include "libft.h"
 
@@ -42,7 +44,7 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sig);
 }
-/*#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 int	main(void)
@@ -53,4 +55,6 @@ int	main(void)
 	printf("%i\n", result1);
 	result2 = atoi("9999999999999999999999999999999999999999999999999999999");
 	printf("%i\n", result2);
-}*/
+}
+
+*/

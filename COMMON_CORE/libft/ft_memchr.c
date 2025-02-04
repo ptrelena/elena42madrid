@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Locates the first occurrence of c (converted to an unsigned char) in string s. 
-Returns a pointer to the byte located, or NULL if no such byte exists within n bytes.*/
+/* Locates the first occurrence of c (converted to an unsigned char) in string
+s. Returns a pointer to the byte located, or NULL if no such byte exists within
+n bytes.*/
 
 // Incluímos nuestra librería
 #include "libft.h"
@@ -35,9 +36,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*#include <stdio.h>
+
+
+#include <stdio.h>
 int	main(void)
 {
 	printf("%s\n", (char *) ft_memchr("picota", 'c', 6));
 	return (0);
-}*/
+}
