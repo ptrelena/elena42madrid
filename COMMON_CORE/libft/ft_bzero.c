@@ -21,15 +21,15 @@ size_t n = Número de bytes a establecer en cero.*/
 
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
+	unsigned char	*t;
+
+	t = ((unsigned char *)s);
 
 	i = 0;
-	if (n == 0)
-		return;
-	
-	while (i < 0)
+	while (i < n)
 	{
-		((unsigned char *)s)[i] = 0;
+		t[i] = 0;
 		i++;
 	}
 }
@@ -37,8 +37,8 @@ void	ft_bzero(void *s, size_t n)
 #include <stdio.h>
 int	main(void)
 {
-	char str[10] = "Elena";
-
+	char str[5] = "Elena";
+	printf("%s\n", str);
 	ft_bzero(str, 5);
 	printf("%s\n", str);
 }*/

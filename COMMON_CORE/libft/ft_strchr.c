@@ -36,9 +36,9 @@ char    *ft_strchr(const char *s, int c)
     return (0);
 }
 
-
+/*
 int main()
 {
     printf("%c", *ft_strchr("Hola", 'o'));
     return (0);
-}
+}*/

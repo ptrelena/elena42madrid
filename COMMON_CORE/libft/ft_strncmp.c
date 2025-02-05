@@ -18,4 +18,4 @@ using unsigned characters, so that ‘\200’ is greater than ‘\0’.*/
 // Incluímos nuestra librería
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+// int	ft_strncmp(const char *s1, const char *s2, size_t n)

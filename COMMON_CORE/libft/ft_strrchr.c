@@ -16,4 +16,4 @@ be part of the string; therefore if c is ‘\0’, the functions locate the
 terminating ‘\0’. The strrchr() function is identical to strchr(), except it
 locates the last occurrence of c.*/
 
-char   *ft_strrchr(const char *s, int c)
+// char   *ft_strrchr(const char *s, int c)

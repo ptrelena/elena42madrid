@@ -17,4 +17,4 @@ is filled with bytes of value zero. */
 // Incluímos nuestra librería
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+// void	*ft_calloc(size_t nmemb, size_t size)

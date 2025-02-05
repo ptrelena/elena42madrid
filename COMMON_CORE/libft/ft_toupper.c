@@ -26,7 +26,7 @@ int ft_toupper(int c)
     return (c);
 }
 
-
+/*
 int main()
 {
     int a;
@@ -37,4 +37,4 @@ int main()
     printf ("%c", ft_toupper(a));
     printf ("%c", ft_toupper(b));
     return (0);
-}
+}*/
