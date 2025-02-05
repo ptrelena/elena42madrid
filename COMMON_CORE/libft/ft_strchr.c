@@ -26,7 +26,7 @@ char    *ft_strchr(const char *s, int c)
     while (s[i] != '\0')
     {
         if (s[i] == (char)c)
-            return ((char *)&s[i]); // Se usa el '&' para indicar la posición exacta del puntero
+            return ((char *)&s[i]); // '&' para indicar posición exacta puntero
         i++;
     }
 

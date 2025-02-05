@@ -18,25 +18,3 @@ is filled with bytes of value zero. */
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
-{
-	void	*ptr;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-	{
-		return (NULL);
-	}
-	ft_bzero(ptr, (nmemb * size));
-	return (ptr);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	printf("%p\n", ft_calloc(2, 2));
-	printf("%s\n", (char *)ft_calloc( 2, 2));
-	printf("%p\n", calloc( 2, 2));
-	return(0);
-}

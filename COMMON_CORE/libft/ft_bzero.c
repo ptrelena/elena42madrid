@@ -33,7 +33,7 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -41,4 +41,4 @@ int	main(void)
 
 	ft_bzero(str, 5);
 	printf("%s\n", str);
-}
+}*/

@@ -17,30 +17,3 @@ Returns its first argument.*/
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
-{
-	size_t			i;
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		ptr[i] = (unsigned char)c;
-		i++;
-	}
-	return (s);
-}
-
-
-#include <stdio.h>
-int	main(void)
-{
-	char str[8] = "Elena";
-	printf("%s", str);
-	ft_memset(str, '*', 2);
-	//ft_memset(str+2, '*', 2);
-	printf("%s", str);
-	return (0);
-}
-/* Lo que cambias en el ptr también se cambia en la str porque no está
-haciendo una copia, esta está apuntando a esa dirección de memoria. */

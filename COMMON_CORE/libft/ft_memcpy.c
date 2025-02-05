@@ -17,33 +17,3 @@ value of dst.*/
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	size_t	i;
-	char	*d;
-	char	*s;
-
-	i = 0;
-	d = (char *)dest;
-	s = (char *)src;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dest);
-}
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char str1[5] = "Elena";
-	char str2[7] = "Alberto";
-	printf("%s\n", (char *)ft_memcpy(str1, str2, 14));
-	char str3[5] = "Elena";
-	char str4[7] = "Alberto";
-	printf("%s\n", (char *)memcpy(str3, str4, 14));
-	return (0);
-}*/
