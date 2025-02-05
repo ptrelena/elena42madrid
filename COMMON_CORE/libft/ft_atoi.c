@@ -14,47 +14,44 @@
 to int representation. Transforma str a int */
 
 
-/*
 // Incluímos nuestra librería
 #include "libft.h"
 
-int	ft_atoi(const char *np tr)
+int	ft_atoi(const char *nptr)
 {
-	int		i;
-	int		sig;
-	long	result;
+	int	i;
+	int	sign;
+	int	result;
 
 	i = 0;
-	sig = 1;
+	sign = 1;
 	result = 0;
-	while ((nptr[i] == ' ') || (nptr[i] >= 9 && nptr[i] <= 13))
+	while (nptr[i] == ' ') //Ignoramos espacios
 		i++;
-	if (nptr[i] == '-')
-		sig = sig * -1;
-	if ((nptr[i] == '+') || (nptr[i] == '-'))
-		i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	
+	if (nptr[i] == '-') //Comprobamos número positivo o negativo
 	{
-		result = result * 10 + nptr[i] - '0';
-		if (result * sig > INT_MAX)
-			return (-1);
-		if (result * sig < INT_MIN)
-			return (0);
+		sign = -1;
 		i++;
-	}
-	return (result * sig);
-}
-#include <stdio.h>
-#include <stdlib.h>
+	}	
+	if (nptr[i] == '+')
+		i++;
+	
+	while ((nptr[i] >= '0') && (nptr[i] <= '9'))
+	{
+        result = result * 10 + (nptr[i] - '0');  //Conversión char a int 0 = 48
+        i++;  //Siguiente char
+    }
 
+	return (result * sign);
+}
+/*
 int	main(void)
 {
-	int	result1;
-	int	result2;
-	result1 = ft_atoi("9999999999999999999999999999999999999999999999999999999");
-	printf("%i\n", result1);
-	result2 = atoi("9999999999999999999999999999999999999999999999999999999");
-	printf("%i\n", result2);
-}
-
-*/
+	int	a;
+	int	b;
+	a = ft_atoi("15");
+	printf("%i", a);
+	b = atoi("-15");
+	printf("%i", b);
+}*/
