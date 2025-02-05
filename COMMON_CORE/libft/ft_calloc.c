@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Contiguously allocates enough space for count objects that are size bytes of memory each and returns a pointer to the allocated memory.  
-The allocated memory is filled with bytes of value zero. */
+/* Contiguously allocates enough space for count objects that are size bytes of
+memory each and returns a pointer to the allocated memory. The allocated memory
+is filled with bytes of value zero. */
 
 // Incluímos nuestra librería
 #include "libft.h"
@@ -38,5 +39,4 @@ int	main(void)
 	printf("%s\n", (char *)ft_calloc( 2, 2));
 	printf("%p\n", calloc( 2, 2));
 	return(0);
-	//i = malloc(5 * sizeof(int));
 }

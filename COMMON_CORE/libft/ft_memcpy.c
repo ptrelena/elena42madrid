@@ -33,17 +33,17 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-
+/*
 #include <stdio.h>
 #include <string.h>
 
 int	main(void)
 {
-	char str1[8] = "Patatizo";
-	char str2[6] = "Picota";
+	char str1[5] = "Elena";
+	char str2[7] = "Alberto";
 	printf("%s\n", (char *)ft_memcpy(str1, str2, 14));
-	char str3[8] = "Patatizo";
-	char str4[6] = "Picota";
+	char str3[5] = "Elena";
+	char str4[7] = "Alberto";
 	printf("%s\n", (char *)memcpy(str3, str4, 14));
 	return (0);
-}
+}*/

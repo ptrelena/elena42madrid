@@ -51,11 +51,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 int	main(void)
 {
-	char str1[] = "Cerezas";
-	char str2[] = "PicotaTeta";
-	printf("%s Propia\n", (char *)ft_memmove(str1, str2, 9));
-	char str3[] = "Cerezas";
-	char str4[] = "PicotaTeta";
-	printf("%s Original\n", (char *)memmove(str3, str4, 9));
-	return (0);
+	char a[] = "Elena";
+	char b[] = "Alberto";
+	printf("%s", (char *)ft_memmove(a, b, 10));
 }

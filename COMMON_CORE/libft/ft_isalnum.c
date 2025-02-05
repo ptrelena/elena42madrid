@@ -26,7 +26,7 @@ int ft_isalnum(int c)
     return (0);
 }
 
-
+/*
 int main(void)
 {
     int a;
@@ -40,4 +40,4 @@ int main(void)
     printf("%d", ft_isalnum(b));
     printf("%d", ft_isalnum(c));
     return (0);
-}
+}*/

@@ -41,6 +41,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 #include <stdio.h>
 int	main(void)
 {
-	printf("%s\n", (char *) ft_memchr("picota", 'c', 6));
+	printf("%s\n", (char *) ft_memchr("Elena", 'l', 6));
 	return (0);
 }

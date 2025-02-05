@@ -24,7 +24,7 @@ int ft_isascii(int c)
   return (0);
 }
 
-
+/*
 int main(void)
 {
     int a;
@@ -44,4 +44,4 @@ int main(void)
     printf("%d", ft_isascii(d));
     printf("%d", ft_isascii(e));
     return (0);
-}
+}*/

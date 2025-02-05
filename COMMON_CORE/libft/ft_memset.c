@@ -35,12 +35,12 @@ void	*ft_memset(void *s, int c, size_t n)
 #include <stdio.h>
 int	main(void)
 {
-	char str[8] = "patatita";
-	printf("%s\n", str);
-	ft_memset(str, '*', 4);
-	//ft_memset(str+4, '*', 4);
-	printf("%s\n", str);
+	char str[8] = "Elena";
+	printf("%s", str);
+	ft_memset(str, '*', 2);
+	//ft_memset(str+2, '*', 2);
+	printf("%s", str);
 	return (0);
 }
-//todo lo que cambias en el ptr tabén se cambia en la s porque no está
-//haciendo una copia, esta está apuntando a esa dirección de memoria.
+/* Lo que cambias en el ptr también se cambia en la str porque no está
+haciendo una copia, esta está apuntando a esa dirección de memoria. */

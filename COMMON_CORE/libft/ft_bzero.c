@@ -29,11 +29,12 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
+/*
 #include <stdio.h>
 int	main(void)
 {
-	char str[10] = "patatita";
+	char str[10] = "Elena";
 	printf("%s\n", str);
 	ft_bzero(str, 10);
 	printf("%s\n", str);
-}
+}*/

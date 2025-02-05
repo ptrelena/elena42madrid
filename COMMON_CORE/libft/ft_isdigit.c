@@ -24,7 +24,7 @@ int ft_isdigit(int c)
     return (0);
 }
 
-
+/*
 int main(void)
 {
     int a;
@@ -38,4 +38,4 @@ int main(void)
     printf("%d", ft_isdigit(b));
     printf("%d", ft_isdigit(c));
 	return (0);
-}
+}*/
