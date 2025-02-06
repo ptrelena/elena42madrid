@@ -17,41 +17,42 @@ to int representation. Transforma str a int */
 // Incluímos nuestra librería
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int ft_atoi(const char *nptr)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int	i = 0;
+	int	sign = 1;
+	int	result = 0;
+   
+       while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32)) //no espacios
+        i++;
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (nptr[i] == ' ') //Ignoramos espacios
-		i++;
-	
-	if (nptr[i] == '-') //Comprobamos número positivo o negativo
-	{
-		sign = -1;
-		i++;
-	}	
-	if (nptr[i] == '+')
-		i++;
-	
-	while ((nptr[i] >= '0') && (nptr[i] <= '9'))
-	{
-        result = result * 10 + (nptr[i] - '0');  //Conversión char a int 0 = 48
-        i++;  //Siguiente char
+    if (nptr[i] == '-' || nptr[i] == '+') //comprobar signo
+    {
+        if (nptr[i] == '-')
+            sign = -1; //cambiamos de (1) a (-1) porque el número es negativo
+        i++;
     }
 
-	return (result * sign);
+    //convertir caracteres numéricos en entero
+    while (nptr[i] >= '0' && nptr[i] <= '9') //número es digito
+    {
+        result = result * 10 + (nptr[i] - '0'); 
+		// (result + 10) mueve el digito analizado a la izq
+		// (nptr[i] - '0') => ascii dígito - ascii '0' = valor numérico dígito
+        i++;
+    }
+
+    return (result * sign);
 }
 /*
-int	main(void)
+int main(void)
 {
-	int	a;
+    int a;
 	int	b;
-	a = ft_atoi("15");
-	printf("%i", a);
-	b = atoi("-15");
-	printf("%i", b);
+
+    a = ft_atoi("-15");
+    printf("%d\n", a);
+    b = atoi("15");  //atoi normal para comparar
+    printf("%d\n", b);
+    return 0;
 }*/
