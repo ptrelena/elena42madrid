@@ -16,4 +16,31 @@ Returns its first argument.*/
 // Incluímos nuestra librería
 #include "libft.h"
 
-// void	*ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *str, int c, size_t n) //ft prototype
+{
+	size_t	i; //set counter as size_t to compare it with 'n'
+	unsigned char	*a; //new pointer to simplify code
+	unsigned char	b; //new variable for int 'c'
+
+	a = (unsigned char *)str; //simplify code
+	b = (unsigned char)c; //simplify code
+
+	i = 0; //counter starts
+	while (i < n) //loop srt until i reaches n
+	{
+		a[i] = b; //change char to b = c
+		i++; //keep looping
+	}
+	return; //nothing to return as it is a void ft
+}
+
+// int	main(void)
+// {
+// 	unsigned char	a [] = "Elena"; //pointer variable
+// 	int	b = 'a'; //modification int
+// 	size_t	c = 3; //number of times to modify int 'b'
+
+// 	printf("%s\n", a); //a before memset
+// 	ft_memset(a, b, c); //call ft
+// 	printf("%s\n", a); //a after memset
+// }

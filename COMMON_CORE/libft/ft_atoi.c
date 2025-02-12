@@ -14,45 +14,70 @@
 to int representation. Transforma str a int */
 
 
-// Incluímos nuestra librería
+//include library
 #include "libft.h"
 
-int ft_atoi(const char *nptr)
+int ft_atoi(const char *nptr) //ft prototype
 {
-	int	i = 0;
-	int	sign = 1;
-	int	result = 0;
+	int	i = 0; //counter
+	int	sign = 1; //int to define sign
+	int	result = 0; //int to save final number
    
-       while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32)) //no espacios
-        i++;
+    while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32)) //no spaces
+        i++; //keep looping
 
-    if (nptr[i] == '-' || nptr[i] == '+') //comprobar signo
+    if (nptr[i] == '-' || nptr[i] == '+') //check number sign
     {
-        if (nptr[i] == '-')
-            sign = -1; //cambiamos de (1) a (-1) porque el número es negativo
-        i++;
+        if (nptr[i] == '-') //loop for negative numbers
+            sign = -1; //change sign to negative
+        if (nptr[i] == '+') //loop for positive numbers
+            sign = 1; //change sign to positive
+        i++; //keep looping
     }
 
-    //convertir caracteres numéricos en entero
-    while (nptr[i] >= '0' && nptr[i] <= '9') //número es digito
+    //convert numeric chars to int
+    while (nptr[i] >= '0' && nptr[i] <= '9') //loop numeric char
     {
         result = result * 10 + (nptr[i] - '0'); 
-		// (result + 10) mueve el digito analizado a la izq
-		// (nptr[i] - '0') => ascii dígito - ascii '0' = valor numérico dígito
-        i++;
+		// (result * 10) moves analyzed digit to left
+		// (nptr[i] - '0') => ascii digit - ascii '0' = digit numeric value
+        i++; //keep looping
     }
 
-    return (result * sign);
+    return (result * sign); //result final value * numer sign (1 / -1)
 }
-/*
-int main(void)
-{
-    int a;
-	int	b;
 
-    a = ft_atoi("-15");
-    printf("%d\n", a);
-    b = atoi("15");  //atoi normal para comparar
-    printf("%d\n", b);
-    return 0;
-}*/
+// int main(void)
+// {
+//     char    a [] = "-1"; //ex1 - positive number
+// 	char    b [] = "1"; //ex2 - negative number
+//     char    c [] = " 1"; //ex3 - space + positive number
+//     char    d [] = " +1"; //ex4 - space + sign + number
+//     char    e [] = " a1"; //ex5 - no numeric char
+
+//     //analyze 'a'
+//     printf("%s\n", a); //printf before atoi
+//     ft_atoi(a);
+//     printf("%s\n", a); //printf after atoi
+
+//     //analyze 'b'
+//     printf("%s\n", b); //printf before atoi
+//     ft_atoi(b);
+//     printf("%s\n", b); //printf after atoi
+
+//     //analyze 'c'
+//     printf("%s\n", c); //printf before atoi
+//     ft_atoi(c);
+//     printf("%s\n", c); //printf after atoi
+
+//     //analyze 'd'
+//     printf("%s\n", d); //printf before atoi
+//     ft_atoi(d);
+//     printf("%s\n", d); //printf after atoi
+
+//     //analyze 'e'
+//     printf("%s\n", e); //printf before atoi
+//     ft_atoi(e);
+//     printf("%s\n", e); //printf after atoi
+//     return 0;
+// }
