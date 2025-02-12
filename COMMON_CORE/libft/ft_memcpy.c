@@ -13,7 +13,46 @@
 /* Copies n bytes from memory area src to memory area dst. Returns the original
 value of dst.*/
 
-// Incluímos nuestra librería
+//include library
 #include "libft.h"
 
-// void	*ft_memcpy(void *dest, const void *src, size_t n)
+
+//const void* “pointer to an unknown data type that cannot be modified”
+
+/// @brief copy data from src to dest
+/// @param dest 
+/// @param src declared as 'const void*', data won't be modified in src
+/// @param n number of bytes to be copied
+/// @return void
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t	i;
+	unsigned char	*d;
+	unsigned char	*s;
+
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i]; //copy first byte from src to dest
+		i++; //keep looping
+	}
+	return (d);
+}
+
+// int	main(void)
+// {
+// 	char	src [] = "Elena";
+// 	char	dest [] = "Juana";
+// 	size_t	n = 2;
+
+// 	printf("%s\n", src);
+// 	printf("%s\n", dest);
+// 	ft_memcpy(dest, src, n);
+// 	printf("%s\n", src);
+// 	printf("%s\n", dest);
+// 	return(0);
+// }
