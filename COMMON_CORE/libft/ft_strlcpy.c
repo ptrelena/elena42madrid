@@ -29,3 +29,5 @@ is not a proper string).*/
 #include "libft.h"
 
 // size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+
+// es como un strcpy, solo que copia el 'size' de caracteres
