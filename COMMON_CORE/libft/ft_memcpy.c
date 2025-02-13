@@ -27,32 +27,31 @@ value of dst.*/
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	unsigned char	*d;
-	unsigned char	*s;
+	size_t	i; //counter
+	unsigned char	*d; //new dest pointer to simplify code
+	unsigned char	*s; //new src pointer to simplify code
+	d = (unsigned char *)dest; //simplify code
+	s = (unsigned char *)src; //simplify code
 
-	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
-
-	i = 0;
-	while (i < n)
+	i = 0; //counter
+	while (i < n)//loop unil reaches 'n'
 	{
 		d[i] = s[i]; //copy first byte from src to dest
 		i++; //keep looping
 	}
-	return (d);
+	return (d);//returns d = dest value
 }
 
 // int	main(void)
 // {
-// 	char	src [] = "Elena";
-// 	char	dest [] = "Juana";
-// 	size_t	n = 2;
+// 	char	a [] = "Elena"; //dest
+// 	char	b [] = "Juana"; //src
+// 	size_t	c = 2; //number of bytes to be copied
 
-// 	printf("%s\n", src);
-// 	printf("%s\n", dest);
-// 	ft_memcpy(dest, src, n);
-// 	printf("%s\n", src);
-// 	printf("%s\n", dest);
-// 	return(0);
+// 	printf("%s\n", a); //dest before memcpp
+// 	printf("%s\n", b); //src before memcpp
+// 	ft_memcpy(a, b, c); //call ft
+// 	printf("%s\n", a); //dest after memcpp
+// 	printf("%s\n", b); //src after memcpp
+// 	return(0); //void ft
 // }

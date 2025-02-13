@@ -14,29 +14,29 @@
 islower(3) is true. The value of the argument must be representable as an
 unsigned char or thevalue of EOF */
 
-// Llamamos a nuestra librería
+//include library
 #include "libft.h"
 
-// Escribimos el prototipo de la función indicado en el manual
-int ft_isalpha(int c)
+int ft_isalpha(int c) //ft prototype
 {
     if ((c >= 'a' && c <= 'z')||(c >= 'A' && c <= 'Z'))
-        return (1);
-    return (0);
+    //int included in alphabetic ascii
+        return (1); //return 1
+    return (0); //return 0
 }
 
-/*
-int main(void)
-{
-    int a;
-    int b;
-    int c;
-	
-    a = 'e';
-    b = 'E';
-    c = '3';
-    printf("%d", ft_isalpha(a));
-    printf("%d", ft_isalpha(b));
-	printf("%d", ft_isalpha(c));
-	return (0);
-}*/
+// int main(void)
+// {
+//     int a = 'e'; //lowercase
+//     int b = 'E'; //uppercase
+//     int c = '3'; //number
+//     int d = ' '; //space
+//     int e = '@'; //special char
+
+//     printf("%d\n", ft_isalpha(a));
+//     printf("%d\n", ft_isalpha(b));
+// 	printf("%d\n", ft_isalpha(c));
+//     printf("%d\n", ft_isalpha(d));
+//     printf("%d\n", ft_isalpha(e));
+// 	return (0); //void ft
+// }

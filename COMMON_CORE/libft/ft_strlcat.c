@@ -25,7 +25,39 @@ dstsize is 0 or the original dst string was longer than dstsize (in practice
 this should not happen as it means that either dstsize is incorrect or that dst
 is not a proper string).*/
 
-// Incluímos nuestra librería
+//include library
 #include "libft.h"
 
-// size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t  ft_strlcat(char *dst, const char *src, size_t size)
+{
+    size_t  i;
+    size_t  dstlen;
+    size_t total_len;
+    unsigned char   *s;
+
+    i = 0;
+    dstlen = ft_strlen(dst);
+    s = (unsigned char *)src;
+    while((s[i] =! '\0') && (i < (size - 1)))
+    {
+        dst[(dstlen + i)] = s[i];
+        i++;
+    }
+    dst[dstlen + i] = '\0';
+    total_len = dstlen + ft_strlen(src);
+    return (total_len);
+}
+
+// int main(void)
+// {
+//     char    a [] = "Manolo"; //dst
+//     char    b [] = "Aurelio"; //src
+//     size_t  c = 3; //size
+
+//     printf("%s\n", a); //dst before strlcat
+//     printf("%s\n", b); //src before strlcat
+//     printf("%zu\n", ft_strlcat(a, b, c)); //call ft
+//     printf("%s\n", a); //dst after strlcat
+//     printf("%s\n", b); //src after strlcat
+//     return (0); //void ft
+// }
