@@ -10,17 +10,17 @@
 #                                                                            #
 # ************************************************************************** #
 
-# Indicamos el nombre del archivo resultante después de compilación
+#file name ofter complation
 NAME = libft.a
 
-# Comando para compilar
+#compilation command
 CC = cc
-# Flags para compilar
+#compilation flags
 CFLAGS = -Wall -Wextra -Werror
 
 A_C = ar rc
 
-# Archivos .c que se van a compilar
+#.c files to be compiled
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 	ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
@@ -35,37 +35,30 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 
-# separar SRC con espacios solo y cuando se acaba linea de 42 acabar con \
-
-# Transformación de los archivos de SRC de .c a .o
+#transform SRC from .c to .o
 OBJ = $(SRC:.c=.o)
 
-# Definimos all para compilar - Llamamos a NAME > Dentro incluimos OBJ + comandos
+#all for compilation - NAME > OBJ + commands #make all
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(A_C) $(NAME) $(OBJ)
 
-# ar: Crea, modifica y extrae archivos de librerías estáticas (normalmente con extensión .a en sistemas UNIX)
-# r: Reemplaza archivos existentes en la librería con versiones nuevas, o agrega nuevos archivos si no existen ya en la librería
-# c: Crea una nueva librería si no existe. Si la librería ya existe, no se muestra ningún error. Asegura que la operación no falle si el archivo aún no existe.
-# s: Crea un índice interno para la librería que ayuda a encontrar rápidamente los símbolos. Permite que los archivos se enlacen correctamente sin necesidad de un orden explícito de los objetos.
+#ar: creates, modifies and extracts files from libraries
+#r: updates files to latest version / adds new unexisting files
+#c: creates library if not exists / no error if library exists
+#s: inner library index for files to be linked correctly
 
-# Definimos clean para eliminar los archivos .o
+#clean to erase files .o #make clean
 clean: 
 	rm -f $(OBJ)
 
-# Definimos fclean para eliminar todo (archivos .o y .a) - clean elimina obj y rm -f 
+#fclean to erase files .o & .a #make fclean
 fclean: clean
 	rm -f $(NAME)
 	
-# Definimos re para eliminar todo y volver a compilar
+#re to erase all & recompile #make re
 re: fclean all
 
-# Declara estas reglas como "falsas" para que siempre se ejecuten, incluso si existen archivos en el directorio con los mismos nombres.
+#declara rules as "false" to always execute them (??)
 PHONY: clean fclean re
-
-# make clean: Limpia archivos intermedios.
-# make fclean: Limpia todo, incluyendo ejecutables.
-# make re: Limpia completamente y recompila desde cero.
-# make all: Compila el proyecto si es necesario.

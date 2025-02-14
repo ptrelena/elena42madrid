@@ -10,21 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Incluímos un if para asegurarnos de que la librería está creada, si no que se cree.
+//create library with 'if'
 #ifndef LIBFT_H
 # define LIBFT_H
 
-// Llamamos a las librerías necesarias para tus funciones
+//call libraries needed
 #include <unistd.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-
-// Declaras funciones de los archivos a entregar - parte 1, parte 2, bonus
-
-// PARTE 1
+//1
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
@@ -49,9 +46,9 @@ int	ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s1);
 
-// PARTE 2
+//2
 
-// BONUS
+//bonus
 
-// Cerramos el condicional if
+//close if
 #endif
