@@ -27,7 +27,7 @@ void	*ft_memset(void *str, int c, size_t n) //ft prototype
 		a[i] = b; //change char to b = c
 		i++; //keep looping
 	}
-	return; //nothing to return as it is a void ft
+	return(a); //nothing to return as it is a void ft
 }
 
 // int	main(void)
