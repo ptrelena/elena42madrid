@@ -10,26 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Locates the first occurrence of c (converted to an unsigned char) in string
-s. Returns a pointer to the byte located, or NULL if no such byte exists within
-n bytes.*/
-
-//include library
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-    size_t i;
-    unsigned char   cc;
-    unsigned char   *ss;
+    size_t i; //counter size_t to compare with 'n'
+    unsigned char   cc; //cast c
+    unsigned char   *ss; //cast *s
 
     cc = (unsigned char)c;
     ss = (unsigned char *)s;
     i = 0;
-    while ((i < n) && (ss[i] != '\0'))
+    while ((i < n) && (ss[i] != '\0')) //till 'n' reached & *s not empty
     {
         if (ss[i] == cc)
-            return (&ss[i]); // '&' pointer exact position
+            return (&ss[i]); //'&' ptr exact position
         i++;
     }
 

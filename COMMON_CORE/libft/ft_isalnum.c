@@ -10,18 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* The isalnum() function tests for any character for which isalpha(3) or 
-isdigit(3) is true. The value of the argument must be representable as an 
-unsigned char or thevalue of EOF */
-
-// Llamamos a nuestra librería
 #include "libft.h"
 
-// Escribimos el prototipo de la función indicado en el manual
 int ft_isalnum(int c)
 {
     if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') 
-        || (c >= '0' && c <= '9'))
+        || (c >= '0' && c <= '9')) //alhpanumeric chars
         return (1);
     return (0);
 }

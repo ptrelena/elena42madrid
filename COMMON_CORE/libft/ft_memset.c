@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Writes len bytes of value c (converted to an unsigned char) to the string b.
-Returns its first argument.*/
-
-// Incluímos nuestra librería
 #include "libft.h"
 
 void	*ft_memset(void *str, int c, size_t n) //ft prototype

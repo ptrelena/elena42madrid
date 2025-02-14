@@ -10,16 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The isprint() function tests for any printing character, including space
-(‘ ’). The value of the argument must be representable as an unsigned char or
-the value of EOF */
-
-// Incluímos nuestra librería
 #include "libft.h"
 
 int ft_isprint(int c)
 {
-    if (c >= ' ' && c <= '~')
+    if (c >= ' ' && c <= '~') //printable chars
         return (1);
     return (0);
 }

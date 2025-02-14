@@ -10,16 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The isdigit() function tests for a decimal digit character.  Regardless of
-locale, this includes only characters from 0-9 */
-
-// Incluímos nuestra librería
 #include "libft.h"
 
-// Escribimos el prototipo de la función indicado en el manual
 int ft_isdigit(int c)
 {
-    if (c >= '0' && c <= '9')
+    if (c >= '0' && c <= '9') //digit chars
         return (1);
     return (0);
 }

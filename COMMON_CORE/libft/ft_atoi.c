@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Converts the initial portion of the string pointed to by str
-to int representation. Transforma str a int */
-
-
-//include library
 #include "libft.h"
 
 int ft_atoi(const char *nptr) //ft prototype

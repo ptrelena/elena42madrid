@@ -10,19 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The isalpha() function tests for any character for which isupper(3) or
-islower(3) is true. The value of the argument must be representable as an
-unsigned char or thevalue of EOF */
-
-//include library
 #include "libft.h"
 
-int ft_isalpha(int c) //ft prototype
+int ft_isalpha(int c)
 {
-    if ((c >= 'a' && c <= 'z')||(c >= 'A' && c <= 'Z'))
-    //int included in alphabetic ascii
-        return (1); //return 1
-    return (0); //return 0
+    if ((c >= 'a' && c <= 'z')||(c >= 'A' && c <= 'Z')) //alphabetic chars
+        return (1); 
+    return (0); 
 }
 
 // int main(void)

@@ -10,12 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* strlcpy() copies up to dstsize - 1 characters from the string src to dst,
-NUL-terminating the result if dstsize is not 0. */
-
-//acts like strcpy only copying 'size' number of characters
-
-//include library
 #include "libft.h"
 
 //const char - src won't be modified

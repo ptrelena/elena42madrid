@@ -10,15 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Copies n bytes from memory area src to memory area dst. Returns the original
-value of dst.*/
-
-//include library
 #include "libft.h"
 
-
 //const void* “pointer to an unknown data type that cannot be modified”
-
 /// @brief copy data from src to dest
 /// @param dest 
 /// @param src declared as 'const void*', data won't be modified in src

@@ -10,16 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The isascii() function tests for an ASCII character, which is any character
-between 0 and octal 0177 inclusive */
-
-// Incluímos nuestra librería
 #include "libft.h"
 
-// Escribimos el prototipo de la función indicado en el manual
 int ft_isascii(int c)
 {
-  if (c >= 0 && c <= 127)
+  if (c >= 0 && c <= 127) //ascii chars
             return (1);
   return (0);
 }

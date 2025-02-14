@@ -10,13 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Writes n zeroed bytes to the string s. If n is zero, bzero() does nothing.
-Incluye bytes '0' al string apuntado por s. */
-/* void = La función no devuelve nada
-*s = Puntero al bloque de memoria que queremos rellenar con ceros.
-size_t n = Número de bytes a establecer en cero.*/
-
-//include library
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n) //ft prototype

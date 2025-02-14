@@ -18,9 +18,8 @@ The argument must be representable as an unsigned char or the value of EOF */
 
 int ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z'){
-        c = c + 32;
-    }
+    if (c >= 'A' && c <= 'Z')
+        c = c + 32; //+32 up in ascii from upper to lower
     else
         return (c);
     return (c);
@@ -29,11 +28,9 @@ int ft_tolower(int c)
 /*
 int main()
 {
-    int a;
-    int b;
+    int a = 'a';
+    int b = 'B';
 
-    a = 'a';
-    b = 'B';
     printf ("%c", ft_tolower(a));
     printf ("%c", ft_tolower(b));
     return (0);
