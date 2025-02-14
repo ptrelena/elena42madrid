@@ -30,15 +30,15 @@ is not a proper string).*/
 
 size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t  i;
-    size_t  dstlen;
-    size_t total_len;
+    size_t  i; //counter
+    size_t  dstlen; //length dst
+    size_t total_len; //dst + src length
     unsigned char   *s;
 
-    i = 0;
-    dstlen = ft_strlen(dst);
-    s = (unsigned char *)src;
-    while((s[i] =! '\0') && (i < (size - 1)))
+    i = 0;//counter starts
+    dstlen = ft_strlen(dst); //define dstlen
+    s = (unsigned char *)src; //define s
+    while((s[i] =! '\0') && (i < (size - 1))) 
     {
         dst[(dstlen + i)] = s[i];
         i++;

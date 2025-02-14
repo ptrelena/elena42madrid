@@ -37,7 +37,7 @@ char    *ft_strchr(const char *s, int c)
     if (cc == '\0')
         return (&ss[i]);
 
-    return (ss);
+    return (NULL);
 }
 
 
@@ -62,11 +62,11 @@ char    *ft_strchr(const char *s, int c)
 //     char    f1 [] = "Piscine end"; //'*s'
 //     int     f2 = 'e'; //'c'
 
-//     printf("a: %c\n", *ft_strchr(a1, a2));
-//     printf("b: %c\n", *ft_strchr(b1, b2));
-//     printf("c: %c\n", *ft_strchr(c1, c2));
-//     printf("d: %c\n", *ft_strchr(d1, d2));
-//     printf("e: %c\n", *ft_strchr(e1, e2));
-//     printf("f: %c\n", *ft_strchr(f1, f2));
+//     printf("a: %s\n", ft_strchr(a1, a2));
+//     printf("b: %s\n", ft_strchr(b1, b2));
+//     printf("c: %s\n", ft_strchr(c1, c2));
+//     printf("d: %s\n", ft_strchr(d1, d2));
+//     printf("e: %s\n", ft_strchr(e1, e2));
+//     printf("f: %s\n", ft_strchr(f1, f2));
 //     return (0);
 // }

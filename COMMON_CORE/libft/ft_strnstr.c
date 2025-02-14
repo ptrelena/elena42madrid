@@ -18,7 +18,25 @@ not a concern. If needle is an empty string, haystack is returned; if needle
 occurs nowhere in haystack, NULL is returned; otherwise a pointer to the first
 character of the first occurrence of needle is returned.*/
 
-// Incluímos nuestra librería
+/*str little se busca en str big y se devuelve desde ese punto el que se encuentra
+el nuero de bytes definido por len*/
+
+//include library
 #include "libft.h"
 
-// char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t	i;
+
+	if (*little == '\0')
+		return(big);
+	
+	while(*big != '\0')
+	{
+		big++;
+		while (little != '\0')
+			little++;
+
+	}
+
+}
