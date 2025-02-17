@@ -18,6 +18,8 @@ size_t  ft_strlcpy(char *dst, const char *src, size_t size)
     size_t  i; //counter size_t to compare it with 'size'
 
     i = 0; //counter starts
+    if (size < 1)
+        return(ft_strlen(src));
     while (src[i] != '\0' && i < (size - 1))
     //loop until end of src & until size -1 (size = '\0')
     {

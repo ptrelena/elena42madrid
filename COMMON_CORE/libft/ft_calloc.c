@@ -22,9 +22,9 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*ptr; //ptr to be returned
 
 	if (count == 0 || size == 0) //nothing to save mem for
-		return (NULL);
+		return (malloc(0));
 	ptr = malloc(count * size); //count*size = total bytes length
-	if (ptr == NULL) //ptrs are compared with 'NULL' not '\0'
+	if (!ptr) //ptrs are compared with 'NULL' not '\0'
 		return (NULL);
 	ft_bzero(ptr, (count * size)); //fill mem with 0
 	return (ptr);
