@@ -15,23 +15,19 @@
 char    *ft_strchr(const char *s, int c) 
 {
     int i;
-    char   cc;
-    char   *ss;
 
-    cc = (char)c;
-    ss = (char *)s;
     i = 0;
-    while (ss[i] != '\0')
+    while (s[i] != '\0')
     {
-        if (ss[i] == cc)
-            return (&ss[i]); // '&' pointer exact position
+        if (s[i] == (char)c)
+            return ((char *)&s[i]); // '&' pointer exact position
         i++;
     }
 
-    if (cc == '\0')
-        return (&ss[i]);
+    if (c == '\0')
+        return ((char *)&s[i]);
 
-    return (NULL);
+    return (0);
 }
 
 

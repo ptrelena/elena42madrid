@@ -14,28 +14,35 @@
 
 char    *ft_strrchr(const char *s, int c)
 {
-    int i;
-    int len;
-    char   cc;
-    char   *ss;
-
+    int i; //counter
     
-    cc = (char)c;
-    ss = (char *)s;
-    len = ft_strlen(s);
-    i = len - 1;
-    while (ss[i] != '\0')
+    i = ft_strlen(s); //counter s' lenght long
+    while (i >= 0) //loop until counter reaches last chat
     {
-        if (ss[i] == cc)
-            return (&ss[i]); // '&' pointer exact position
-        i--;
+        if (s[i] == (char)c)
+            return((char *)&s[i]); // '&' ptr exact position
+        i--; //loop backwards
     }
-
-    if (cc == '\0')
-        return (&ss[i]);
-
-    return (ss);
+    return(0);
 }
+
+// char    *ft_strrchr(const char *s, int c)
+// {
+//     int i;
+
+//     i = ft_strlen(s) - 1;
+//     while (i >= 0)
+//     {
+//         if (s[i] == (char)c)
+//             return ((char *)&s[i]); // '&' pointer exact position
+//         i--;
+//     }
+
+//     if (c == '\0')
+//         return ((char *)&s[i]);
+
+//     return (0);
+// }
 
 // int main()
 // {
@@ -60,9 +67,9 @@ char    *ft_strrchr(const char *s, int c)
 
 //     printf("a: %c\n", *ft_strrchr(a1, a2));
 //     printf("b: %c\n", *ft_strrchr(b1, b2));
-//     printf("c: %c\n", *ft_strrchr(c1, c2));
 //     printf("d: %c\n", *ft_strrchr(d1, d2));
 //     printf("e: %c\n", *ft_strrchr(e1, e2));
 //     printf("f: %c\n", *ft_strrchr(f1, f2));
+//     printf("c: %c\n", *ft_strrchr(c1, c2));
 //     return (0);
 // }
