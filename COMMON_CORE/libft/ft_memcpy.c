@@ -27,6 +27,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = (unsigned char *)dest; //simplify code
 	s = (unsigned char *)src; //simplify code
 
+	if (d == s || n <= 0)
+		return (dest);
 	i = 0; //counter
 	while (i < n)//loop unil reaches 'n'
 	{

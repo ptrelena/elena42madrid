@@ -17,25 +17,25 @@
 /// @return ptr to char copy
 char	*ft_strdup(const char *s1)
 {
-	char	*t1; //ptr to return s1 value
+	char	*p; //ptr to return s1 value
+	char	*t1; //cast *s1
 	int		i; //counter
 
+	t1 = (char *)s1;
 	i = 0; //counter starts
-	if (s1 == NULL) //nothing to save mem for
+	p = (char *)malloc(ft_strlen(s1) * sizeof(char) + 1);
+	if (!t1) //nothing to save mem for
 		return(NULL);
-	t1 = malloc(ft_strlen(s1) * sizeof(char) + 1);
 	//assign mem for ptr - len * size + 1 ('\0')
-	if (t1 == NULL) //nothing to save mem for
-	{
+	if (!p) //nothing to save mem for
 		return(NULL);
-	}
-	while (s1[i] != '\0') //copy s1 in ptr
+	while (t1[i] != '\0') //copy s1 in ptr
 	{
-		t1[i] = s1[i];
+		p[i] = t1[i];
 		i++;
 	}
-	t1[i] = '\0'; //add final NULL
-	return (t1); //return ptr containing s1
+	p[i] = '\0'; //add final NULL
+	return (p); //return ptr containing s1
 }
 
 // int	main(void)
