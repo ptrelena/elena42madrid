@@ -18,7 +18,11 @@ CC = cc
 #compilation flags
 CFLAGS = -Wall -Wextra -Werror
 
-A_C = ar rc
+A_C = ar rcs
+#ar creates, archives or modifies files from library
+#r updates files to latest version / adds new unexisting files
+#c creates new files if don't exist already
+#s: inner library index for files to be linked correctly
 
 #.c files to be compiled
 SRC = t_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -36,7 +40,7 @@ SRC = t_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 
-#transform SRC from .c to .o
+#transform SRC from .c to .o - .o files = binary code
 OBJ = $(SRC:.c=.o)
 
 #all for compilation - NAME > OBJ + commands #make all
@@ -44,11 +48,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(A_C) $(NAME) $(OBJ)
-
-#ar: creates, modifies and extracts files from libraries
-#r: updates files to latest version / adds new unexisting files
-#c: creates library if not exists / no error if library exists
-#s: inner library index for files to be linked correctly
 
 #clean to erase files .o #make clean
 clean: 
@@ -61,5 +60,5 @@ fclean: clean
 #re to erase all & recompile #make re
 re: fclean all
 
-#declara rules as "false" to always execute them (??)
+#declares rules as "false" to always execute them (??)
 PHONY: clean fclean re
