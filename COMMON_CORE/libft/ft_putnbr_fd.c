@@ -15,15 +15,26 @@
 
 void	ft_putnbr_fd(int	n, int	fd)
 {
-	int	digit;
-	char	digitc;
+	int	b; //int to save 'n' value
+	int	digit; //individual digit
+	char	digit_ascii;
 
-	digit = b % 10;
-	digitc = digit + 48;
-	b = b/10;
-	if (b > 10)
-		--- //crear ft para que se llame a sí misma hasta acabar con el num
-	else
-		write(1, &digitc, 1);
-	return (0);
+	b = n; //save n in b
+	digit = b % 10; //b remainder(resto) is individual digit
+	digit_ascii = digit + '0'; //digit in ASCII
+	if (b < 0)
+	{
+		write(1, "-", 1);
+		n = -n;
+	}
+	if (b >= 10)
+		ft_putnbr_fd(n/10, fd);
+	write(fd, &digit_ascii, 1);
 }
+
+// int	main(void)
+// {
+// 	int	fd = open("prueba.txt", O_RDWR, O_APPEND); //fd declaration
+// 	ft_putnbr_fd(42, fd);
+// 	return (0);
+// }

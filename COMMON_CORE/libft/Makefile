@@ -46,6 +46,8 @@ OBJ = $(SRC:.c=.o)
 #all for compilation - NAME > OBJ + commands #make all
 all: $(NAME)
 
+#calls name
+#calls A_C to create lib with NAME + includes OBJ
 $(NAME): $(OBJ)
 	$(A_C) $(NAME) $(OBJ)
 
