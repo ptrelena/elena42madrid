@@ -9,3 +9,19 @@
 /*   Updated: 2025-02-18 09:03:16 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+#include <fcntl.h>
+
+void	ft_putendl_fd(char	*s, int	fd)
+{
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
+}
+
+// int	main(void)
+// {
+// 	int	fd = open("prueba.txt", O_RDWR, O_APPEND); //fd declaration
+// 	ft_putendl_fd("Elena y Fran <3", fd);
+// 	return (0);
+// }
