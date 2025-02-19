@@ -39,7 +39,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 // {
 // 	char	a [] = "hola me llamo Elena hola Jimenahola"; //*s1
 // 	char	b [] = "hola"; //*set
-
 // 	printf("%s\n", ft_strtrim(a, b));
 // 	return (0);
 // }
