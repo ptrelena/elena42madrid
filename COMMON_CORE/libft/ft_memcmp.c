@@ -28,8 +28,6 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
             //t1 -t2
         i++;//keep looping when t1 = t2
     }
-    if (t1[i] == t2[i])//while above not working means t1 = t2
-        return (0); // 0 when t1 = t2
     return(0);
 }
 /* 

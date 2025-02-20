@@ -18,10 +18,10 @@ size_t	ft_count_words(char const *s, char c)
 	size_t	i;
 	size_t	w_count;
 
+	i = 0;
+	w_count = 0; //start from 1 word always
 	if (!s)
 		return (-1);//returns 0 if !words_dst
-	i = 0;
-	w_count = 1; //start from 1 word always
 	while(s[i] != '\0')
 	{
 		while(s[i] && s[i] == c)
@@ -43,9 +43,7 @@ size_t	ft_count_letters(const char *s, char c)
 
 	l_count = 0;
 	while(s[l_count] != '\0' && s[l_count] != c)
-	{
 		l_count++;
-	}
 	return(l_count);
 }
 
@@ -55,10 +53,10 @@ char	*ft_printword(char const *s, char c)
 	size_t	i;
 	char	*dest;
 
+	i = 0;
 	dest = ft_calloc((ft_count_letters(s, c) + 1), sizeof(char));
 	if(!dest)
 		return (NULL);
-	i = 0;
 	while(s[i] && s[i] != c)
 	{
 		dest[i] = s[i];
@@ -79,13 +77,13 @@ void	*ft_freespace(char **arr, size_t delete)
 
 char	**ft_split(char const *s, char c)
 {
+	char	**words_dst;
 	int	i;
 	int	j;
-	char	**words_dst;
 
 	i = 0;
 	j = 0;
-	words_dst = malloc(sizeof(char *)*(ft_count_words(s, c) + 1));//**ptr space
+	words_dst = (char **)ft_calloc(sizeof(char *), ft_count_words(s, c) + 1);//**ptr space
 	if (!words_dst)
 		return (NULL);
 	while(s[i])

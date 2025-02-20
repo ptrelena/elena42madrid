@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	len_s = ft_strlen(s);
 	if (start >= len_s) //nowhere to start from
-		return(strdup("")); //create & copy space for NULL
+		return(ft_strdup("")); //create & copy space for NULL
 	if (len > len_s - start) //bytes to copy > bytes left to copy
 		len = len_s - start; //copy only what's left to copy
 	r = malloc(len + 1); //create space for new str + '\0'
