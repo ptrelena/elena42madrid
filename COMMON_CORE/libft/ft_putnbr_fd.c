@@ -13,24 +13,43 @@
 #include "libft.h"
 #include <fcntl.h>
 
-void	ft_putnbr_fd(int	n, int	fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	b; //int to save 'n' value
-	int	digit; //individual digit
-	char	digit_ascii;
-
-	b = n; //save n in b
-	digit = b % 10; //b remainder(resto) is individual digit
-	digit_ascii = digit + '0'; //digit in ASCII
-	if (b < 0)
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else
 	{
-		write(1, "-", 1);
-		n = -n;
+		if (n < 0)
+		{
+			write(fd, "-", 1);
+			n = -n;
+		}
+		if (n >= 10)
+		{
+			ft_putnbr_fd(n / 10, fd);
+		}
+		write(fd, &"0123456789"[n % 10], 1);
 	}
-	if (b >= 10)
-		ft_putnbr_fd(n/10, fd);
-	write(fd, &digit_ascii, 1);
 }
+
+// void	ft_putnbr_fd(int n, int	fd)
+// {
+// 	int	b; //int to save 'n' value
+// 	int	digit; //individual digit
+// 	int digit_ascii;
+
+// 	b = n; //save n in b
+// 	digit = b % 5; //b remainder(resto) is individual digit
+// 	digit_ascii = digit + '0'; //digit in ASCII
+// 	if (n < 0)
+// 	{
+// 		write(fd, "-", 1);
+// 		n = -n;
+// 	}
+// 	if (n >= 10)
+// 		ft_putnbr_fd(n / 10, fd);
+// 	write(fd, &digit_ascii, 1);
+// }
 
 // int	main(void)
 // {
