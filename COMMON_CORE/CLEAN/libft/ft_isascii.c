@@ -35,7 +35,7 @@ int	main(void)
 	b = 'A';
 	c = '1';
 	d = '@';
-	e = 164; // Número ASCII de la letra 'ñ'
+	e = 164; // 'ñ'
 	printf("%d", ft_isascii(a));
 	printf("%d", ft_isascii(b));
 	printf("%d", ft_isascii(c));

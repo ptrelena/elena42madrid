@@ -41,7 +41,7 @@ void	ft_toupper_s(unsigned int j, char *t)
 
 // int	main(void)
 // {
-// 	char	a [] = "me gusta mucho programar";
+// 	char	a [] = "I like programming a lot";
 // 	ft_striteri(a, ft_toupper_s);
 // 	printf("%s", a);
 // 	return (0);

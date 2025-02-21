@@ -41,8 +41,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int	main(void)
 // {
-// 	char	a [] = "hola me llamo Elena hola Jimenahola"; //*s1
-// 	char	b [] = "hola"; //*set
+// 	char	a [] = "hello my name is Elena hello Carloshello"; //*s1
+// 	char	b [] = "hello"; //*set
 // 	printf("%s\n", ft_strtrim(a, b));
 // 	return (0);
 // }

@@ -107,31 +107,27 @@ char	**ft_split(char const *s, char c)
 // #include <stdio.h>
 // #include <stdlib.h>
 
-// char **ft_split(char const *s, char c); // Declaración de la función
-
 // int main()
 // {
-//     char *cadena = "Hola  mundo esto es C  ";
-// Cadena de prueba con múltiples espacios
-//     char delimitador = ' ';                    // Delimitador de separación
-//     char **resultado = ft_split(cadena, delimitador); // Ejecutar la función
+//     char *str = "Hola  mundo esto es C  ";
+//     char limit  = ' ';                   
+//     char **result = ft_split(str, limit);
 
-//     if (!resultado) // Verificar si la función devolvió NULL
+//     if (!result) 
 //     {
 //         printf("Error: No se pudo reservar memoria.\n");
 //         return (1);
 //     }
 
-//     // Imprimir el resultado
 //     int i = 0;
-//     while (resultado[i])
+//     while (result[i])
 //     {
-//         printf("Palabra %d: %s\n", i, resultado[i]);
-//         free(resultado[i]); // Liberar memoria de cada palabra
+//         printf("word: %d: %s\n", i, result[i]);
+//         free(result[i]); //free words space
 //         i++;
 //     }
 
-//     free(resultado); // Liberar el array de punteros
+//     free(result); //free ptr array space
 
 //     return (0);
 // }
