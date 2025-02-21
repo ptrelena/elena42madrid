@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/// @brief change from char to int
+/// @param nptr - initial char
+/// @return final int
 int	ft_atoi(const char *nptr)
 {
 	int	i;

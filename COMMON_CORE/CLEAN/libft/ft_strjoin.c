@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/// @brief concatenates s1 & s2
+/// @param s1 
+/// @param s2 
+/// @return ptr containing s1 & s2 together
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;

@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/// @brief loops s1 onwards & backwars till finds set
+/// @param s1 
+/// @param set 
+/// @return final str without set
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;

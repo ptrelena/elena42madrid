@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/// @brief 
+/// @param dst 
+/// @param src 
+/// @param size 
+/// @return dst + src len
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;

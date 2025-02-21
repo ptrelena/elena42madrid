@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/// @brief last appareance of c in s
+/// @param s 
+/// @param c 
+/// @return ptr to c appareance
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;

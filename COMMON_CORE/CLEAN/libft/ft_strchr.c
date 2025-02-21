@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/// @brief returns ptr to first occurrence of c
+/// @param s 
+/// @param c 
+/// @return &s
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;

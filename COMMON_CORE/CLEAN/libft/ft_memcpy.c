@@ -17,7 +17,6 @@
 /// @param src declared as 'const void*', data won't be modified in src
 /// @param n number of bytes to be copied
 /// @return void
-
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t			i;

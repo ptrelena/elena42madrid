@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/// @brief compare s1 & s2 in 'n' bytes
+/// @param s1 
+/// @param s2 
+/// @param n 
+/// @return if equal 0, if different s1[i] - s2[i]
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;

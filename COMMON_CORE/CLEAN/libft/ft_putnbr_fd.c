@@ -13,6 +13,9 @@
 #include "libft.h"
 #include <fcntl.h>
 
+/// @brief print nbr in fd
+/// @param n 
+/// @param fd 
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)

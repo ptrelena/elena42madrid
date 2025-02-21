@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/// @brief check if int printable character
+/// @param c 
+/// @return 1 if TRUE, 0 if FALSE
 int	ft_isprint(int c)
 {
 	if (c >= ' ' && c <= '~')

@@ -13,6 +13,9 @@
 #include "libft.h"
 #include <fcntl.h>
 
+/// @brief print str in fd
+/// @param s 
+/// @param fd 
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	strlen;

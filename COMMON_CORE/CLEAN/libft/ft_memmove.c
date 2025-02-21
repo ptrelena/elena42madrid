@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/// @brief copies backwards from src to dst 'len' bytes
+/// @param dst 
+/// @param src 
+/// @param len 
+/// @return dst
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;

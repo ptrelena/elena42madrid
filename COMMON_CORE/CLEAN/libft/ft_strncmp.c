@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/// @brief compares str until different inside 'n' bytes
+/// @param s1 
+/// @param s2 
+/// @param n 
+/// @return s1[i] - s2[i] when different
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;

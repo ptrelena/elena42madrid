@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/// @brief checks if src can be pasted in dst
+/// @param dst 
+/// @param src 
+/// @param size 
+/// @return src len
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;

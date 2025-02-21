@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-/// @brief mem for variable = count * size
+/// @brief set mem to 0
 /// @param count - variable length
 /// @param size - variable size
 /// @return ptr with mem

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-/// @brief allocates mem for s1 + copies it
+/// @brief allocates mem & copies s1
 /// @param *s1
 /// @return ptr to char copy
 char	*ft_strdup(const char *s1)

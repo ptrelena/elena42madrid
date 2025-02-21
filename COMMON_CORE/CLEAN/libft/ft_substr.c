@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/// @brief creates new str from 'start' & 'len' size
+/// @param s 
+/// @param start 
+/// @param len 
+/// @return ptr new str
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*r;

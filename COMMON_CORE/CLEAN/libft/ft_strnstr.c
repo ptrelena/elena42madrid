@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/// @brief first appareance of little in first 'len' chars of big
+/// @param big 
+/// @param little 
+/// @param len 
+/// @return ptr to first appareance
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

@@ -63,14 +63,18 @@ char	*ft_printword(char const *s, char c)
 	return (dest);
 }
 
-void	*ft_freespace(char **arr, size_t delete)
+void	*ft_freematrix(char **arr, size_t index)
 {
-	while (delete > 0)
-		free(arr[--delete]);
+	while (index > 0)
+		free(arr[--index]);
 	free(arr);
 	return (NULL);
 }
 
+/// @brief split ptr 
+/// @param s 
+/// @param c 
+/// @return print array of arrays
 char	**ft_split(char const *s, char c)
 {
 	char	**words_dst;
@@ -90,7 +94,7 @@ char	**ft_split(char const *s, char c)
 		{
 			words_dst[j] = ft_printword((char *)s + i, c);
 			if (!words_dst[j])
-				return (ft_freespace(words_dst, j), NULL);
+				return (ft_freematrix(words_dst, j), NULL);
 			j++;
 			while (s[i] && s[i] != c)
 				i++;

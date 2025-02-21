@@ -29,23 +29,26 @@ size_t	ft_countnum(int n)
 	return (count);
 }
 
+/// @brief change from int to char
+/// @param n 
+/// @return final char value
 char	*ft_itoa(int n)
 {
-	int		count;
+	int		len_str;
 	char	*str;
 	long	num;
 
-	count = ft_countnum(n);
+	len_str = ft_countnum(n);
 	num = n;
-	str = (char *)malloc(count + 1);
+	str = (char *)malloc(len_str + 1);
 	if (!str)
 		return (NULL);
-	str[count] = '\0';
+	str[len_str] = '\0';
 	if (n < 0)
 		num = -num;
-	while (count > 0)
+	while (len_str > 0)
 	{
-		str[--count] = num % 10 + '0';
+		str[--len_str] = num % 10 + '0';
 		num /= 10;
 	}
 	if (n < 0)

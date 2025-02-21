@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/// @brief locates first occurrence of 'c' in in 'n' bytes from s
+/// @param s 
+/// @param c 
+/// @param n 
+/// @return NULL
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;

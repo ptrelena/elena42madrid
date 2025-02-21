@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/// @brief set bytes as 0 (nothing to return)
+/// @param s - initial ptr
+/// @param n - num of bytes to set
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*str;

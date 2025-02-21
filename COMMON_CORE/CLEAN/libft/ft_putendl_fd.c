@@ -13,6 +13,9 @@
 #include "libft.h"
 #include <fcntl.h>
 
+/// @brief print s + '\n' in fd
+/// @param s 
+/// @param fd 
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
