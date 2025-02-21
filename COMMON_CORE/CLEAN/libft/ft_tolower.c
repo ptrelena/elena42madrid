@@ -10,28 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Converts an upper-case letter to the corresponding lower-case letter. 
-The argument must be representable as an unsigned char or the value of EOF */
-
-// Incluímos nuestra librería
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        c = c + 32; //+32 up in ascii from upper to lower
-    else
-        return (c);
-    return (c);
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	else
+		return (c);
+	return (c);
 }
 
 /*
-int main()
+int	main(void)
 {
-    int a = 'a';
-    int b = 'B';
+	int a = 'a';
+	int b = 'B';
 
-    printf ("%c", ft_tolower(a));
-    printf ("%c", ft_tolower(b));
-    return (0);
+	printf ("%c", ft_tolower(a));
+	printf ("%c", ft_tolower(b));
+	return (0);
 }*/

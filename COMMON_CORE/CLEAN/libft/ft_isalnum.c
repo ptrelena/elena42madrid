@@ -12,26 +12,26 @@
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') 
-        || (c >= '0' && c <= '9')) //alhpanumeric chars
-        return (1);
-    return (0);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0'
+			&& c <= '9'))
+		return (1);
+	return (0);
 }
 
 /*
-int main(void)
+int	main(void)
 {
-    int a;
-    int b;
-    int c;
+	int a;
+	int b;
+	int c;
 
-    a = '@';
-    b = 'A';
-    c = '5';
-    printf("%d", ft_isalnum(a));
-    printf("%d", ft_isalnum(b));
-    printf("%d", ft_isalnum(c));
-    return (0);
+	a = '@';
+	b = 'A';
+	c = '5';
+	printf("%d", ft_isalnum(a));
+	printf("%d", ft_isalnum(b));
+	printf("%d", ft_isalnum(c));
+	return (0);
 }*/

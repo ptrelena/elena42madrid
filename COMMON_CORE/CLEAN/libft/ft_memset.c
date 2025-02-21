@@ -12,22 +12,21 @@
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n) //ft prototype
+void	*ft_memset(void *str, int c, size_t n)
 {
-	size_t	i; //set counter as size_t to compare it with 'n'
-	unsigned char	*a; //new pointer to simplify code
-	unsigned char	b; //new variable for int 'c'
+	size_t			i;
+	unsigned char	*a;
+	unsigned char	b;
 
-	a = (unsigned char *)str; //simplify code
-	b = (unsigned char)c; //simplify code
-
-	i = 0; //counter starts
-	while (i < n) //loop srt until i reaches n
+	a = (unsigned char *)str;
+	b = (unsigned char)c;
+	i = 0;
+	while (i < n)
 	{
-		a[i] = b; //change char to b = c
-		i++; //keep looping
+		a[i] = b;
+		i++;
 	}
-	return(a); //nothing to return as it is a void ft
+	return (a);
 }
 
 // int	main(void)

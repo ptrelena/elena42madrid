@@ -18,24 +18,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	len_s;
 
-	if (!s) //initial str not exists
+	if (!s)
 		return (NULL);
 	len_s = ft_strlen(s);
-	if (start >= len_s) //nowhere to start from
-		return(ft_strdup("")); //create & copy space for NULL
-	if (len > len_s - start) //bytes to copy > bytes left to copy
-		len = len_s - start; //copy only what's left to copy
-	r = malloc(len + 1); //create space for new str + '\0'
+	if (start >= len_s)
+		return (ft_strdup(""));
+	if (len > len_s - start)
+		len = len_s - start;
+	r = malloc(len + 1);
 	if (!r)
 		return (NULL);
-	i = 0; //counter to loop new str
-	while (i < len) //loop until end of len is reached
+	i = 0;
+	while (i < len)
 	{
-		r[i] = s[start + i]; //copy s in new str from start
+		r[i] = s[start + i];
 		i++;
 	}
-	r[i] = '\0'; //add NULL to new str end
-	return(r);
+	r[i] = '\0';
+	return (r);
 }
 
 // int	main(void)

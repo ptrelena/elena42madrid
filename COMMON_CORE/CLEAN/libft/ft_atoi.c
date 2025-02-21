@@ -12,34 +12,31 @@
 
 #include "libft.h"
 
-int ft_atoi(const char *nptr) //ft prototype
+int	ft_atoi(const char *nptr)
 {
-	int	i = 0; //counter
-	int	sign = 1; //int to define sign
-	int	result = 0; //int to save final number
-   
-    while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32)) //no spaces
-        i++; //keep looping
+	int	i;
+	int	sign;
+	int	result;
 
-    if (nptr[i] == '-' || nptr[i] == '+') //check number sign
-    {
-        if (nptr[i] == '-') //loop for negative numbers
-            sign = -1; //change sign to negative
-        if (nptr[i] == '+') //loop for positive numbers
-            sign = 1; //change sign to positive
-        i++; //keep looping
-    }
-
-    //convert numeric chars to int
-    while (nptr[i] >= '0' && nptr[i] <= '9') //loop numeric char
-    {
-        result = result * 10 + (nptr[i] - '0'); 
-		// (result * 10) moves analyzed digit to left
-		// (nptr[i] - '0') => ascii digit - ascii '0' = digit numeric value
-        i++; //keep looping
-    }
-
-    return (result * sign); //result final value * numer sign (1 / -1)
+	i = 0;
+	sign = 1;
+	result = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			sign = -1;
+		if (nptr[i] == '+')
+			sign = 1;
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result = result * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }
 
 // int main(void)
@@ -74,5 +71,5 @@ int ft_atoi(const char *nptr) //ft prototype
 //     printf("%s\n", e); //printf before atoi
 //     ft_atoi(e);
 //     printf("%s\n", e); //printf after atoi
-//     return 0;
+//     return (0);
 // }

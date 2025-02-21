@@ -12,31 +12,28 @@
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n) //ft prototype
+void	ft_bzero(void *s, size_t n)
 {
-	size_t	i; //set counter as size_t to compare it with n
-	unsigned char *str; //new pointer to simplify code
+	unsigned char	*str;
+	size_t			i;
 
-	str = (unsigned char *)s; //simplify code
-
-	i = 0; //counter starts
-	while (i < n) //loop srt until i reaches n
+	str = (unsigned char *)s;
+	i = 0;
+	while (i < n)
 	{
-		str[i] = 0; //change char 0
-		i++; //keep looping
+		str[i] = 0;
+		i++;
 	}
-	return; //nothing to return as it is a void ft
+	return ;
 }
 
 // int	main(void)
 // {
 // 	char	str [] = "Elena"; //create a pointer variable
-// 	size_t	n = 5; //create n variable 
+// 	size_t	n = 5; //create n variable
 
 // 	printf("%s\n", str); //print str before bzero
 // 	ft_bzero(str, n); //call ft
 // 	printf("%s\n", str); //print str after bzero
 // 	return (0);
 // }
-
-// bzero = memset, setting c = 0

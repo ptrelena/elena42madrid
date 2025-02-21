@@ -12,40 +12,39 @@
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    size_t  i; //counter
-    unsigned char   *t1;//change const void to unsigned char
-    unsigned char   *t2;//change const void to unsigned char
+	size_t			i;
+	unsigned char	*t1;
+	unsigned char	*t2;
 
-    i = 0;//counter starts
-    t1 = (unsigned char *)s1;//s1 value assigned to t1
-    t2 = (unsigned char *)s2;//s2 value assigned to t2
-    while (i < n) //loop till counter reaches 'n' value
-    {
-        if (t1[i] != t2[i])//t1 byte different to t2 byte
-            return (t1[i] - t2[i]);
-            //t1 -t2
-        i++;//keep looping when t1 = t2
-    }
-    return(0);
+	i = 0;
+	t1 = (unsigned char *)s1;
+	t2 = (unsigned char *)s2;
+	while (i < n)
+	{
+		if (t1[i] != t2[i])
+			return (t1[i] - t2[i]);
+		i++;
+	}
+	return (0);
 }
-/* 
-int main(void)
+/*
+int	main(void)
 {
-    //same str - return 0
-    char   a1 [] = "ElenaElenita"; //s1
-    char    a2 [] = "ElenaElenita"; //s2
-    //different str
-    char    b1 [] = "ElenaElenita"; //s1
-    char    b2 [] = "CarlosCarlitos"; //s2
-    //str including NULL
-    char    c1 [] = "ElenaElenita"; //s1
-    char    c2 [] = "Elenita'\0'Carlos"; //s2
-    size_t  z = 10; //n
+	//same str - return 0
+	char   a1 [] = "ElenaElenita"; //s1
+	char    a2 [] = "ElenaElenita"; //s2
+	//different str
+	char    b1 [] = "ElenaElenita"; //s1
+	char    b2 [] = "CarlosCarlitos"; //s2
+	//str including NULL
+	char    c1 [] = "ElenaElenita"; //s1
+	char    c2 [] = "Elenita'\0'Carlos"; //s2
+	size_t  z = 10; //n
 
-    printf("a: %d\n", ft_memcmp(a1, a2, z));
-    printf("b: %d\n", ft_memcmp(b1, b2, z));
-    printf("c: %d\n", ft_memcmp(c1, c2, z));
-    return (0);
+	printf("a: %d\n", ft_memcmp(a1, a2, z));
+	printf("b: %d\n", ft_memcmp(b1, b2, z));
+	printf("c: %d\n", ft_memcmp(c1, c2, z));
+	return (0);
 } */

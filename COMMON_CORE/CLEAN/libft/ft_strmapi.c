@@ -15,14 +15,14 @@
 // char ft_to_upper_or_lower(unsigned int i, char c)
 // {
 //     if (i % 2 == 0)
-//         return toupper(c); //uppercase if even
-//     return tolower(c);  //lowercase if odd
+//         return (toupper(c)); //uppercase if even
+//     return (tolower(c));  //lowercase if odd
 // }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*t;
 
 	if (!s)
@@ -38,7 +38,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		i++;
 	}
 	t[len] = '\0';
-	return(t);
+	return (t);
 }
 
 // int main(void)

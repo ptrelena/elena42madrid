@@ -14,20 +14,18 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i; //big counter
-	size_t	j; //little counter
+	size_t	i;
+	size_t	j;
 
-	if (*little == '\0') //nothing to find
-		return((char *)big);
-	
+	if (*little == '\0')
+		return ((char *)big);
 	i = 0;
-	while(big[i] && i < len) //big & counter not longer than len
+	while (big[i] && i < len)
 	{
 		j = 0;
 		while ((big[j + i] == little[j]) && ((i + j) < len))
-		// big[j+i] - firs byte of litte in big - smaller than len
 		{
-			if (little[j + 1] == '\0') //return big if little str finished
+			if (little[j + 1] == '\0')
 				return ((char *)&big[i]);
 			j++;
 		}

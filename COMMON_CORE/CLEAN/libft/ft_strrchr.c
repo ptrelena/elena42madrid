@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-char    *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    int i; //counter
-    
-    i = ft_strlen(s); //counter s' lenght long
-    while (i >= 0) //loop until counter reaches last chat
-    {
-        if (s[i] == (char)c)
-            return((char *)&s[i]); // '&' ptr exact position
-        i--; //loop backwards
-    }
-    return(0);
+	int	i;
+
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i--;
+	}
+	return (0);
 }
 
 // char    *ft_strrchr(const char *s, int c)

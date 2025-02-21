@@ -12,25 +12,25 @@
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= '0' && c <= '9') //digit chars
-        return (1);
-    return (0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
 
 /*
-int main(void)
+int	main(void)
 {
-    int a;
-    int b;
-    int c;
+	int a;
+	int b;
+	int c;
 
-    a = 'a';
-    b = 'A';
-    c = '1';
-    printf("%d", ft_isdigit(a));
-    printf("%d", ft_isdigit(b));
-    printf("%d", ft_isdigit(c));
+	a = 'a';
+	b = 'A';
+	c = '1';
+	printf("%d", ft_isdigit(a));
+	printf("%d", ft_isdigit(b));
+	printf("%d", ft_isdigit(c));
 	return (0);
 }*/
