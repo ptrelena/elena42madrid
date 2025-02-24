@@ -13,7 +13,6 @@
 NAME = libft.a
 
 CC = cc
-
 CFLAGS = -Wall -Wextra -Werror
 
 A_C = ar rcs
