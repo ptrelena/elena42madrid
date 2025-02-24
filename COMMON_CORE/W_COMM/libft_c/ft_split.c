@@ -12,35 +12,6 @@
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
-{
-	char	**words_dst;
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	words_dst = (char **)ft_calloc(sizeof(char *), ft_count_words(s, c) + 1);//**ptr space
-	if (!words_dst)
-		return (NULL);
-	while(s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		if(s[i])
-		{
-			words_dst[j] = ft_printword((char *)s + i, c);
-			if (!words_dst[j])
-				return(ft_freespace(words_dst, j), NULL);
-			j++;
-			while (s[i] && s[i] != c)
-				i++;
-		}
-	}
-	words_dst[j] = NULL;
-	return (words_dst);
-}
-
 //count array words
 static size_t	ft_count_words(char const *s, char c)
 {
@@ -103,6 +74,36 @@ static void	*ft_freespace(char **arr, size_t delete)
 	free(arr);
 	return (NULL);
 }
+
+char	**ft_split(char const *s, char c)
+{
+	char	**words_dst;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	words_dst = (char **)ft_calloc(sizeof(char *), ft_count_words(s, c) + 1);//**ptr space
+	if (!words_dst)
+		return (NULL);
+	while(s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if(s[i])
+		{
+			words_dst[j] = ft_printword((char *)s + i, c);
+			if (!words_dst[j])
+				return(ft_freespace(words_dst, j), NULL);
+			j++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
+	}
+	words_dst[j] = NULL;
+	return (words_dst);
+}
+
 
 // #include <stdio.h>
 // #include <stdlib.h>
