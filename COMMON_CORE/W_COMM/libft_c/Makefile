@@ -17,11 +17,14 @@ NAME = libft.a
 CC = cc
 #compilation flags
 CFLAGS = -Wall -Wextra -Werror
+#-Wall, common adverts
+#-Wextra, additional adverts
+#-Werror, converts all adverts into errors so compilation is not completed
 
 A_C = ar rcs
-#ar creates, archives or modifies files from library
+#ar manipulate files from library
 #r updates files to latest version / adds new unexisting files
-#c creates new files if don't exist already
+#c creates library if don't exist already
 #s: inner library index for files to be linked correctly
 
 #.c files to be compiled
@@ -55,5 +58,5 @@ fclean: clean
 #re to erase all & recompile #make re
 re: fclean all
 
-#declares rules as "false" to always execute them (??)
-PHONY: clean fclean re
+#if .c file = rule name => rule name over .c file
+.PHONY: clean fclean re

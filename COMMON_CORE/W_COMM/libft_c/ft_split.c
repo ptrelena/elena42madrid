@@ -12,69 +12,6 @@
 
 #include "libft.h"
 
-//count array words
-size_t	ft_count_words(char const *s, char c)
-{
-	size_t	i;
-	size_t	w_count;
-
-	i = 0;
-	w_count = 0; //start from 1 word always
-	if (!s)
-		return (-1);//returns 0 if !words_dst
-	while(s[i] != '\0')
-	{
-		while(s[i] && s[i] == c)
-			i++;
-		if (s[i])
-		{
-			w_count++; //if equal +1 word
-			while(s[i] && s[i] != c)
-				i++;
-		}
-	}
-	return (w_count);
-}
-
-//count word letters
-size_t	ft_count_letters(const char *s, char c)
-{
-	size_t	l_count;
-
-	l_count = 0;
-	while(s[l_count] != '\0' && s[l_count] != c)
-		l_count++;
-	return(l_count);
-}
-
-//print
-char	*ft_printword(char const *s, char c)
-{
-	size_t	i;
-	char	*dest;
-
-	i = 0;
-	dest = ft_calloc((ft_count_letters(s, c) + 1), sizeof(char));
-	if(!dest)
-		return (NULL);
-	while(s[i] && s[i] != c)
-	{
-		dest[i] = s[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-//free space
-void	*ft_freespace(char **arr, size_t delete)
-{
-	while(delete > 0)
-		free(arr[--delete]);
-	free(arr);
-	return (NULL);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**words_dst;
@@ -102,6 +39,69 @@ char	**ft_split(char const *s, char c)
 	}
 	words_dst[j] = NULL;
 	return (words_dst);
+}
+
+//count array words
+static size_t	ft_count_words(char const *s, char c)
+{
+	size_t	i;
+	size_t	w_count;
+
+	i = 0;
+	w_count = 0; //start from 1 word always
+	if (!s)
+		return (-1);//returns 0 if !words_dst
+	while(s[i] != '\0')
+	{
+		while(s[i] && s[i] == c)
+			i++;
+		if (s[i])
+		{
+			w_count++; //if equal +1 word
+			while(s[i] && s[i] != c)
+				i++;
+		}
+	}
+	return (w_count);
+}
+
+//count word letters
+static size_t	ft_count_letters(const char *s, char c)
+{
+	size_t	l_count;
+
+	l_count = 0;
+	while(s[l_count] != '\0' && s[l_count] != c)
+		l_count++;
+	return(l_count);
+}
+
+//print
+static char	*ft_printword(char const *s, char c)
+{
+	size_t	i;
+	char	*dest;
+
+	i = 0;
+	dest = ft_calloc((ft_count_letters(s, c) + 1), sizeof(char));
+	if(!dest)
+		return (NULL);
+	while(s[i] && s[i] != c)
+	{
+		dest[i] = s[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+//free space
+static void	*ft_freespace(char **arr, size_t delete)
+{
+	while(delete > 0)
+		free(arr[--delete]);
+	free(arr);
+	return (NULL);
 }
 
 // #include <stdio.h>

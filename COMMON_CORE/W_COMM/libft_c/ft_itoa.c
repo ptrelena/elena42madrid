@@ -13,22 +13,6 @@
 #include "libft.h"
 #include <stdlib.h>
 
-size_t	ft_countnum(int n)
-{
-	size_t	count;
-
-	if (n > 0)
-		count = 0;
-	else
-		count = 1;
-	while (n)
-	{
-		n /= 10;
-		count++;
-	}
-	return (count);
-}
-
 char	*ft_itoa(int n)
 {
 	int		count;
@@ -51,6 +35,22 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		str[0] = '-';
 	return (str);
+}
+
+static size_t	ft_countnum(int n)
+{
+	size_t	count;
+
+	if (n > 0)
+		count = 0;
+	else
+		count = 1;
+	while (n)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
 }
 
 // int	main(void)
