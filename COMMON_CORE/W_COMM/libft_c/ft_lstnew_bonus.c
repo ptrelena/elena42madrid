@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/// @brief adds new node to end of list
+/// @param content 
+/// @return final node w new node + NULL
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new; //ptr for new node
