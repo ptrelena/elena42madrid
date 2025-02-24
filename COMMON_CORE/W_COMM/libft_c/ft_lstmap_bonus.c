@@ -25,7 +25,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f || !del) //if any parameter empty -> NULL
 		return (NULL);
-	new_list = NULL; //start empty list from first node
+	new_list = NULL;  //start empty list from first node
 	while (lst)
 	{
 		content = f(lst->content); //apply f to node, save in content variable
@@ -40,4 +40,4 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst->next; //loop to following node
 	}
 	return (new_list); //return final list
-}
+} 

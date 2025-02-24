@@ -20,9 +20,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*node_del; //aux ptr
 
-	if(!lst)
+	if (!lst)
 		return ;
-	while(lst)
+	while (*lst)
 	{
 		node_del = (*lst)->next; //save next node in aux ptr
 		ft_lstdelone(*lst, del); //del actual node
