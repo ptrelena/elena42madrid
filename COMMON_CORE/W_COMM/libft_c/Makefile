@@ -36,8 +36,14 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 
+BSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c	\
+	ft_lstlast_bonus.c ft_lstsize_bonus.c ft_lstadd_back_bonus.c \
+	ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
+	ft_lstmap_bonus.c \
+
 #transform SRC from .c to .o - .o files = binary code
 OBJ = $(SRC:.c=.o)
+BOBJ = $(BSRC:.c=.o)
 
 #all for compilation - NAME > OBJ + commands #make all
 all: $(NAME)
@@ -46,6 +52,11 @@ all: $(NAME)
 #calls A_C to create lib with NAME + includes OBJ
 $(NAME): $(OBJ)
 	$(A_C) $(NAME) $(OBJ)
+
+bonus: .bonus
+.bonus: $(OBJ) $(BOBJ)
+	$(A_C) $(NAME) $(OBJ) $(BOBJ)
+	touch .bonus
 
 #clean to erase files .o #make clean
 clean: 
@@ -59,4 +70,4 @@ fclean: clean
 re: fclean all
 
 #if .c file = rule name => rule name over .c file
-.PHONY: clean fclean re
+.PHONY: all bonus clean fclean re
