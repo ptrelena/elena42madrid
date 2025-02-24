@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/// @brief deletes one node
+/// @param lst - specific node to delete
+/// @param del - del ft
+/// @return void ft
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if(!lst) //nothing to return if empty list

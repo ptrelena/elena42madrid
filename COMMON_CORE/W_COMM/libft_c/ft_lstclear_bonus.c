@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/// @brief deletes whole list
+/// @param lst - double ptr for whole list
+/// @param del - del ft
+/// @return void ft
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*node_del; //aux ptr

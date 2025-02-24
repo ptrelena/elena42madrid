@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/// @brief calculates list size (num of nodes)
+/// @param lst ptr to first node
+/// @return int of nodes
 int		ft_lstsize(t_list *lst)
 {
 	int	nodes; //counter for ptr in lst

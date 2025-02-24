@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/// @brief iterates node by node applying f ft
+/// @param lst first node
+/// @param f ft to apply
+/// @return void
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f) //return not exist lst / no f to apply
