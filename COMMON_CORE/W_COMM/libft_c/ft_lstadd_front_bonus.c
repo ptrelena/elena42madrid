@@ -37,7 +37,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
     
 	ft_lstadd_front(&lst_x, node1);
 	printf("node: %s\n", (char *)lst_x->content);
-	
 	ft_lstadd_front(&lst_x, node2);
     printf("node: %s\n", (char *)lst_x->content);
     return (0);

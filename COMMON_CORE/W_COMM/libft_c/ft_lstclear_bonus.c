@@ -33,27 +33,18 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 /* void del(void *content)
 {
-    free(content); // Liberamos la memoria del contenido
+    free(content);
 }
 
 int main()
 {
-    // Crear nodos
-    t_list *node1 = ft_lstnew(malloc(10)); // Nodo 1
-    t_list *node2 = ft_lstnew(malloc(10)); // Nodo 2
-    t_list *node3 = ft_lstnew(malloc(10)); // Nodo 3
+    t_list *node1 = ft_lstnew(malloc(10));
+    t_list *node2 = ft_lstnew(malloc(10));
+    t_list *node3 = ft_lstnew(malloc(10));
     
-    // Conectar nodos
     node1->next = node2;
     node2->next = node3;
     node3->next = NULL;
-
-    // Lista original: node1 -> node2 -> node3 -> NULL
-
-    // Llamar a ft_lstclear para limpiar toda la lista
     ft_lstclear(&node1, del);
-
-    // Al final, node1 será NULL
-
-    return 0;
+	return 0;
 } */

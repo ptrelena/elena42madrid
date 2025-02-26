@@ -12,20 +12,23 @@
 
 #include "libft.h"
 
+/// @brief copy 'size' 1st bytes from src in dst
+/// @param dst 
+/// @param src 
+/// @param size 
+/// @return dstlen + srclen
 size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
     size_t  i; //counter
     size_t	srclen; //src length
     size_t  dstlen; //length dst
- //   unsigned char   *s;
 
     i = 0;//counter starts
     srclen = ft_strlen(src);
-    dstlen = ft_strlen(dst); //define dstlen
-   // s = (unsigned char *)src; //define s
-	if (size == 0)
+    dstlen = ft_strlen(dst);
+	if (size == 0) //srclen=0, nth to copy in dst
 		return (srclen);
-	if (size <= dstlen)
+	if (size <= dstlen) 
 		return (size + srclen);
     while (src[i] != '\0' && dstlen + i < size - 1) 
     {
@@ -36,16 +39,16 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size)
     return (dstlen + srclen);
 }
 
-// int main(void)
-// {
-//     char    a [] = "Manolo"; //dst
-//     char    b [] = "Aurelio"; //src
-//     size_t  c = 3; //size
+/* int main(void)
+{
+    char    a [] = "Manolo"; //dst
+    char    b [] = "Aurelio"; //src
+    size_t  c = 3; //size
 
-//     printf("%s\n", a); //dst before strlcat
-//     printf("%s\n", b); //src before strlcat
-//     printf("%zu\n", ft_strlcat(a, b, c)); //call ft
-//     printf("%s\n", a); //dst after strlcat
-//     printf("%s\n", b); //src after strlcat
-//     return (0); //void ft
-// }
+    printf("%s\n", a); //dst before strlcat
+    printf("%s\n", b); //src before strlcat
+    printf("%zu\n", ft_strlcat(a, b, c)); //call ft
+    printf("%s\n", a); //dst after strlcat
+    printf("%s\n", b); //src after strlcat
+    return (0); //void ft
+} */

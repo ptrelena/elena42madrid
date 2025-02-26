@@ -12,31 +12,36 @@
 
 #include "libft.h"
 
+/// @brief sets 'c' 'n' bytes in str
+/// @param str 
+/// @param c 
+/// @param n 
+/// @return *str
 void	*ft_memset(void *str, int c, size_t n) //ft prototype
 {
 	size_t	i; //set counter as size_t to compare it with 'n'
-	unsigned char	*a; //new pointer to simplify code
-	unsigned char	b; //new variable for int 'c'
+	unsigned char	*ptr; //cast str
+	unsigned char	z; //cast c
 
-	a = (unsigned char *)str; //simplify code
-	b = (unsigned char)c; //simplify code
+	ptr = (unsigned char *)str; //cast str
+	z = (unsigned char)c; //cast c
 
 	i = 0; //counter starts
 	while (i < n) //loop srt until i reaches n
 	{
-		a[i] = b; //change char to b = c
+		ptr[i] = z; //change char to b = c
 		i++; //keep looping
 	}
-	return(a); //nothing to return as it is a void ft
+	return(ptr); //nothing to return as it is a void ft
 }
 
-// int	main(void)
-// {
-// 	unsigned char	a [] = "Elena"; //pointer variable
-// 	int	b = 'a'; //modification int
-// 	size_t	c = 3; //number of times to modify int 'b'
+/* int	main(void)
+{
+	unsigned char	a [] = "Elena"; //pointer variable
+	int	b = 'a'; //modification int
+	size_t	c = 3; //number of times to modify int 'b'
 
-// 	printf("%s\n", a); //a before memset
-// 	ft_memset(a, b, c); //call ft
-// 	printf("%s\n", a); //a after memset
-// }
+	printf("%s\n", a); //a before memset
+	ft_memset(a, b, c); //call ft
+	printf("%s\n", a); //a after memset
+} */

@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/// @brief creates new str starting from s and 'len' long
+/// @param s 
+/// @param start 
+/// @param len 
+/// @return final str
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*r;
@@ -38,12 +43,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return(r);
 }
 
-// int	main(void)
-// {
-// 	char	a [] = "university"; //*s
-// 	int	b = 3; //start
-// 	size_t	c = 5; //len
+/* int	main(void)
+{
+	char	a [] = "university"; //*s
+	int	b = 3; //start
+	size_t	c = 5; //len
 
-// 	printf("%s", ft_substr(a, b, c));
-// 	return(0);
-// }
+	printf("%s", ft_substr(a, b, c));
+	return(0);
+} */

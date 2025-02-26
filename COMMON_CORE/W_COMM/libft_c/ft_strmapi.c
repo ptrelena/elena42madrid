@@ -12,13 +12,10 @@
 
 #include "libft.h"
 
-// char ft_to_upper_or_lower(unsigned int i, char c)
-// {
-//     if (i % 2 == 0)
-//         return toupper(c); //uppercase if even
-//     return tolower(c);  //lowercase if odd
-// }
-
+/// @brief iterates s applying f
+/// @param s 
+/// @param f 
+/// @return new ptr after applying f
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int	i;
@@ -27,23 +24,30 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	len = ft_strlen(s);
-	t = malloc((sizeof(char) * (len)) + 1);
-	if (!t)
+	len = ft_strlen(s); //s len
+	t = malloc((sizeof(char) * (len)) + 1); //space for s
+	if (!t) //failure check
 		return (NULL);
-	while (i < len)
+	i = 0;
+	while (i < len) //util i reaches s len
 	{
-		t[i] = f(i, s[i]);
+		t[i] = f(i, s[i]); //apply f
 		i++;
 	}
-	t[len] = '\0';
+	t[len] = '\0'; //add final NULL
 	return(t);
 }
 
-// int main(void)
-// {
-// 	char	a [] = "me gusta mucho programar";
-// 	printf("%s\n", ft_strmapi(a, ft_to_upper_or_lower));
-// 	return (0);
-// }
+/* char ft_to_upper_or_lower(unsigned int i, char c)
+{
+    if (i % 2 == 0)
+        return toupper(c); //uppercase if even
+    return tolower(c);  //lowercase if odd
+}
+
+int main(void)
+{
+	char	a [] = "I like programming a lot";
+	printf("%s\n", ft_strmapi(a, ft_to_upper_or_lower));
+	return (0);
+} */

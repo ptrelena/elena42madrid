@@ -20,9 +20,9 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new; //ptr for new node
 	
 	new = (t_list *)malloc(sizeof(t_list)); //calculate node size
-	if (!new) //NULL if new fails
+	if (!new) //failure check
 		return(NULL);
-	new->content = (void *)content; //add new node ptr end, content = void *
+	new->content = (void *)content; //add content to node = void *
 	new->next = NULL; //last node as NULL
 	return(new); //return new ptr
 }

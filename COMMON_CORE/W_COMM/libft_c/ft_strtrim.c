@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/// @brief loops s1 fordward & backwards until set found
+/// @param s1 
+/// @param set 
+/// @return new pointer without 'set'
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int	start;
@@ -22,10 +26,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	start = 0;
 	end = ft_strlen(s1) - 1;
+	//skip 'set' occurrences in beggining
 	while (ft_strchr(set, s1[start]) && (start <= end))
 		start++;
-	if (start > end)
-		return (ft_strdup(s1 + end + 1)); //set ev to 0 as start reaches end
+	if (start > end) //end of str reached
+		//s1 + end reaches end of str + 1 ('\0') returns NULL
+		return (ft_strdup(s1 + end + 1));
+	//skip 'set' occurrences in end
 	while (ft_strchr(set, s1[end]) && (end >= 0))
 		end--;
 	s2 = malloc(end - start + 2);//s2 length + 2(change from position to length)
@@ -35,10 +42,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (s2);
 }
 
-// int	main(void)
-// {
-// 	char	a [] = "hola me llamo Elena hola Jimenahola"; //*s1
-// 	char	b [] = "hola"; //*set
-// 	printf("%s\n", ft_strtrim(a, b));
-// 	return (0);
-// }
+/* int	main(void)
+{
+	char	a [] = "hello my name is Elena hello Jimenahello"; //*s1
+	char	b [] = "hello"; //*set
+	printf("%s\n", ft_strtrim(a, b));
+	return (0);
+} */

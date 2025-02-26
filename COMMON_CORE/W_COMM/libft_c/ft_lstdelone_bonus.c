@@ -36,8 +36,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
         free(content);
         return (1);
     }
-
     ft_lstdelone(node, free);
-
     return 0;
 } */

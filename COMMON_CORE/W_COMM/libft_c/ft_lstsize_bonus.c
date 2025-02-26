@@ -23,7 +23,7 @@ int		ft_lstsize(t_list *lst)
 	while (lst) //list not NULL
 	{
 		lst = lst->next; //loop to next node
-		nodes++; //++ until NULL is reached
+		nodes++; //loop until NULL is reached
 	}
 	return (nodes); //return num of nodes in lst
 }
@@ -41,14 +41,11 @@ int		ft_lstsize(t_list *lst)
 
     //call ft
     total_nodes = ft_lstsize(node1);
-
-    //
     printf("lst has %d nodes\n", total_nodes);
 
     //free node space
     free(node1);
     free(node2);
     free(node3);
-
     return (0);
 } */

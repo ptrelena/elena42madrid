@@ -12,15 +12,20 @@
 
 #include "libft.h"
 
+/// @brief compare s1 & s2 in 'n' bytes
+/// @param s1 
+/// @param s2 
+/// @param n 
+/// @return if equal 0, if different s1[i] - s2[i]
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
     size_t  i; //counter
-    unsigned char   *t1;//change const void to unsigned char
-    unsigned char   *t2;//change const void to unsigned char
+    unsigned char   *t1;//cast s1
+    unsigned char   *t2;//cast s2
 
     i = 0;//counter starts
-    t1 = (unsigned char *)s1;//s1 value assigned to t1
-    t2 = (unsigned char *)s2;//s2 value assigned to t2
+    t1 = (unsigned char *)s1;//cast s1
+    t2 = (unsigned char *)s2;//cast s2
     while (i < n) //loop till counter reaches 'n' value
     {
         if (t1[i] != t2[i])//t1 byte different to t2 byte

@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/// @brief join s1 & s2
+/// @param s1 
+/// @param s2 
+/// @return new ptr w resulting join
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
@@ -39,11 +43,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (s3);	
 }
 
-// int	main(void)
-// {
-// 	char	a [] = "Elena"; //*s1
-// 	char	b [] = "Perez"; //*s2
+/* int	main(void)
+{
+	char	a [] = "Elena"; //*s1
+	char	b [] = "Perez"; //*s2
 
-// 	printf("%s", ft_strjoin(a, b));
-// 	return(0);
-// }
+	printf("%s", ft_strjoin(a, b));
+	return(0);
+} */

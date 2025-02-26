@@ -13,6 +13,9 @@
 #include "libft.h"
 #include <fcntl.h>
 
+/// @brief prints str in fd
+/// @param s 
+/// @param fd 
 void	ft_putstr_fd(char	*s, int	fd)
 {
 	size_t	strlen;
@@ -21,9 +24,9 @@ void	ft_putstr_fd(char	*s, int	fd)
 	write(fd, s, strlen);
 }
 
-// int	main(void)
-// {
-// 	int fd = open("prueba.txt", O_RDWR, O_APPEND); //fd declaration
-// 	ft_putstr_fd("Elena", fd);
-// 	return(0);
-// }
+/* int	main(void)
+{
+	int fd = open("try.txt", O_RDWR, O_APPEND); //fd declaration
+	ft_putstr_fd("Elena", fd);
+	return(0);
+} */

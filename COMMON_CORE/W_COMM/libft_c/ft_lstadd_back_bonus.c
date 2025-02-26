@@ -40,7 +40,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	ft_lstadd_back(&node1, node3);
     ft_lstadd_back(&node1, node2);
-    
 	final_list = node1;
 	while(final_list)
 	{

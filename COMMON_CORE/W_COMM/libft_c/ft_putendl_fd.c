@@ -13,15 +13,18 @@
 #include "libft.h"
 #include <fcntl.h>
 
+/// @brief print s + '\n' in fd
+/// @param s 
+/// @param fd 
 void	ft_putendl_fd(char	*s, int	fd)
 {
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
 
-// int	main(void)
-// {
-// 	int	fd = open("prueba.txt", O_RDWR, O_APPEND); //fd declaration
-// 	ft_putendl_fd("Elena y Fran <3", fd);
-// 	return (0);
-// }
+/* int	main(void)
+{
+	int	fd = open("try.txt", O_RDWR, O_APPEND); //fd declaration
+	ft_putendl_fd("Elena y Fran <3", fd);
+	return (0);
+} */

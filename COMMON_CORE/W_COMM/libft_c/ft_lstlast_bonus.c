@@ -33,7 +33,6 @@ t_list	*ft_lstlast(t_list *lst)
 	node1->next = node2;
 	node2->next = node3;
 	node3->next = NULL;
-
 	last = ft_lstlast(node1);
 	printf("last node: %s\n", (char *)last->content);
 	return(0);

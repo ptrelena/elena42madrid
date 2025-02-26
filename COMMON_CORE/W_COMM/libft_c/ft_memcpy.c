@@ -18,15 +18,14 @@
 /// @param src declared as 'const void*', data won't be modified in src
 /// @param n number of bytes to be copied
 /// @return void
-
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i; //counter
-	unsigned char	*d; //new dest pointer to simplify code
-	unsigned char	*s; //new src pointer to simplify code
-	d = (unsigned char *)dest; //simplify code
-	s = (unsigned char *)src; //simplify code
+	unsigned char	*d; //cast dest
+	unsigned char	*s; //cast src
 
+	d = (unsigned char *)dest; //cast dest
+	s = (unsigned char *)src; //cast src
 	if (d == s || n <= 0)
 		return (dest);
 	i = 0; //counter
@@ -38,16 +37,16 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (d);//returns d = dest value
 }
 
-// int	main(void)
-// {
-// 	char	a [] = "Elena"; //dest
-// 	char	b [] = "Juana"; //src
-// 	size_t	c = 2; //number of bytes to be copied
+/* int	main(void)
+{
+	char	a [] = "Elena"; //dest
+	char	b [] = "Juana"; //src
+	size_t	c = 2; //number of bytes to be copied
 
-// 	printf("%s\n", a); //dest before memcpp
-// 	printf("%s\n", b); //src before memcpp
-// 	ft_memcpy(a, b, c); //call ft
-// 	printf("%s\n", a); //dest after memcpp
-// 	printf("%s\n", b); //src after memcpp
-// 	return(0); //void ft
-// }
+	printf("%s\n", a); //dest before memcpp
+	printf("%s\n", b); //src before memcpp
+	ft_memcpy(a, b, c); //call ft
+	printf("%s\n", a); //dest after memcpp
+	printf("%s\n", b); //src after memcpp
+	return(0); //void ft
+} */

@@ -23,10 +23,10 @@ char	*ft_strdup(const char *s1)
 
 	t1 = (char *)s1;
 	i = 0; //counter starts
+	//assign mem for ptr - len * size + 1 ('\0')
 	p = (char *)malloc(ft_strlen(s1) * sizeof(char) + 1);
 	if (!t1) //nothing to save mem for
 		return(NULL);
-	//assign mem for ptr - len * size + 1 ('\0')
 	if (!p) //nothing to save mem for
 		return(NULL);
 	while (t1[i] != '\0') //copy s1 in ptr
@@ -38,10 +38,10 @@ char	*ft_strdup(const char *s1)
 	return (p); //return ptr containing s1
 }
 
-// int	main(void)
-// {
-// 	char	a [] = "Elenita"; //*s1
+/* int	main(void)
+{
+	char	a [] = "Elenita"; //*s1
 
-// 	printf("%s", ft_strdup(a));
-// 	return (0);
-// }
+	printf("%s", ft_strdup(a));
+	return (0);
+} */

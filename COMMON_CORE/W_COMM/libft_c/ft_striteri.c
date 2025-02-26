@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/// @brief iterates s applying f
+/// @param s 
+/// @param f 
+/// @return void
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
@@ -26,7 +30,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 
-void	ft_toupper_s(unsigned int j, char* t)
+/* void	ft_toupper_s(unsigned int j, char* t)
 {
 	while (t[j] != '\0')
 	{
@@ -36,10 +40,10 @@ void	ft_toupper_s(unsigned int j, char* t)
 	}
 }
 
-// int	main(void)
-// {
-// 	char	a [] = "me gusta mucho programar";
-// 	ft_striteri(a, ft_toupper_s);
-// 	printf("%s", a);
-// 	return (0);
-// }
+int	main(void)
+{
+	char	a [] = "I like programming a lot";
+	ft_striteri(a, ft_toupper_s);
+	printf("%s", a);
+	return (0);
+} */
