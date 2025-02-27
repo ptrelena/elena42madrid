@@ -13,39 +13,39 @@
 #include "libft.h"
 
 /// @brief iterates s applying f
-/// @param s 
-/// @param f 
+/// @param s
+/// @param f
 /// @return new ptr after applying f
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*t;
 
 	if (!s)
 		return (NULL);
-	len = ft_strlen(s); //s len
-	t = malloc((sizeof(char) * (len)) + 1); //space for s
-	if (!t) //failure check
+	len = ft_strlen(s);                     // s len
+	t = malloc((sizeof(char) * (len)) + 1); // space for s
+	if (!t)                                 // failure check
 		return (NULL);
 	i = 0;
-	while (i < len) //util i reaches s len
+	while (i < len) // util i reaches s len
 	{
-		t[i] = f(i, s[i]); //apply f
+		t[i] = f(i, s[i]); // apply f
 		i++;
 	}
-	t[len] = '\0'; //add final NULL
-	return(t);
+	t[len] = '\0'; // add final NULL
+	return (t);
 }
 
 /* char ft_to_upper_or_lower(unsigned int i, char c)
 {
-    if (i % 2 == 0)
-        return toupper(c); //uppercase if even
-    return tolower(c);  //lowercase if odd
+	if (i % 2 == 0)
+		return (toupper(c)); //uppercase if even
+	return (tolower(c));  //lowercase if odd
 }
 
-int main(void)
+int	main(void)
 {
 	char	a [] = "I like programming a lot";
 	printf("%s\n", ft_strmapi(a, ft_to_upper_or_lower));

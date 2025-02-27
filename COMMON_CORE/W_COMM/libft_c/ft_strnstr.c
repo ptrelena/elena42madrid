@@ -13,25 +13,24 @@
 #include "libft.h"
 
 /// @brief finds little in big
-/// @param big 
-/// @param little 
+/// @param big
+/// @param little
 /// @param len
-/// @return  
+/// @return
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i; //big counter
-	size_t	j; //little counter
-
-	if (*little == '\0') //nothing to find
-		return((char *)big);
+	size_t i; // big counter
+	size_t j; // little counter
+	if (*little == '\0') // nothing to find
+		return ((char *)big);
 	i = 0;
-	while(big[i] && i < len) //big & counter not longer than len
+	while (big[i] && i < len) // big & counter not longer than len
 	{
 		j = 0;
 		while ((big[j + i] == little[j]) && ((i + j) < len))
 		// big[j+i] - 1st byte of litte in big - smaller than len
 		{
-			if (little[j + 1] == '\0') //return big if little str finished
+			if (little[j + 1] == '\0') // return big if little str finished
 				return ((char *)&big[i]);
 			j++;
 		}

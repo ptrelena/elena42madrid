@@ -14,8 +14,8 @@
 #include <fcntl.h>
 
 /// @brief prints num in fd
-/// @param n 
-/// @param fd 
+/// @param n
+/// @param fd
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	digit;

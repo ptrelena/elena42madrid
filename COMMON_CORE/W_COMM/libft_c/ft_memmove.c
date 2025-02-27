@@ -13,30 +13,29 @@
 #include "libft.h"
 
 /// @brief copy from src to dst 'len' bytes
-/// @param dst 
-/// @param src 
-/// @param len 
+/// @param dst
+/// @param src
+/// @param len
 /// @return dst
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i; //counter
-
-	if (len == 0 || dst == src) //nothing to copy/compare
-			return (dst);
+	size_t i; // counter
+	if (len == 0 || dst == src) // nothing to copy/compare
+		return (dst);
 	if ((const unsigned char *)src > (const unsigned char *)dst)
-	{//if src longer than dst
-		i = 0; //counter
+	{          // if src longer than dst
+		i = 0; // counter
 		while (i < len)
-		{//copy src in dst forward
+		{ // copy src in dst forward
 			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
 	}
 	else
-	{//if src shorter than dst
+	{ // if src shorter than dst
 		i = len;
 		while (i > 0)
-		{//copy dst in src backwards - 1 for NULL
+		{ // copy dst in src backwards - 1 for NULL
 			((unsigned char *)dst)[i - 1] = ((unsigned char *)src)[i - 1];
 			i--;
 		}

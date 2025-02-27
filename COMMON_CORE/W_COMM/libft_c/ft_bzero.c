@@ -15,26 +15,25 @@
 /// @brief set bytes as 0 (nothing to return)
 /// @param s - initial ptr
 /// @param n - num of bytes to set
-void	ft_bzero(void *s, size_t n) //ft prototype
+void	ft_bzero(void *s, size_t n) // ft prototype
 {
-	size_t	i; //set counter as size_t to compare it with n
-	unsigned char *str; //cast *s
+	size_t i;           // set counter as size_t to compare it with n
+	unsigned char *str; // cast *s
 
-	str = (unsigned char *)s; //cast *s
-	i = 0; //counter starts
-	while (i < n) //loop srt until i reaches n
+	str = (unsigned char *)s; // cast *s
+	i = 0;                    // counter starts
+	while (i < n)             // loop srt until i reaches n
 	{
-		str[i] = 0; //change char 0
-		i++; //keep looping
+		str[i] = 0; // change char 0
+		i++;        // keep looping
 	}
-	return; //nothing to return as it is a void ft
+	return ; // nothing to return as it is a void ft
 }
 
 /* int	main(void)
 {
 	char	str [] = "Elena"; //create a pointer variable
-	size_t	n = 5; //create n variable 
-
+	size_t	n = 5; //create n variable
 	printf("%s\n", str); //print str before bzero
 	ft_bzero(str, n); //call ft
 	printf("%s\n", str); //print str after bzero

@@ -20,31 +20,31 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp_last;
 
-	if(!new)
-		return ; //if new is empty, exit ft
-	if (!lst || !(*lst)) //if lst not exist or is empty
+	if (!new)
+		return ;          // if new is empty, exit ft
+	if (!lst || !(*lst)) // if lst not exist or is empty
 	{
-		*lst = new; //first node = new node
-		return ; //exit ft
+		*lst = new; // first node = new node
+		return ;     // exit ft
 	}
-	temp_last = ft_lstlast(*lst); //temporary last = last node
-	temp_last->next = new; //last node ptr now pointing to new
+	temp_last = ft_lstlast(*lst); // temporary last = last node
+	temp_last->next = new;        // last node ptr now pointing to new
 }
 
 /* int main()
 {
-    t_list *node1 = ft_lstnew("new node1");
+	t_list *node1 = ft_lstnew("new node1");
 	t_list *node2 = ft_lstnew("new node2");
 	t_list *node3 = ft_lstnew("new node3");
 	t_list	*final_list;
 
 	ft_lstadd_back(&node1, node3);
-    ft_lstadd_back(&node1, node2);
+	ft_lstadd_back(&node1, node2);
 	final_list = node1;
 	while(final_list)
 	{
 		printf("final list: %s\n", (char *)final_list->content);
 		final_list = final_list->next;
 	}
-    return (0);
+	return (0);
 } */

@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /// @brief check if int digit
-/// @param c 
+/// @param c
 /// @return 1 if TRUE, 0 if FALSE
 int	ft_isdigit(int c)
 {
@@ -25,13 +25,10 @@ int	ft_isdigit(int c)
 /*
 int	main(void)
 {
-	int a;
-	int b;
-	int c;
+	int a = 'a';
+	int b = 'A';
+	int c = '1';
 
-	a = 'a';
-	b = 'A';
-	c = '1';
 	printf("%d", ft_isdigit(a));
 	printf("%d", ft_isdigit(b));
 	printf("%d", ft_isdigit(c));

@@ -13,28 +13,28 @@
 #include "libft.h"
 
 /// @brief check if int ascii character
-/// @param c 
+/// @param c
 /// @return 1 if TRUE, 0 if FALSE
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-  if (c >= 0 && c <= 127) //ascii char
-            return (1);
-  return (0);
+	if (c >= 0 && c <= 127) // ascii char
+		return (1);
+	return (0);
 }
 
 /*
-int main(void)
+int	main(void)
 {
-    int a = 'a';
-    int b = 'A';
-    int c = '1';
-    int d = '@';
-    unsigned char   e = 164; //num ascii for 'ñ'
+	int a = 'a';
+	int b = 'A';
+	int c = '1';
+	int d = '@';
+	unsigned char   e = 164; //num ascii for 'ñ'
 
-    printf("%d", ft_isascii(a));
-    printf("%d", ft_isascii(b));
-    printf("%d", ft_isascii(c));
-    printf("%d", ft_isascii(d));
-    printf("%d", ft_isascii(e));
-    return (0);
+	printf("%d", ft_isascii(a));
+	printf("%d", ft_isascii(b));
+	printf("%d", ft_isascii(c));
+	printf("%d", ft_isascii(d));
+	printf("%d", ft_isascii(e));
+	return (0);
 }*/

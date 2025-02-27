@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /// @brief converts to uppercase
-/// @param c 
+/// @param c
 /// @return uppercase c
 int	ft_toupper(int c)
 {

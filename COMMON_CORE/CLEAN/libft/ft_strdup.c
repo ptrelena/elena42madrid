@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-/// @brief allocates mem & copies s1
+/// @brief allocates mem for s1 + copies it
 /// @param *s1
 /// @return ptr to char copy
 char	*ft_strdup(const char *s1)
 {
+	int		i;
 	char	*p;
 	char	*t1;
-	int		i;
 
 	t1 = (char *)s1;
 	i = 0;
@@ -37,10 +37,10 @@ char	*ft_strdup(const char *s1)
 	return (p);
 }
 
-// int	main(void)
-// {
-// 	char	a [] = "Elenita"; //*s1
+/* int	main(void)
+{
+	char	a [] = "Elenita"; //s1
 
-// 	printf("%s", ft_strdup(a));
-// 	return (0);
-// }
+	printf("%s", ft_strdup(a));
+	return (0);
+} */

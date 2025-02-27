@@ -13,8 +13,8 @@
 #include "libft.h"
 
 /// @brief converts to lowercase
-/// @param c 
-/// @return lowercase int
+/// @param c
+/// @return lowercase c
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')

@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-/// @brief loops s1 onwards & backwars till finds set
-/// @param s1 
-/// @param set 
-/// @return final str without set
+/// @brief loops s1 fordward & backwards until set found
+/// @param s1
+/// @param set
+/// @return new pointer without 'set'
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
@@ -39,10 +39,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (s2);
 }
 
-// int	main(void)
-// {
-// 	char	a [] = "hello my name is Elena hello Carloshello"; //*s1
-// 	char	b [] = "hello"; //*set
-// 	printf("%s\n", ft_strtrim(a, b));
-// 	return (0);
-// }
+/* int	main(void)
+{
+	char	a [] = "hello my name is Elena hello Jimenahello"; //s1
+	char	b [] = "hello"; //set
+	printf("%s\n", ft_strtrim(a, b));
+	return (0);
+} */

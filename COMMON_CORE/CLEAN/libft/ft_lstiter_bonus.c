@@ -20,7 +20,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
 		return ;
-	while (lst) 
+	while (lst)
 	{
 		f(lst->content);
 		lst = lst->next;
@@ -29,20 +29,19 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 
 /* void print_content(void *content)
 {
-    printf("node content: %s\n", (char *)content);
+	printf("node content: %s\n", (char *)content);
 }
 
-int main()
+int	main(void)
 {
-    t_list *node1 = ft_lstnew("first node");
-    t_list *node2 = ft_lstnew("second node");
-    t_list *node3 = ft_lstnew("third node");
+	t_list *node1 = ft_lstnew("first node");
+	t_list *node2 = ft_lstnew("second node");
+	t_list *node3 = ft_lstnew("third node");
 
-    //link nodes + add NULL
-    node1->next = node2;
-    node2->next = node3;
-    node3->next = NULL;
-
-    ft_lstiter(node1, print_content);
-    return 0;
+	//link nodes + add NULL
+	node1->next = node2;
+	node2->next = node3;
+	node3->next = NULL;
+	ft_lstiter(node1, print_content);
+	return (0);
 } */

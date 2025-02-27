@@ -14,9 +14,9 @@
 #include <fcntl.h>
 
 /// @brief print s + '\n' in fd
-/// @param s 
-/// @param fd 
-void	ft_putendl_fd(char	*s, int	fd)
+/// @param s
+/// @param fd
+void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);

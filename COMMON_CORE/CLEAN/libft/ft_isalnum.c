@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /// @brief check if int alphanumeric character
-/// @param c 
+/// @param c
 /// @return 1 if TRUE, 0 if FALSE
 int	ft_isalnum(int c)
 {
@@ -26,13 +26,10 @@ int	ft_isalnum(int c)
 /*
 int	main(void)
 {
-	int a;
-	int b;
-	int c;
+	int a = '@';
+	int b = 'A';
+	int c = '5';
 
-	a = '@';
-	b = 'A';
-	c = '5';
 	printf("%d", ft_isalnum(a));
 	printf("%d", ft_isalnum(b));
 	printf("%d", ft_isalnum(c));

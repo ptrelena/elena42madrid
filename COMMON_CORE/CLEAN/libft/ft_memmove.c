@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-/// @brief copies backwards from src to dst 'len' bytes
-/// @param dst 
-/// @param src 
-/// @param len 
+/// @brief copy from src to dst 'len' bytes
+/// @param dst
+/// @param src
+/// @param len
 /// @return dst
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -44,16 +44,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 
-// int	main(void)
-// {
-// 	char	a [] = "Elena Juana"; //dest
-// 	char	b [] = "Maria"; //src
-// 	size_t	c = 5; //number of bytes to copy
+/* int	main(void)
+{
+	char	a [] = "Elena Juana"; //dest
+	char	b [] = "Maria"; //src
+	size_t	c = 5; //number of bytes to copy
 
-// 	printf("%s\n", a); //dest before memmove
-// 	printf("%s\n", b); //src before memmove
-// 	ft_memmove(a, b, c); //call ft
-// 	printf("%s\n", a); //dest after memmove
-// 	printf("%s\n", b); //src after memmove
-// 	return (0); //void ft
-// }
+	printf("%s\n", a); //dest before memmove
+	printf("%s\n", b); //src before memmove
+	ft_memmove(a, b, c); //call ft
+	printf("%s\n", a); //dest after memmove
+	printf("%s\n", b); //src after memmove
+	return (0); //void ft
+} */

@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /// @brief finds last node in list
-/// @param lst 
+/// @param lst
 /// @return ptr to last node
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -29,11 +29,10 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*node2 = ft_lstnew("42student");
 	t_list	*node3 = ft_lstnew("Madrid");
 	t_list	*last;
-	
+
 	node1->next = node2;
 	node2->next = node3;
 	node3->next = NULL;
-
 	last = ft_lstlast(node1);
 	printf("last node: %s\n", (char *)last->content);
 	return(0);

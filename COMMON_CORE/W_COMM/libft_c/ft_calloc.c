@@ -12,21 +12,20 @@
 
 #include "libft.h"
 
-//malloc - assigns mem during ft execution
+// malloc - assigns mem during ft execution
 /// @brief mem for variable = count * size
-/// @param count - variable length 
+/// @param count - variable length
 /// @param size - variable size
 /// @return ptr with mem
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*ptr; //ptr to be returned
-
-	if (count == 0 || size == 0) //nothing to save mem for
-		return (malloc(1)); //1 byte mem to return 'smth'
-	ptr = malloc(count * size); //count*size = total bytes length
-	if (!ptr) //ptrs are compared with 'NULL' not '\0'
+	void *ptr; // ptr to be returned
+	if (count == 0 || size == 0) // nothing to save mem for
+		return (malloc(1));      // 1 byte mem to return 'smth'
+	ptr = malloc(count * size);  // count*size = total bytes length
+	if (!ptr)                    // ptrs are compared with 'NULL' not '\0'
 		return (NULL);
-	ft_bzero(ptr, (count * size)); //fill mem with 0
+	ft_bzero(ptr, (count * size)); // fill mem with 0
 	return (ptr);
 }
 

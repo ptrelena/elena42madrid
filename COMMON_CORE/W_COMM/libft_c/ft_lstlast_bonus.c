@@ -13,15 +13,15 @@
 #include "libft.h"
 
 /// @brief finds last node in list
-/// @param lst 
+/// @param lst
 /// @return ptr to last node
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst) //if lst empty or not exist = NULL
+	if (!lst) // if lst empty or not exist = NULL
 		return (NULL);
-	while (lst->next) //keep looping while existing following node
+	while (lst->next) // keep looping while existing following node
 		lst = lst->next;
-	return (lst); //return last lst value found
+	return (lst); // return last lst value found
 }
 /* int	main(void)
 {
@@ -29,7 +29,7 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*node2 = ft_lstnew("42student");
 	t_list	*node3 = ft_lstnew("Madrid");
 	t_list	*last;
-	
+
 	node1->next = node2;
 	node2->next = node3;
 	node3->next = NULL;

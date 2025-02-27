@@ -13,24 +13,24 @@
 #include "libft.h"
 
 /// @brief converts to lowercase
-/// @param c 
+/// @param c
 /// @return lowercase c
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        c = c + 32; //+32 up in ascii from upper to lower
-    else
-        return (c);
-    return (c);
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32; //+32 up in ascii from upper to lower
+	else
+		return (c);
+	return (c);
 }
 
 /*
-int main()
+int	main(void)
 {
-    int a = 'a';
-    int b = 'B';
+	int a = 'a';
+	int b = 'B';
 
-    printf ("%c", ft_tolower(a));
-    printf ("%c", ft_tolower(b));
-    return (0);
+	printf ("%c", ft_tolower(a));
+	printf ("%c", ft_tolower(b));
+	return (0);
 }*/

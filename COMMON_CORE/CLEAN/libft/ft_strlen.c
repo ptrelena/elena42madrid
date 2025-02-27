@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief calculates str length
-/// @param s 
-/// @return str length
+/// @brief calculate s length
+/// @param s
+/// @return length
 size_t	ft_strlen(const char *s)
 {
 	int	lenght;

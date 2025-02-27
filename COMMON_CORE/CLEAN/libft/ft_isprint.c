@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /// @brief check if int printable character
-/// @param c 
+/// @param c
 /// @return 1 if TRUE, 0 if FALSE
 int	ft_isprint(int c)
 {
@@ -25,17 +25,12 @@ int	ft_isprint(int c)
 /*
 int	main(void)
 {
-	int a;
-	int b;
-	int c;
-	int d;
-	int e;
+	int a = 'a';
+	int b = 'A';
+	int c = '1';
+	int d = '=';
+	int e = 128; //ascii num for 'Ç' (not printable)
 
-	a = 'a';
-	b = 'A';
-	c = '1';
-	d = '=';
-	e = 128;
 	printf("%d", ft_isprint(a));
 	printf("%d", ft_isprint(b));
 	printf("%d", ft_isprint(c));

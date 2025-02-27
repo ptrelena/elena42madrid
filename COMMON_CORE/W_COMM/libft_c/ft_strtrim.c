@@ -13,29 +13,29 @@
 #include "libft.h"
 
 /// @brief loops s1 fordward & backwards until set found
-/// @param s1 
-/// @param set 
+/// @param s1
+/// @param set
 /// @return new pointer without 'set'
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	start;
-	int	end;
+	int		start;
+	int		end;
 	char	*s2;
 
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	//skip 'set' occurrences in beggining
+	// skip 'set' occurrences in beggining
 	while (ft_strchr(set, s1[start]) && (start <= end))
 		start++;
-	if (start > end) //end of str reached
-		//s1 + end reaches end of str + 1 ('\0') returns NULL
+	if (start > end) // end of str reached
+		// s1 + end reaches end of str + 1 ('\0') returns NULL
 		return (ft_strdup(s1 + end + 1));
-	//skip 'set' occurrences in end
+	// skip 'set' occurrences in end
 	while (ft_strchr(set, s1[end]) && (end >= 0))
 		end--;
-	s2 = malloc(end - start + 2);//s2 length + 2(change from position to length)
+	s2 = malloc(end - start + 2); // s2 len -> +2 change from position to len
 	if (!s2)
 		return (NULL);
 	ft_strlcpy(s2, &s1[start], end - start + 2);

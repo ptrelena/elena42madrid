@@ -13,17 +13,17 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static size_t	ft_countnum(int n) //ft to count num of digits
+static size_t	ft_countnum(int n) // ft to count num of digits
 {
-	size_t	count; //counter
+	size_t count; // counter
 
 	if (n > 0)
-		count = 0; //positive num, no sign
+		count = 0; // positive num, no sign
 	else
-		count = 1; //negative num, (-) sign = 1 char
-	while (n) //n exists
+		count = 1; // negative num, (-) sign = 1 char
+	while (n)      // n exists
 	{
-		n /= 10; //divide /10 util last digit
+		n /= 10; // divide /10 util last digit
 		count++;
 	}
 	return (count);
@@ -36,29 +36,28 @@ char	*ft_itoa(int n)
 {
 	int		count;
 	char	*str;
-	long	num; //num = n declared as long to store bigger nums
 
-	count = ft_countnum(n); //num of digits to convert to char
-	num = n; //equal n to num
-	str = (char *)malloc(count + 1); //final char num space
-	if (!str) //failure check
+	long num; // num = n declared as long to store bigger nums
+	count = ft_countnum(n);          // num of digits to convert to char
+	num = n;                         // equal n to num
+	str = (char *)malloc(count + 1); // final char num space
+	if (!str)                        // failure check
 		return (NULL);
-	if (n < 0) //if num negative, change to positive
+	if (n < 0) // if num negative, change to positive
 		num = -num;
-	while (count > 0) //until num of digits reaches 0
+	while (count > 0) // until num of digits reaches 0
 	{
-		//start looping from 2nd-last digit + convert to char
-		//num%10 gets last digit alone + value of '0' in ascii
+		// start looping from 2nd-last digit + convert to char
+		// num%10 gets last digit alone + value of '0' in ascii
 		str[--count] = num % 10 + '0';
-		//num/10 gets left num to analyse
+		// num/10 gets left num to analyse
 		num /= 10;
 	}
-	if (n < 0) //if num is negative, firts char = '-'
+	if (n < 0) // if num is negative, firts char = '-'
 		str[0] = '-';
-	str[count] = '\0'; //last char = NULL
+	str[count] = '\0'; // last char = NULL
 	return (str);
 }
-
 
 /* int	main(void)
 {

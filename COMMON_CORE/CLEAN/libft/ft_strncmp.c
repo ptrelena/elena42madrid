@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-/// @brief compares str until different inside 'n' bytes
-/// @param s1 
-/// @param s2 
-/// @param n 
-/// @return s1[i] - s2[i] when different
+/// @brief s1 & s2 cmp in 'n' first bytes
+/// @param s1
+/// @param s2
+/// @param n
+/// @return 0 if equal / s1-s2 if different
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
@@ -33,41 +33,41 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-// int main(void)
-// {
-//     //same str
-//     char    a1 [] = "Elena"; //s1
-//     char    a2 [] = "Elena"; //s2
-//     //different str
-//     char    b1 [] = "Elena"; //s1
-//     char    b2 [] = "Eleno"; //s2
-//     //shorter str
-//     char    c1 [] = "Elena"; //s1
-//     char    c2 [] = "Ele"; //s2
-//     //str longer than n
-//     char    d1 [] = "Elena"; //s1
-//     char    d2 [] = "ElenoElena123"; //s2
-//     //different str
-//     char    e1 [] = "Elena"; //s1
-//     char    e2 [] = "Javier"; //s2
-//     //lowercase, uppercase
-//     char    f1 [] = "ELENA"; //s1
-//     char    f2 [] = "elena"; //s2
-//     //numbers
-//     char    g1 [] = "123"; //s1
-//     char    g2 [] = "124"; //s2
-//     //empty str
-//     char    h1 [] = "Elena"; //s1
-//     char    h2 [] = ""; //s2
-//     size_t  m = 10; //n
+/* int main(void)
+{
+	//same str
+	char    a1 [] = "Elena"; //s1
+	char    a2 [] = "Elena"; //s2
+	//different str
+	char    b1 [] = "Elena"; //s1
+	char    b2 [] = "Eleno"; //s2
+	//shorter str
+	char    c1 [] = "Elena"; //s1
+	char    c2 [] = "Ele"; //s2
+	//str longer than n
+	char    d1 [] = "Elena"; //s1
+	char    d2 [] = "ElenoElena123"; //s2
+	//different str
+	char    e1 [] = "Elena"; //s1
+	char    e2 [] = "Javier"; //s2
+	//lowercase, uppercase
+	char    f1 [] = "ELENA"; //s1
+	char    f2 [] = "elena"; //s2
+	//numbers
+	char    g1 [] = "123"; //s1
+	char    g2 [] = "124"; //s2
+	//empty str
+	char    h1 [] = "Elena"; //s1
+	char    h2 [] = ""; //s2
+	size_t  m = 10; //n
 
-//     printf("a: %i\n", ft_strncmp(a1, a2, m));
-//     printf("b: %i\n", ft_strncmp(b1, b2, m));
-//     printf("c: %i\n", ft_strncmp(c1, c2, m));
-//     printf("d: %i\n", ft_strncmp(d1, d2, m));
-//     printf("e: %i\n", ft_strncmp(e1, e2, m));
-//     printf("f: %i\n", ft_strncmp(f1, f2, m));
-//     printf("g: %i\n", ft_strncmp(g1, g2, m));
-//     printf("h: %i\n", ft_strncmp(h1, h2, m));
-//     return (0);
-// }
+	printf("a: %i\n", ft_strncmp(a1, a2, m));
+	printf("b: %i\n", ft_strncmp(b1, b2, m));
+	printf("c: %i\n", ft_strncmp(c1, c2, m));
+	printf("d: %i\n", ft_strncmp(d1, d2, m));
+	printf("e: %i\n", ft_strncmp(e1, e2, m));
+	printf("f: %i\n", ft_strncmp(f1, f2, m));
+	printf("g: %i\n", ft_strncmp(g1, g2, m));
+	printf("h: %i\n", ft_strncmp(h1, h2, m));
+	return (0);
+} */

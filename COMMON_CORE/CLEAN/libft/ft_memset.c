@@ -13,34 +13,34 @@
 #include "libft.h"
 
 /// @brief sets 'c' 'n' bytes in str
-/// @param str 
-/// @param c 
-/// @param n 
+/// @param str
+/// @param c
+/// @param n
 /// @return *str
-void	*ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *str, int c, size_t n) // ft prototype
 {
 	size_t			i;
-	unsigned char	*a;
-	unsigned char	b;
+	unsigned char	*ptr;
+	unsigned char	z;
 
-	a = (unsigned char *)str;
-	b = (unsigned char)c;
+	ptr = (unsigned char *)str;
+	z = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{
-		a[i] = b;
+		ptr[i] = z;
 		i++;
 	}
-	return (a);
+	return (ptr);
 }
 
-// int	main(void)
-// {
-// 	unsigned char	a [] = "Elena"; //pointer variable
-// 	int	b = 'a'; //modification int
-// 	size_t	c = 3; //number of times to modify int 'b'
+/* int	main(void)
+{
+	unsigned char	a [] = "Elena"; //pointer variable
+	int	b = 'a'; //modification int
+	size_t	c = 3; //number of times to modify int 'b'
 
-// 	printf("%s\n", a); //a before memset
-// 	ft_memset(a, b, c); //call ft
-// 	printf("%s\n", a); //a after memset
-// }
+	printf("%s\n", a); //a before memset
+	ft_memset(a, b, c); //call ft
+	printf("%s\n", a); //a after memset
+} */

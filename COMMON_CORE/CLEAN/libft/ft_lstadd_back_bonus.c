@@ -20,7 +20,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp_last;
 
-	if(!new)
+	if (!new)
 		return ;
 	if (!lst || !(*lst))
 	{
@@ -33,19 +33,18 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 /* int main()
 {
-    t_list *node1 = ft_lstnew("new node1");
+	t_list *node1 = ft_lstnew("new node1");
 	t_list *node2 = ft_lstnew("new node2");
 	t_list *node3 = ft_lstnew("new node3");
 	t_list	*final_list;
 
 	ft_lstadd_back(&node1, node3);
-    ft_lstadd_back(&node1, node2);
-    
+	ft_lstadd_back(&node1, node2);
 	final_list = node1;
 	while(final_list)
 	{
 		printf("final list: %s\n", (char *)final_list->content);
 		final_list = final_list->next;
 	}
-    return (0);
+	return (0);
 } */

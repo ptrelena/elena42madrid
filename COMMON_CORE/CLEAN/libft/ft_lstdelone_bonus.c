@@ -16,9 +16,9 @@
 /// @param lst - specific node to delete
 /// @param del - del ft
 /// @return void ft
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if(!lst)
+	if (!lst)
 		return ;
 	del(lst->content);
 	free(lst);
@@ -26,18 +26,16 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 
 /* int main()
 {
-    char *content = malloc(15);
-    if (!content)
-        return (1);
-    
-    t_list *node = ft_lstnew(content);
-    if (!node)
-    {
-        free(content);
-        return (1);
-    }
+	char *content = malloc(15);
+	if (!content)
+		return (1);
 
-    ft_lstdelone(node, free);
-
-    return 0;
+	t_list *node = ft_lstnew(content);
+	if (!node)
+	{
+		free(content);
+		return (1);
+	}
+	ft_lstdelone(node, free);
+	return (0);
 } */

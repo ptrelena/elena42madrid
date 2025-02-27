@@ -13,28 +13,28 @@
 #include "libft.h"
 
 /// @brief check if int printable character
-/// @param c 
+/// @param c
 /// @return 1 if TRUE, 0 if FALSE
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c >= ' ' && c <= '~') //printable char
-        return (1);
-    return (0);
+	if (c >= ' ' && c <= '~') // printable char
+		return (1);
+	return (0);
 }
 
 /*
-int main(void)
+int	main(void)
 {
-    int a = 'a';
-    int b = 'A';
-    int c = '1';
-    int d = '=';
-    int e = 128; //ascii num for 'Ç' (not printable)
+	int a = 'a';
+	int b = 'A';
+	int c = '1';
+	int d = '=';
+	int e = 128; //ascii num for 'Ç' (not printable)
 
-    printf("%d", ft_isprint(a));
-    printf("%d", ft_isprint(b));
-    printf("%d", ft_isprint(c));
-    printf("%d", ft_isprint(d));
-    printf("%d", ft_isprint(e));
+	printf("%d", ft_isprint(a));
+	printf("%d", ft_isprint(b));
+	printf("%d", ft_isprint(c));
+	printf("%d", ft_isprint(d));
+	printf("%d", ft_isprint(e));
 	return (0);
 }*/

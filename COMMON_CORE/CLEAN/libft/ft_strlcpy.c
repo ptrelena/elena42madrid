@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-/// @brief checks if src can be pasted in dst
-/// @param dst 
-/// @param src 
-/// @param size 
-/// @return src len
+/// @brief copy src in dst 'size' bytes
+/// @param dst
+/// @param src
+/// @param size
+/// @return src length
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
@@ -33,16 +33,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (ft_strlen(src));
 }
 
-// int main(void)
-// {
-//     char    a [] = "Manolo"; //dst
-//     char    b [] = "Aurelio"; //src
-//     size_t  c = 3; //'size'
+/* int main(void)
+{
+	char    a [] = "Manolo"; //dst
+	char    b [] = "Aurelio"; //src
+	size_t  c = 3; //'size'
 
-//     printf("%s\n", a); //dst before strlcpy
-//     printf("%s\n", b); //src before strlcpy
-//     printf("%zu\n", ft_strlcpy(a, b, c)); //call ft
-//     printf("%s\n", a); //dst after strlcpy
-//     printf("%s\n", b); //src after strlcpy
-//     return(0); //void ft
-// }
+	printf("%s\n", a); //dst before strlcpy
+	printf("%s\n", b); //src before strlcpy
+	printf("%zu\n", ft_strlcpy(a, b, c)); //call ft
+	printf("%s\n", a); //dst after strlcpy
+	printf("%s\n", b); //src after strlcpy
+	return(0); //void ft
+} */

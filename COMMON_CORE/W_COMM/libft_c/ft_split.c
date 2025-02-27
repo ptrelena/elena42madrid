@@ -12,42 +12,42 @@
 
 #include "libft.h"
 
-//count array words
+// count array words
 static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	i;
 	size_t	w_count;
 
 	i = 0;
-	w_count = 0; //start from 1 word always
+	w_count = 0; // start from 1 word always
 	if (!s)
-		return (-1);//returns 0 if !words_dst
-	while(s[i] != '\0')
+		return (-1); // returns 0 if !words_dst
+	while (s[i] != '\0')
 	{
-		while(s[i] && s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
 		{
-			w_count++; //if equal +1 word
-			while(s[i] && s[i] != c)
+			w_count++; // if equal +1 word
+			while (s[i] && s[i] != c)
 				i++;
 		}
 	}
 	return (w_count);
 }
 
-//count word letters
+// count word letters
 static size_t	ft_count_letters(const char *s, char c)
 {
 	size_t	l_count;
 
 	l_count = 0;
-	while(s[l_count] != '\0' && s[l_count] != c)
+	while (s[l_count] != '\0' && s[l_count] != c)
 		l_count++;
-	return(l_count);
+	return (l_count);
 }
 
-//print
+// print
 static char	*ft_printword(char const *s, char c)
 {
 	size_t	i;
@@ -55,9 +55,9 @@ static char	*ft_printword(char const *s, char c)
 
 	i = 0;
 	dest = ft_calloc((ft_count_letters(s, c) + 1), sizeof(char));
-	if(!dest)
+	if (!dest)
 		return (NULL);
-	while(s[i] && s[i] != c)
+	while (s[i] && s[i] != c)
 	{
 		dest[i] = s[i];
 		i++;
@@ -66,39 +66,40 @@ static char	*ft_printword(char const *s, char c)
 	return (dest);
 }
 
-//free space
+// free space
 static void	*ft_freespace(char **arr, size_t delete)
 {
-	while(delete > 0)
+	while (delete > 0)
 		free(arr[--delete]);
 	free(arr);
 	return (NULL);
 }
 
 /// @brief takes str and stores divided by words in array
-/// @param s 
-/// @param c 
+/// @param s
+/// @param c
 /// @return array
 char	**ft_split(char const *s, char c)
 {
 	char	**words_dst;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
-	words_dst = (char **)ft_calloc(sizeof(char *), ft_count_words(s, c) + 1);//**ptr space
+	words_dst = (char **)ft_calloc(sizeof(char *), ft_count_words(s, c) + 1);
+		//**ptr space
 	if (!words_dst)
 		return (NULL);
-	while(s[i])
+	while (s[i])
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		if(s[i])
+		if (s[i])
 		{
 			words_dst[j] = ft_printword((char *)s + i, c);
 			if (!words_dst[j])
-				return(ft_freespace(words_dst, j), NULL);
+				return (ft_freespace(words_dst, j), NULL);
 			j++;
 			while (s[i] && s[i] != c)
 				i++;
@@ -108,28 +109,27 @@ char	**ft_split(char const *s, char c)
 	return (words_dst);
 }
 
-
 /* #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int	main(void)
 {
-    char *str = "hello word this is C language";
-    char limit = ' ';
-    char **result = ft_split(str, limit);
+	char *str = "hello word this is C language";
+	char limit = ' ';
+	char **result = ft_split(str, limit);
 
-    if (!result)
-    {
-        printf("error, no mem reserved\n");
-        return (1);
-    }
-    int i = 0;
-    while (result[i])
-    {
-        printf("word %d: %s\n", i, result[i]);
-        free(result[i]);
-        i++;
-    }
-    free(result);
-    return (0);
+	if (!result)
+	{
+		printf("error, no mem reserved\n");
+		return (1);
+	}
+	int i = 0;
+	while (result[i])
+	{
+		printf("word %d: %s\n", i, result[i]);
+		free(result[i]);
+		i++;
+	}
+	free(result);
+	return (0);
 } */

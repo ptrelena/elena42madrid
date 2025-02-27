@@ -28,6 +28,10 @@ static size_t	ft_countnum(int n)
 	}
 	return (count);
 }
+
+/// @brief converts int to char
+/// @param n - int num
+/// @return ptr to num in char
 char	*ft_itoa(int n)
 {
 	int		count;
@@ -52,10 +56,9 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-
-// int	main(void)
-// {
-// 	int n = 12345;
-// 	printf("%s\n", ft_itoa(n));
-// 	return(0);
-// }
+/* int	main(void)
+{
+	int n = 12345;
+	printf("%s\n", ft_itoa(n));
+	return(0);
+} */

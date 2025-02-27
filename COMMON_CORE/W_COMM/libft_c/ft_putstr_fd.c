@@ -14,9 +14,9 @@
 #include <fcntl.h>
 
 /// @brief prints str in fd
-/// @param s 
-/// @param fd 
-void	ft_putstr_fd(char	*s, int	fd)
+/// @param s
+/// @param fd
+void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	strlen;
 

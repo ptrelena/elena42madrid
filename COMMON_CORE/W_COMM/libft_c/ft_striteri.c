@@ -13,15 +13,15 @@
 #include "libft.h"
 
 /// @brief iterates s applying f
-/// @param s 
-/// @param f 
+/// @param s
+/// @param f
 /// @return void
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
 	i = 0;
-	if(!s || !f)
+	if (!s || !f)
 		return ;
 	while (s[i] != '\0')
 	{

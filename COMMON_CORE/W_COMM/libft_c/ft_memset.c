@@ -13,26 +13,26 @@
 #include "libft.h"
 
 /// @brief sets 'c' 'n' bytes in str
-/// @param str 
-/// @param c 
-/// @param n 
+/// @param str
+/// @param c
+/// @param n
 /// @return *str
-void	*ft_memset(void *str, int c, size_t n) //ft prototype
+void	*ft_memset(void *str, int c, size_t n) // ft prototype
 {
-	size_t	i; //set counter as size_t to compare it with 'n'
-	unsigned char	*ptr; //cast str
-	unsigned char	z; //cast c
+	size_t i;           // set counter as size_t to compare it with 'n'
+	unsigned char *ptr; // cast str
+	unsigned char z;    // cast c
 
-	ptr = (unsigned char *)str; //cast str
-	z = (unsigned char)c; //cast c
+	ptr = (unsigned char *)str; // cast str
+	z = (unsigned char)c;       // cast c
 
-	i = 0; //counter starts
-	while (i < n) //loop srt until i reaches n
+	i = 0;        // counter starts
+	while (i < n) // loop srt until i reaches n
 	{
-		ptr[i] = z; //change char to b = c
-		i++; //keep looping
+		ptr[i] = z; // change char to b = c
+		i++;        // keep looping
 	}
-	return(ptr); //nothing to return as it is a void ft
+	return (ptr); // nothing to return as it is a void ft
 }
 
 /* int	main(void)

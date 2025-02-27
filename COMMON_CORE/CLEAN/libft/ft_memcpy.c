@@ -36,16 +36,16 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (d);
 }
 
-// int	main(void)
-// {
-// 	char	a [] = "Elena"; //dest
-// 	char	b [] = "Juana"; //src
-// 	size_t	c = 2; //number of bytes to be copied
+/* int	main(void)
+{
+	char	a [] = "Elena"; //dest
+	char	b [] = "Juana"; //src
+	size_t	c = 2; //number of bytes to be copied
 
-// 	printf("%s\n", a); //dest before memcpp
-// 	printf("%s\n", b); //src before memcpp
-// 	ft_memcpy(a, b, c); //call ft
-// 	printf("%s\n", a); //dest after memcpp
-// 	printf("%s\n", b); //src after memcpp
-// 	return(0); //void ft
-// }
+	printf("%s\n", a); //dest before memcpp
+	printf("%s\n", b); //src before memcpp
+	ft_memcpy(a, b, c); //call ft
+	printf("%s\n", a); //dest after memcpp
+	printf("%s\n", b); //src after memcpp
+	return(0); //void ft
+} */
