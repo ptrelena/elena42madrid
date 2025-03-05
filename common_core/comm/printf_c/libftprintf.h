@@ -18,8 +18,14 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-// # include <stdarg.h>
+# include <stdarg.h>
 
-//include fts
+void	ft_putchar(int c);
+int		ft_putstr(const char *c);
+void	ft_putnbr(int c);
+void	ft_putunsigned(int n);
+void	ft_puthexlower(int n);
+void	ft_puthexupper(int n);
+void	*ft_putptr(void *ptr);
 
 #endif

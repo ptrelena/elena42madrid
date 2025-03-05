@@ -11,60 +11,25 @@
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#include <stdarg.h>
 
-void	ft_putchar(int c)
-{
-	write(1, &c, 1);
-}
-
-
-int	ft_putstr(const char *c)
-{
-	int	i;
-
-	i = 0;
-	if(c == NULL)
-		return (write(1, "(null)", 6));
-	while(c[i] != '\0')
-	{
-		ft_putchar(c[i]);
-		i++;
-	}
-	return(0);
-}
-
-void	ft_putnbr(int c)
-{
-	char	digit;
-
-	if (c == -2147483648)
-		write(1, "-2147483648", 11);
-	else
-	{
-		if (c < 0)
-		{
-			write(1, "-", 1);
-			c = -c;
-		}
-		if (c >= 10)
-			ft_putnbr(c / 10);
-		digit = c % 10 + '0';
-		write(1, &digit, 1);
-	}
-}
-
-void	ft_convert(va_list args, char n)
+static void	ft_convert(va_list args, char n)
 {
 	if (n == 'c')
 		ft_putchar(va_arg(args, int));
 	else if (n == 's')
 		ft_putstr(va_arg(args, char*));
 	else if (n == 'p')
-		ft_putstr(va_arg(args, char*));
-	else if (n == 'd')
+		ft_putptr(va_arg(args, char*));
+	else if (n == 'd' || n == 'i')
 		ft_putnbr(va_arg(args, int));
-	
+	else if (n == 'u')
+		ft_putunsigned(va_arg(args, unsigned int));
+	else if (n == 'x')
+		ft_puthexlower(va_arg(args, unsigned int));
+	else if (n == 'X')
+		ft_puthexupper(va_arg(args, unsigned int));
+	else if (n == '%')
+		ft_putchar('%');
 }
 
 int	ft_printf(char const *c, ...)
@@ -89,12 +54,17 @@ int	ft_printf(char const *c, ...)
 	return(0);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	c1 = 'c';
 	char	*s1 = "Elena";
 	char	*s2 = NULL;
-	int	i1 = 123;
+	char	*ptr = "my name is Elena";
+	int	d1 = 1;
+	int	i1 = -2147483648;
+	unsigned int	u1 = 12;
+	unsigned int	u2 = -854;
+	unsigned int	xlower = 267;
 	
 	//char
 	ft_printf("e: printing char %c\n", c1);
@@ -109,42 +79,36 @@ int	main(void)
 	printf("p: printing empty str %s\n", s2);
 
 	//ptr
-	ft_printf("p: printing ptr %p\n", s1);
-	printf("p: printing ptr %p\n", s1);
+	ft_printf("e: printing ptr %p\n", ptr);
+	printf("p: printing ptr %p\n", ptr);
 
 	//digit
-	ft_printf("p: printing digit %d\n", i1);
-	printf("p: printing digit %d\n", i1);
+	ft_printf("e: printing digit %d\n", d1);
+	printf("p: printing digit %d\n", d1);
 
+	//integer
+	ft_printf("e: printing integer %i\n", i1);
+	printf("p: printing integer %i\n", i1);
+
+	//unsigned int - positive
+	ft_printf("e: printing unsigned int %u\n", u1);
+	printf("p: printing unsigned int %u\n", u1);
+
+	//unsigned int - negative
+	ft_printf("e: printing unsigned int %u\n", u2);
+	printf("p: printing unsigned int %u\n", u2);
+
+	//hexadecimal lowecase
+	ft_printf("e: printing hexadecimal lowecase %x\n", xlower);
+	printf("p: printing hexadecimal lowecase %x\n", xlower);
+
+	//hexadecimal uppercase
+	ft_printf("e: printing hexadecimal uppercase %X\n", xlower);
+	printf("p: printing hexadecimal uppercase %X\n", xlower);
+
+	//percentage
+	ft_printf("e: printing percentage %%%%\n");
+	printf("p: printing percentage %%%%\n");
 	
-
 	return(0);
-}
-
-/* 
-	else if (n == 'd')
-		// imprimir digito
-	else if (n == 'i')
-		// imprimir int
-	else if (n == 'u')
-		// imprimir unsigned
-	else if (n == 'x')
-		// imprimir hexadegimal minusc = 0123456789abcdef
-	else if (n == 'X')
-		// imprimir hexadecimal mayusc = 0123456789ABCDEF
-	else if (n == '%%')
-		//imprimir %
-	else */
-
-
-	/* size_t	ft_strlen(const char *c)
-{
-	size_t	len;
-
-	len = 0;
-	while (c[len] != '\0')
-	{
-		len++;
-	}
-	return(len);
 } */
