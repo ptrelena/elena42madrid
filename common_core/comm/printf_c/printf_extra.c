@@ -67,38 +67,51 @@ void	ft_putunsigned(int n)
 	ft_putchar((num % 10) + '0');
 }
 
-void	ft_puthexlower(int n)
+void	ft_puthex(int n, char *base) //TO DO:change int to unsigned longlong for enough space
 {
 	unsigned int num;
-	char	*hex;
 
 	num = (unsigned int)n;
-	hex = "0123456789abcdef";
-	if (num >= 16)
+	if (num > 15)
 		ft_puthexlower(num / 16);
-    ft_putchar(hex[num % 16]); // (num % 16) = [i] for 'hex' char position
+    ft_putchar(base[num % 16]); // (num % 16) = [i] for 'hex' char position
 }
 
-void	ft_puthexupper(int n)
+size_t	ft_strlen(const char *s)
 {
-	unsigned int num;
-	char	*hex;
+	int	lenght;
+	
+	lenght = 0;
+	while (s[lenght] != '\0')
+	{
+		lenght++;
+	}
+	return (lenght);
+}
 
-	num = (unsigned int)n;
-	hex = "0123456789ABCDEF";
-	if (num >= 16)
-        ft_puthexupper(num / 16);
-    ft_putchar(hex[num % 16]); // (num % 16) = [i] for 'hex' char position
+void ft_putnbrbase(unsigned int n, char *base)
+{
+	char	digit;
+	
+	if(n >= (ft_strlen(base)))
+	ft_putnbrbase(n / ft_strlen(base), base);
+	digit = n % (ft_strlen(base)) + '0';
+	write(1, &digit, 1);
 }
 
 void	*ft_putptr(void *ptr)
 {
-	unsigned long mem = (unsigned long)ptr; //enough space to save ptr location
-
-	write(1, "0x", 2); //indicates an hexdecimal num follows
-	if (mem == 0)
-		ft_putchar('0');
-	else
-		ft_puthexlower(mem); //print hexadecimal mem location
-	return (ptr);
+	write(1, "0x", 2);
+	ft_puthex((int)ptr, HEXLOWER);
 }
+
+/* void	*ft_putptr(void *ptr)
+{
+	char	digit;
+
+	if (ptr == NULL)
+		return(ft_putstr("(nil)")); //nil = null linux para Moulinette
+	ft_putstr("0x");
+	digit = 
+	return(ft_putnbrbase((unsigned int)ptr, HEXUPPER));
+} */

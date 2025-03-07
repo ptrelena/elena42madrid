@@ -20,6 +20,15 @@
 # include <unistd.h>
 # include <stdarg.h>
 
+# ifndef HEXLOWER
+#  define HEXLOWER "0123456789abcdef"
+# endif
+
+# ifndef HEXUPPER
+#  define HEXUPPER "0123456789ABCDEF"
+# endif
+
+int		ft_printf(char const *c, ...);
 void	ft_putchar(int c);
 int		ft_putstr(const char *c);
 void	ft_putnbr(int c);
