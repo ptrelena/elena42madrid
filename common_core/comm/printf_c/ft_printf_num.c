@@ -13,56 +13,71 @@
 #include "libftprintf.h"
 
 //digit & int printing
-void	ft_putnbr(int c)
+int	ft_putnbr(int c)
 {
 	char	digit;
+	int	count;
 
+	count = 0;
 	if (c == -2147483648)
+	{
 		write(1, "-2147483648", 11);
+		count = 11;
+	}
 	else
 	{
 		if (c < 0)
 		{
-			write(1, "-", 1);
+			count += write(1, "-", 1);
 			c = -c;
 		}
 		if (c >= 10)
-			ft_putnbr(c / 10);
+			count += ft_putnbr(c / 10);
 		digit = c % 10 + '0';
-		write(1, &digit, 1);
+		count += write(1, &digit, 1);
 	}
+	return(count);
 }
 
 //unsigned printing
-void	ft_putunsigned(int c)
+int	ft_putunsigned(unsigned int c)
 {
-	unsigned int num;
+	int	count;
 
-	if (c < 0)
-		num = (unsigned int)c; //convert n to 32bits archictecture
-	else
-		num = c;
-	if (num >= 10)
-		ft_putunsigned(num / 10);
-	ft_putchar((num % 10) + '0');
+	count = 0;
+	if (c >= 10)
+		count += ft_putunsigned(c / 10);
+	count += ft_putchar((c % 10) + '0');
+	return(count);
 }
 
 //hex lower & upper printing
-void	ft_puthex(unsigned long c, char *base)
+int	ft_puthex(unsigned long c, char *base)
 {
+	int	count;
+	
+	count = 0;
 	if (c >= 16)
-		ft_puthex(c / 16, base);
-    ft_putchar(base[c % 16]); // (c % 16) = [i] for 'hex' char position
+		count += ft_puthex(c / 16, base);
+	count += ft_putchar(base[c % 16]); // (c % 16) = [i] for 'hex' char position
+	return(count);
 }
 
 //ptr printing
-void	ft_putptr(unsigned long ptr)
+int	ft_putptr(unsigned long ptr)
 {
+	int	count;
+
+	count = 0;
 	if (!ptr)
+	{
 		ft_putstr("(nil)");
+		return(5);
+	}
 	else
 	{
-		write(1, "0x", 2);
-		ft_puthex(ptr, HEXLOWER);
+		count += write(1, "0x", 2);
+		count += ft_puthex(ptr, HEXLOWER);
 	}
+	return(count);
 }

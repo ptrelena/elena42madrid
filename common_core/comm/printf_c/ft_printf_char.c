@@ -13,23 +13,30 @@
 #include "libftprintf.h"
 
 //char & percentage printing
-void	ft_putchar(int c)
+int	ft_putchar(int c)
 {
-	write(1, &c, 1);
+	int	count; 
+
+	count = 0;
+	count += write(1, &c, 1);
+	return(count);
 }
 
 //str printing
 int	ft_putstr(const char *c)
 {
-	int	i;
+	int	count;
 
-	i = 0;
+	count = 0;
 	if(c == NULL)
-		return (write(1, "(null)", 6));
-	while(c[i] != '\0')
 	{
-		ft_putchar(c[i]);
-		i++;
+		write(1, "(null)", 6);
+		return(6);
 	}
-	return(0);
+	while(c[count] != '\0')
+	{
+		ft_putchar(c[count]);
+		count++;
+	}
+	return(count);
 }

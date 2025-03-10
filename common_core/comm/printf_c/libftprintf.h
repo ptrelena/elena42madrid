@@ -28,12 +28,12 @@
 #  define HEXUPPER "0123456789ABCDEF"
 # endif
 
-int		ft_printf(char const *c, ...);
-void	ft_putchar(int c);
-int		ft_putstr(const char *c);
-void	ft_putnbr(int c);
-void	ft_putunsigned(int c);
-void	ft_puthex(unsigned long c, char *base);
-void	ft_putptr(unsigned long ptr);
+int	ft_printf(char const *c, ...);
+int	ft_putchar(int c);
+int	ft_putstr(const char *c);
+int	ft_putnbr(int c);
+int	ft_putunsigned(int c);
+int	ft_puthex(unsigned long c, char *base);
+int	ft_putptr(unsigned long ptr);
 
 #endif

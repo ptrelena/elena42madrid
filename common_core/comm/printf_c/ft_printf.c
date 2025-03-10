@@ -12,44 +12,49 @@
 
 #include "libftprintf.h"
 
-static void	ft_convert(va_list args, char n)
+static int	ft_convert(va_list args, char n)
 {
+	int count;
+
 	if (n == 'c')
-		ft_putchar(va_arg(args, int));
+		count += ft_putchar(va_arg(args, int));
 	else if (n == 's')
-		ft_putstr(va_arg(args, char*));
+		count += ft_putstr(va_arg(args, char*));
 	else if (n == 'p')
-		ft_putptr(va_arg(args, unsigned long));
+		count += ft_putptr(va_arg(args, unsigned long));
 	else if (n == 'd' || n == 'i')
-		ft_putnbr(va_arg(args, int));
+		count += ft_putnbr(va_arg(args, int));
 	else if (n == 'u')
-		ft_putunsigned(va_arg(args, unsigned int));
+		count += ft_putunsigned(va_arg(args, unsigned int));
 	else if (n == 'x')
-		ft_puthex(va_arg(args, unsigned int), HEXLOWER);
+		count += ft_puthex(va_arg(args, unsigned int), HEXLOWER);
 	else if (n == 'X')
-		ft_puthex(va_arg(args, unsigned int), HEXUPPER);
+		count += ft_puthex(va_arg(args, unsigned int), HEXUPPER);
 	else if (n == '%')
-		ft_putchar('%');
+		count += ft_putchar('%');
+	return(count);
 }
 
 int	ft_printf(char const *c, ...)
 {
 	int	i;
+	int	count;
 	va_list	args;
 
 	i = 0;
+	count = 0;
 	va_start(args, c);
 	while(c[i] != '\0')
 	{
 		if (c[i] == '%')
 		{
-			ft_convert(args, c[i + 1]);
+			count += ft_convert(args, c[i + 1]);
 			i++;
 		}
 		else
-			ft_putchar(c[i]);
+			count += ft_putchar(c[i]);
 		i++;
 	}
 	va_end(args);
-	return(0);
+	return(count);
 }
