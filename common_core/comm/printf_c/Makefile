@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 A_C = ar rcs
 
-SRC = printf_extra.c
+SRC = ft_printf_utils.c
 
 OBJ = $(SRC:.c=.o)
 

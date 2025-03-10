@@ -18,16 +18,16 @@ static void	ft_convert(va_list args, char n)
 		ft_putchar(va_arg(args, int));
 	else if (n == 's')
 		ft_putstr(va_arg(args, char*));
-	/* else if (n == 'p')
-		ft_putptr(va_arg(args, char*)); */
+	else if (n == 'p')
+		ft_putptr(va_arg(args, unsigned long));
 	else if (n == 'd' || n == 'i')
 		ft_putnbr(va_arg(args, int));
 	else if (n == 'u')
 		ft_putunsigned(va_arg(args, unsigned int));
 	else if (n == 'x')
-		ft_putnbrbase(va_arg(args, unsigned int), HEXLOWER);
+		ft_puthex(va_arg(args, unsigned int), HEXLOWER);
 	else if (n == 'X')
-		ft_putnbrbase(va_arg(args, unsigned int), HEXUPPER);
+		ft_puthex(va_arg(args, unsigned int), HEXUPPER);
 	else if (n == '%')
 		ft_putchar('%');
 }

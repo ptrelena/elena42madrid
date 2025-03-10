@@ -33,10 +33,7 @@ void	ft_putchar(int c);
 int		ft_putstr(const char *c);
 void	ft_putnbr(int c);
 void	ft_putunsigned(int c);
-void	ft_puthexlower(int c);
-void	ft_puthexupper(int c);
-size_t	ft_strlen(const char *c);
-void 	ft_putnbrbase(unsigned int c, char *base);
-void	*ft_putptr(void *ptr);
+void	ft_puthex(unsigned long c, char *base);
+void	ft_putptr(unsigned long ptr);
 
 #endif
