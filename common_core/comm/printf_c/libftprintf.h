@@ -32,9 +32,11 @@ int		ft_printf(char const *c, ...);
 void	ft_putchar(int c);
 int		ft_putstr(const char *c);
 void	ft_putnbr(int c);
-void	ft_putunsigned(int n);
-void	ft_puthexlower(int n);
-void	ft_puthexupper(int n);
+void	ft_putunsigned(int c);
+void	ft_puthexlower(int c);
+void	ft_puthexupper(int c);
+size_t	ft_strlen(const char *c);
+void 	ft_putnbrbase(unsigned int c, char *base);
 void	*ft_putptr(void *ptr);
 
 #endif

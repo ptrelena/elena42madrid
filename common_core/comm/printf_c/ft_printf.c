@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-03-03 14:03:18 by elenpere          #+#    #+#             */
-/*   Updated: 2025-03-03 14:03:18 by elenpere         ###   ########.fr       */
+/*   Created: 2025-03-10 16:57:07 by elenpere          #+#    #+#             */
+/*   Updated: 2025-03-10 16:57:07 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ static void	ft_convert(va_list args, char n)
 		ft_putchar(va_arg(args, int));
 	else if (n == 's')
 		ft_putstr(va_arg(args, char*));
-	else if (n == 'p')
-		ft_putptr(va_arg(args, char*));
+	/* else if (n == 'p')
+		ft_putptr(va_arg(args, char*)); */
 	else if (n == 'd' || n == 'i')
 		ft_putnbr(va_arg(args, int));
 	else if (n == 'u')
 		ft_putunsigned(va_arg(args, unsigned int));
 	else if (n == 'x')
-		ft_puthexlower(va_arg(args, unsigned int));
+		ft_putnbrbase(va_arg(args, unsigned int), HEXLOWER);
 	else if (n == 'X')
-		ft_puthexupper(va_arg(args, unsigned int));
+		ft_putnbrbase(va_arg(args, unsigned int), HEXUPPER);
 	else if (n == '%')
 		ft_putchar('%');
 }
@@ -53,4 +53,3 @@ int	ft_printf(char const *c, ...)
 	va_end(args);
 	return(0);
 }
-

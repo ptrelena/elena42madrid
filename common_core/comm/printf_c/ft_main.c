@@ -12,128 +12,53 @@
 
 #include "libftprintf.h"
 
-/* //char
 int	main(void)
 {
-	char	c1 = 'c';
+	char	c1 = 'c'; //char
+	char	*s1 = "Elena"; //str
+	char	*s2 = NULL; //empty str
+	char	*ptr = "my name is Elena"; //ptr
+	int	d1 = 1; //digit
+	int	i1 = -2147483648; //integer
+	unsigned int	u1 = 12; //unsigned int - positive
+	unsigned int	u2 = -854; //unsigned int - negative
+	unsigned int	x = 267; //hexadecimal lowecase & uppercase
 	
 	ft_printf("e: printing char %c\n", c1);
 	printf("p: printing char %c\n", c1);
-	
-	return(0);
-} */
 
-/* //str
-int	main(void)
-{
-	char	*s1 = "Elena";
-	
 	ft_printf("e: printing str %s\n", s1);
 	printf("p: printing str %s\n", s1);
 
-	return(0);
-} */
-
-/* //empty str
-int	main(void)
-{
-	char	*s2 = NULL;
-	
 	ft_printf("e: printing empty str %s\n", s2);
 	printf("p: printing empty str %s\n", s2);
 
-	return(0);
-} */
-
-//ptr
-int	main(void)
-{
-	char	*ptr = "my name is Elena";
-	unsigned int	x = 267;
-
 	ft_printf("e: printing ptr %p\n", ptr);
 	printf("p: printing ptr %p\n", ptr);
-	
+
 	ft_printf("e: printing hexadecimal lowecase %x\n", x);
 	printf("p: printing hexadecimal lowecase %x\n", x);
-	
-	return(0);
-}
 
-/* //digit
-int	main(void)
-{
-	int	d1 = 1;
-	
 	ft_printf("e: printing digit %d\n", d1);
 	printf("p: printing digit %d\n", d1);
 	
-	return(0);
-} */
-
-/* //integer
-int	main(void)
-{
-	int	i1 = -2147483648;
-
 	ft_printf("e: printing integer %i\n", i1);
 	printf("p: printing integer %i\n", i1);
-	
-	return(0);
-} */
-
-/* //unsigned int - positive
-int	main(void)
-{
-	unsigned int	u1 = 12;
-	unsigned int	xlower = 267;
 	
 	ft_printf("e: printing unsigned int %u\n", u1);
 	printf("p: printing unsigned int %u\n", u1);
 	
-	return(0);
-} */
-
-/* //unsigned int - negative
-int	main(void)
-{
-	unsigned int	u2 = -854;
-
 	ft_printf("e: printing unsigned int %u\n", u2);
 	printf("p: printing unsigned int %u\n", u2);
 
-	return(0);
-} */
-
-/* //hexadecimal lowecase
-int	main(void)
-{
-	unsigned int	x = 267;
-	
 	ft_printf("e: printing hexadecimal lowecase %x\n", x);
 	printf("p: printing hexadecimal lowecase %x\n", x);
-	
-	return(0);
-} */
-
-/* //hexadecimal uppercase
-int	main(void)
-{
-	unsigned int	x = 267;
 
 	ft_printf("e: printing hexadecimal uppercase %X\n", x);
 	printf("p: printing hexadecimal uppercase %X\n", x);
 	
-	return(0);
-} */
-
-/* //percentage
-int	main(void)
-{
 	ft_printf("e: printing percentage %%%%\n");
 	printf("p: printing percentage %%%%\n");
-	
-	return(0);
-} */
 
-//cambios ok
+	return(0);
+}

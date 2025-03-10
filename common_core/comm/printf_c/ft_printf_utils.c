@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_extra.c                                     :+:      :+:    :+:   */
+/*   printf_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-03-05 12:18:37 by elenpere          #+#    #+#             */
-/*   Updated: 2025-03-05 12:18:37 by elenpere         ###   ########.fr       */
+/*   Created: 2025-03-10 16:57:15 by elenpere          #+#    #+#             */
+/*   Updated: 2025-03-10 16:57:15 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
+//char & percentage printing
 void	ft_putchar(int c)
 {
 	write(1, &c, 1);
 }
 
-
+//str printing
 int	ft_putstr(const char *c)
 {
 	int	i;
@@ -33,6 +34,7 @@ int	ft_putstr(const char *c)
 	return(0);
 }
 
+//digit & int printing
 void	ft_putnbr(int c)
 {
 	char	digit;
@@ -53,56 +55,72 @@ void	ft_putnbr(int c)
 	}
 }
 
-
-void	ft_putunsigned(int n)
+//unsigned printing
+void	ft_putunsigned(int c)
 {
 	unsigned int num;
 
-	if (n < 0)
-		num = (unsigned int)n; //convert n to 32bits archictecture
+	if (c < 0)
+		num = (unsigned int)c; //convert n to 32bits archictecture
 	else
-		num = n;
+		num = c;
 	if (num >= 10)
 		ft_putunsigned(num / 10);
 	ft_putchar((num % 10) + '0');
 }
 
-void	ft_puthex(int n, char *base) //TO DO:change int to unsigned longlong for enough space
+//hex lower & upper printing
+void	ft_puthexlower(int c)
 {
 	unsigned int num;
+	char	*hex;
 
-	num = (unsigned int)n;
-	if (num > 15)
+	num = (unsigned int)c;
+	hex = "0123456789abcdef";
+	if (num >= 16)
 		ft_puthexlower(num / 16);
-    ft_putchar(base[num % 16]); // (num % 16) = [i] for 'hex' char position
+    ft_putchar(hex[num % 16]); // (num % 16) = [i] for 'hex' char position
 }
 
-size_t	ft_strlen(const char *s)
+void	ft_puthexupper(int c)
+{
+	unsigned int num;
+	char	*hex;
+
+	num = (unsigned int)c;
+	hex = "0123456789ABCDEF";
+	if (num >= 16)
+        ft_puthexupper(num / 16);
+    ft_putchar(hex[num % 16]); // (num % 16) = [i] for 'hex' char position
+}
+
+size_t	ft_strlen(const char *c)
 {
 	int	lenght;
 	
 	lenght = 0;
-	while (s[lenght] != '\0')
+	while (c[lenght] != '\0')
 	{
 		lenght++;
 	}
 	return (lenght);
 }
 
-void ft_putnbrbase(unsigned int n, char *base)
+void ft_putnbrbase(unsigned int c, char *base)
 {
 	char	digit;
 	
-	if(n >= (ft_strlen(base)))
-	ft_putnbrbase(n / ft_strlen(base), base);
-	digit = n % (ft_strlen(base)) + '0';
+	if(c >= (ft_strlen(base)))
+	ft_putnbrbase(c / ft_strlen(base), base);
+	digit = c % (ft_strlen(base)) + '0';
 	write(1, &digit, 1);
 }
 
+//ptr printing
 void	*ft_putptr(void *ptr)
 {
 	write(1, "0x", 2);
-	ft_puthex((int)ptr, HEXLOWER);
+	ft_putnbrbase((unsigned long)ptr, HEXLOWER);
 }
 
 /* void	*ft_putptr(void *ptr)
@@ -112,6 +130,17 @@ void	*ft_putptr(void *ptr)
 	if (ptr == NULL)
 		return(ft_putstr("(nil)")); //nil = null linux para Moulinette
 	ft_putstr("0x");
-	digit = 
-	return(ft_putnbrbase((unsigned int)ptr, HEXUPPER));
+	write(1,ft_putnbrbase((unsigned long)ptr, HEXLOWER));//+2 - 0x positions
+} */
+
+/* void	*ft_putptr(void *ptr)
+{
+	unsigned long mem = (unsigned long)ptr; //enough space to save ptr location
+
+	write(1, "0x", 2); //indicates an hexdecimal num follows
+	if (mem == 0)
+		ft_putchar('0');
+	else
+		ft_puthexlower(mem); //print hexadecimal mem location
+	return (ptr);
 } */
