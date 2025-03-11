@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 /// @brief print number
 /// @param c int
@@ -57,7 +57,7 @@ int	ft_putunsigned(unsigned int c)
 
 /// @brief print base number
 /// @param c unisgned long
-/// @param base char* - octal, decimal, hexadecimal
+/// @param base char* - hexadecimal
 /// @return int (counter)
 int	ft_putbase(unsigned long c, char *base)
 {
