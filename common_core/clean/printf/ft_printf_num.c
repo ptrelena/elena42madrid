@@ -38,7 +38,7 @@ int	ft_putnbr(int c)
 		digit = c % 10 + '0';
 		count += write(1, &digit, 1);
 	}
-	return(count);
+	return (count);
 }
 
 /// @brief print unsigned number
@@ -62,7 +62,7 @@ int	ft_putunsigned(unsigned int c)
 int	ft_putbase(unsigned long c, char *base)
 {
 	int	count;
-	
+
 	count = 0;
 	if (c >= 16)
 		count += ft_putbase(c / 16, base);

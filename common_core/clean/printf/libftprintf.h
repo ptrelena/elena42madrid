@@ -14,11 +14,11 @@
 # define LIBFTPRINTFT_H
 
 # include <ctype.h>
+# include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <stdarg.h>
 
 # ifndef HEXLOWER
 #  define HEXLOWER "0123456789abcdef"

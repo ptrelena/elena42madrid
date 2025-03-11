@@ -14,13 +14,13 @@
 
 static int	ft_convert(va_list args, char n)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (n == 'c')
 		count += ft_putchar(va_arg(args, int));
 	else if (n == 's')
-		count += ft_putstr(va_arg(args, char*));
+		count += ft_putstr(va_arg(args, char *));
 	else if (n == 'p')
 		count += ft_putptr(va_arg(args, unsigned long));
 	else if (n == 'd' || n == 'i')

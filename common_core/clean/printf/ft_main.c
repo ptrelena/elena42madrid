@@ -14,16 +14,16 @@
 
 int	main(void)
 {
-	char	c1 = 'c'; //char
-	char	*s1 = "Elena"; //str
-	char	*s2 = NULL; //empty str
-	char	*ptr = "hello, how are you? my name is Elena"; //ptr
-	char	*null = NULL; //empty ptr
-	int	d1 = 1; //digit
-	int	i1 = -2147483648; //integer
-	unsigned int	u1 = 12; //unsigned int - positive
-	unsigned int	u2 = -854; //unsigned int - negative
-	unsigned int	x = 267; //hexadecimal lowercase & uppercase
+	int				d1 = 1;
+	int				i1 = -2147483648;
+	char			c1 = 'c';
+	char			*s1 = "Elena";
+	char			*s2 = NULL;
+	char			*ptr = "hello, how are you? my name is Elena";
+	char			*null = NULL;
+	unsigned int	u1 = 12;
+	unsigned int	u2 = -854;
+	unsigned int	x = 267;
 	
 	ft_printf("e: printing char %c\n", c1);
 	printf("p: printing char %c\n", c1);
