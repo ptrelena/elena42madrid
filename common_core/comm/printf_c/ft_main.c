@@ -14,13 +14,13 @@
 
 int	main(void)
 {
-	char	c1 = 'c'; //char
-	char	*s1 = "Elena"; //str
-	char	*s2 = NULL; //empty str
-	char	*ptr = "hello, how are you? my name is Elena"; //ptr
-	char	*null = NULL; //empty ptr
-	int	d1 = 1; //digit
-	int	i1 = -2147483648; //integer
+	int				d1 = 1; //digit
+	int				i1 = -2147483648; //integer
+	char			c1 = 'c'; //char
+	char			*s1 = "Elena"; //str
+	char			*s2 = NULL; //empty str
+	char			*ptr = "hello, how are you? my name is Elena"; //ptr
+	char			*null = NULL; //empty ptr
 	unsigned int	u1 = 12; //unsigned int - positive
 	unsigned int	u2 = -854; //unsigned int - negative
 	unsigned int	x = 267; //hexadecimal lowercase & uppercase

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTFT_H
-# define LIBFTPRINTFT_H
+#ifndef PRINTFT_H
+# define PRINTFT_H
 
 # include <ctype.h>
 # include <stdarg.h>
