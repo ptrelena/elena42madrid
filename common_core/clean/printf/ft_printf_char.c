@@ -12,37 +12,35 @@
 
 #include "libftprintf.h"
 
-//char & percentage printing
 /// @brief print char
 /// @param c int
 /// @return int (counter)
 int	ft_putchar(int c)
 {
-	int	count; //printed chars counter
+	int	count;
 
 	count = 0;
-	count += write(1, &c, 1); //print char + add up counter
-	return (count); //return num of chars printed
+	count += write(1, &c, 1);
+	return (count);
 }
 
-//str printing
 /// @brief print str
 /// @param c const char *
 /// @return int (counter)
 int	ft_putstr(const char *c)
 {
-	int	count; //printed chars counter
+	int	count;
 
 	count = 0;
-	if (c == NULL) //if str fails
+	if (c == NULL)
 	{
-		write(1, "(null)", 6); //print (null)
-		return (6); //return 6 chars printed - "(null)"
+		write(1, "(null)", 6);
+		return (6);
 	}
-	while (c[count] != '\0') //iterate str usign 'count' as index
+	while (c[count] != '\0')
 	{
-		ft_putchar(c[count]); //print str chars individually
-		count++; //add up counter w each char
+		ft_putchar(c[count]);
+		count++;
 	}
-	return (count); //return num of chars printed
+	return (count);
 }

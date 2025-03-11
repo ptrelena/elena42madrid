@@ -12,85 +12,81 @@
 
 #include "libftprintf.h"
 
-//digit & int printing
 /// @brief print number
 /// @param c int
 /// @return int (counter)
 int	ft_putnbr(int c)
 {
-	int		count; //printed chars counter
-	char	digit; //variable to save int converted to char
+	int		count;
+	char	digit;
 
 	count = 0;
-	if (c == -2147483648) //specifically print min negative
+	if (c == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		count = 11; //add up 11 chars to counter - "-2147483648"
+		count = 11;
 	}
 	else
 	{
-		if (c < 0) //treat negative num
+		if (c < 0)
 		{
-			count += write(1, "-", 1); //include (-) char + add up counter
-			c = -c; //convert num to positive
+			count += write(1, "-", 1);
+			c = -c;
 		}
-		if (c >= 10) //treat decimal base number
-			count += ft_putnbr(c / 10); //recursion + add up counter
-		digit = c % 10 + '0'; //convert digit to char
-		count += write(1, &digit, 1); //print digit alone + add up counter
+		if (c >= 10)
+			count += ft_putnbr(c / 10);
+		digit = c % 10 + '0';
+		count += write(1, &digit, 1);
 	}
-	return(count); //return num of chars printed
+	return(count);
 }
 
-//unsigned printing
 /// @brief print unsigned number
 /// @param c unisgned int
 /// @return int (counter)
 int	ft_putunsigned(unsigned int c)
 {
-	int	count; //printed chars counter
+	int	count;
 
 	count = 0;
-	if (c >= 10) //treat decimal base number
-		count += ft_putunsigned(c / 10); //recursion + add up counter
-	count += ft_putchar((c % 10) + '0'); //print digit alone + add up counter
-	return (count); //return num of chars printed
+	if (c >= 10)
+		count += ft_putunsigned(c / 10);
+	count += ft_putchar((c % 10) + '0');
+	return (count);
 }
 
-//hex lower & upper printing
 /// @brief print base number
 /// @param c unisgned long
 /// @param base char* - octal, decimal, hexadecimal
 /// @return int (counter)
 int	ft_putbase(unsigned long c, char *base)
 {
-	int	count; //printed chars counter
+	int	count;
 	
 	count = 0;
-	if (c >= 16) //treat hexadecimal base number
-		count += ft_putbase(c / 16, base); //recursion + add up counter
-	count += ft_putchar(base[c % 16]); //(c % 16)=[i] 'hex' char position
-	return (count); //return num of chars printed
+	if (c >= 16)
+		count += ft_putbase(c / 16, base);
+	count += ft_putchar(base[c % 16]);
+	return (count);
 }
 
-//ptr printing
 /// @brief print ptr mem direction
 /// @param ptr unsigned long
 /// @return int (counter)
 int	ft_putptr(unsigned long ptr)
 {
-	int	count; //printed chars counter
+	int	count;
 
 	count = 0;
-	if (!ptr) //ptr failure
+	if (!ptr)
 	{
-		ft_putstr("(nil)"); //(nil) = (null) Ubuntu
-		return (5); //return 5 chars printed - "(nil)"
+		ft_putstr("(nil)");
+		return (5);
 	}
 	else
 	{
-		count += write(1, "0x", 2); //print '0x' + add up counter
-		count += ft_putbase(ptr, HEXLOWER); //change base + add up counter
+		count += write(1, "0x", 2);
+		count += ft_putbase(ptr, HEXLOWER);
 	}
-	return (count); //return num of chars printed
+	return (count);
 }

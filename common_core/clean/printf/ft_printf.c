@@ -14,49 +14,48 @@
 
 static int	ft_convert(va_list args, char n)
 {
-	int count; //printed chars counter
+	int count;
 
-	//first arg = va_ar(va_list args, variable type)
 	count = 0;
-	if (n == 'c') //char
+	if (n == 'c')
 		count += ft_putchar(va_arg(args, int));
-	else if (n == 's') //str
+	else if (n == 's')
 		count += ft_putstr(va_arg(args, char*));
-	else if (n == 'p') //ptr
+	else if (n == 'p')
 		count += ft_putptr(va_arg(args, unsigned long));
-	else if (n == 'd' || n == 'i') //digit & int
+	else if (n == 'd' || n == 'i')
 		count += ft_putnbr(va_arg(args, int));
-	else if (n == 'u') //unsigned
+	else if (n == 'u')
 		count += ft_putunsigned(va_arg(args, unsigned int));
-	else if (n == 'x') //lower hex base
+	else if (n == 'x')
 		count += ft_putbase(va_arg(args, unsigned int), HEXLOWER);
-	else if (n == 'X') //upper hex base
+	else if (n == 'X')
 		count += ft_putbase(va_arg(args, unsigned int), HEXUPPER);
-	else if (n == '%') //percentage
+	else if (n == '%')
 		count += ft_putchar('%');
-	return (count); //return num of chars printed
+	return (count);
 }
 
 int	ft_printf(char const *c, ...)
 {
 	int		i;
-	int		count; //printed chars counter
-	va_list	args; //variadic lists varible including args
+	int		count;
+	va_list	args;
 
 	i = 0;
 	count = 0;
-	va_start(args, c); //variadic list starts, calling args & c
-	while (c[i] != '\0') //c existing / not empy
+	va_start(args, c);
+	while (c[i] != '\0')
 	{
-		if (c[i] == '%') //% means a data type follows
+		if (c[i] == '%')
 		{
-			count += ft_convert(args, c[i + 1]); //convert data received
-			i++; //keep looping
+			count += ft_convert(args, c[i + 1]);
+			i++;
 		}
 		else
-			count += ft_putchar(c[i]); //no % found, print str received
-		i++; //keep looping
+			count += ft_putchar(c[i]);
+		i++;
 	}
-	va_end(args); //variadic list ends
-	return (count); //return num of chars printed
+	va_end(args);
+	return (count);
 }
