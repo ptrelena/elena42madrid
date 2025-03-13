@@ -63,3 +63,12 @@ int	main(void)
 
 	return(0);
 }
+
+/* 
+<PREGUNTAS> 
+_ int	ft_printf(char const *c, ...) -> por qué se usa char const * como variable?
+_ por qué se usan las listas variádicas para el printf?
+_ qué almacena exactamente la variable va_list	args?
+_ por qué ft_convert(va_list args, char n) recibe como primer arg un va_list args?
+_ por qué putchar recibe un int como parámetro?
+*/
