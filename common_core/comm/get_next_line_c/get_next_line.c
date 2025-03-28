@@ -10,7 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
+
+
+
 char *ft_get_next_line(int fd)
 {
-	int	i;
+	int		fd; //file from where to read
+	int		chars_read; //num of chars read
+	char	buf[256]; //buffer where num of chars is stored
+
+	fd = open("try.txt", O_RDWR | O_APPEND);
+
+	while((chars_read = read(fd, buf, BUFFER_SIZE)))
+	{
+		if (chars_read < 0)
+			return (NULL);
+		
+		//funcion que me encuentre el \n
+		buf[chars_read] = '\0';
+		printf("buf -> %s\n", buf);
+	}
 }
