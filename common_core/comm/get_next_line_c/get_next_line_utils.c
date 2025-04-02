@@ -77,3 +77,59 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s3[i + j] = '\0';
 	return (s3);
 }
+
+/// @brief allocates mem for s1 + copies it
+/// @param *s1
+/// @return ptr to char copy
+char	*ft_strdup(const char *s1)
+{
+	int		i;
+	char	*p;
+	char	*t1;
+
+	t1 = (char *)s1;
+	i = 0;
+	p = (char *)malloc(ft_strlen(s1) * sizeof(char) + 1);
+	if (!t1)
+		return (NULL);
+	if (!p)
+		return (NULL);
+	while (t1[i] != '\0')
+	{
+		p[i] = t1[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
+}
+
+/// @brief creates new str starting from s and 'len' long
+/// @param s
+/// @param start
+/// @param len
+/// @return final str
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*r;
+	size_t	i;
+	size_t	len_s;
+
+	if (!s)
+		return (NULL);
+	len_s = ft_strlen(s);
+	if (start >= len_s)
+		return (ft_strdup(""));
+	if (len > len_s - start)
+		len = len_s - start;
+	r = malloc(len + 1);
+	if (!r)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		r[i] = s[start + i];
+		i++;
+	}
+	r[i] = '\0';
+	return (r);
+}
