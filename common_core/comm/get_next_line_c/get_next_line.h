@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 42
 # endif
 
 # include <ctype.h>
@@ -24,10 +24,6 @@
 # include <string.h>
 # include <unistd.h>
 #include <fcntl.h>
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
 
 char	*ft_get_next_line(int fd);
 char	*ft_strchr(const char *s, int c);
