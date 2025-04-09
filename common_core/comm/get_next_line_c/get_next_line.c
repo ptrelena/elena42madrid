@@ -35,9 +35,10 @@ char	*ft_read_and_join(int fd, char *buff)//fd & buff from gnl
 			return (free(buff), free(temp_buff), NULL); //free space & NULL
 		temp_buff[bytes_read] = '\0'; //null-terminated
 		temp_read = ft_strjoin(buff, temp_buff); //join first & just read bytes
+		free(temp_buff);
 		buff = temp_read; //assign full reading to main buffer
 	}
-	return (free(temp_buff), buff); //free temp_buff as not in use anymore
+	return (free(temp_read), buff); //free temp_buff as not in use anymore
 }
 
 /// @brief identify newline
