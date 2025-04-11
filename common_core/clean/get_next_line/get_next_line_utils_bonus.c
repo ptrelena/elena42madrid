@@ -53,33 +53,26 @@ size_t	ft_strlen(const char *s)
 /// @return new ptr w resulting join
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
-	size_t	len_s1;
-	size_t	len_s2;
-	char	*s3;
+	int		size_s1;
+	int		size_s2;
+	char	*str;
+	int		i;
+	int		j;
 
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	if (!s1 && !s2)
-		return (NULL);
-	s3 = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
-	if (!s3)
+	size_s1 = ft_strlen(s1);
+	size_s2 = ft_strlen(s2);
+	str = malloc(sizeof(char)*(size_s1 + size_s2 + 1));
+	if (str == NULL)
 		return (NULL);
 	i = 0;
-	while (len_s1 > i)
-	{
-		s3[i] = s1[i];
-		i++;
-	}
 	j = 0;
-	while (len_s2 > j)
-	{
-		s3[i + j] = s2[j];
-		j++;
-	}
-	s3[i + j] = '\0';
-	return (s3);
+	while (i < size_s1)
+		str[i++] = s1[j++];
+	j = 0;
+	while (j < size_s2)
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	return (str);
 }
 
 /// @brief allocates mem for s1 + copies it
