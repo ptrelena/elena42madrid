@@ -32,12 +32,16 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	//gnl printing lines while '\0' is not found
+	printf("Buffer %d \n", BUFFER_SIZE);
 	line = get_next_line(fd);
 	while (line)
 	{
 		printf("%s", line);
 		free(line);
+		line = get_next_line(fd);
 	}
+	printf("\n");
+	free(line);
 	//close file
 	close(fd);
 	return (0);

@@ -1,0 +1,123 @@
+PUSH SWAP
+
+Pila de platos => lo más sencillo es ir analizando desde los extremos 
+
+Tenemos dos pilas de platos – todos los platos tienen que quedar ordenados en la pila A (stack A) y la pila B (stack B) se usa de auxiliar para poder ordenar los platos.
+
+ALLOWED FUNCTIONS
+pa – push from b to a
+pb – push from a to b
+rb – moves first place to bottom in b
+ra – moves first place to bottom in a
+rrb – moves last place to top in b
+rra – moves last place to top in a
+rr – does ra & rb together at the same time => useful to save moves
+rrr – does rra & rrb together at the same time => useful to save moves
+sa – swaps first place for second place in a 
+sb – swaps first place for second place in b
+
+STRUCTURE TYPE
+i.e.
+	struct 		s_list
+	{
+		t_list	*next;
+		int 	value;
+	}	t_list
+
+
+Stack struct => Cada plato
+	struct		s_stack
+	{
+		t_node		*head;
+		t_node		*tail;
+	}	t_stack
+
+Node struct => Moverse hacia abajo y hacia arriba entre los platos
+	struct		s_node
+	{
+		t_node		*next;
+		t_node		*before;
+		int		value;
+		int		index;
+	}	t_node
+	
+	Dentro de este punto, se le asigna index = -1 a todos los nodos
+
+
+1. Analizamos número a número (nodos individuales)
+	[-1]	[-1]	[-1]	[-1]	[-1]	[-1]
+	2	3	7	-10	-5	1
+
+	Inicializamos int	i = 0;
+	while (stack) => recorremos nodos buscando el número más pequeño
+1)	Encontramos número pequeño comparando con siguiente número 
+Cada vez que encontramos el menor número, tenemos que asignar el aux.index = i para poder guardar la posición que ese nodo va a tener en el resultado final 
+
+
+Crear stacks:
+t_stack	*ft_newstack (void) *solo se crea el stack, no recibe argumentos y devuelve t_stack*
+{
+	t_stack		*stack;
+
+	*hay que controlar errores (si no existe etc)*
+	stack = (t_stack *)malloc (sizeof (t_stack));
+	stack.head = NULL;
+	stack.tail = NULL;
+	return (stack);
+}
+
+int	ft_addnode (t_stack *stack, int value)
+{
+	t_node		node_new;
+	t_node		node_aux; *variable para stacks con info previa*
+
+ft_newnode (&node_new, value) *creamos el nuevo nodo a añadir*
+if (!stack.head) *si no hay head asumimos que no hay tail + newnode = head & tail*
+{
+	stack.head = node_new;
+	stack.tail = node_new;
+	return (0); *salimos de la ft porque ya hemos rellenado lo vacío*
+}
+node_aux = stack.tail; *auxiliar último nodo de stack*
+node_aux.next = node_new; *nuevo nodo se añade después de aux (último)*
+node_new.before = node_aux; *aux se asigna como anterior a new*
+stack.tail = node_new; *new se asigna en stack como ultimo nodo*
+
+}
+
+int	ft_newnode (t_stack *node, int value)
+{
+	t_stack		*node;
+
+	node = malloc (sizeof (t_node));
+	node.value = value; *el valor el dígito que están pasado*
+	node.index = -1; *índice por defecto para analizar los números*
+	node.next = NULL; *se asigna en ft_addnode*
+	node.before = NULL; *ft_newnode (&node_new, value)*
+}
+
+void	ft_pa (t_stack **stack_a, t_stack **stack_b)
+{
+	((b -> a))
+	t_node		node_aux;
+
+	node_aux = stack_b.head; *reservamos el head de b*
+	stack_b.head = node_aux.next; *aux es head.b, cambiamos head.b al Segundo nodo*
+
+*hemos asignado el nuevo head al segundo nodo: 1) en caso de que el segundo nodo sea NULL directamente el stack b es NULL; 2) en caso de que exista, hacemos una condición para que se asigne el siguiente valor como NULL y finalizar el stack*
+	if (stack_b.head)
+		stack_b -> head -> before = NULL;
+	else
+		stack_b.tail = NULL;
+
+	node_aux.next = stack_a.head; 
+*el valor después del aux_b tiene que ser la cabecera de stack a*
+Stack_a.head.before = node_aux;
+*el valor anterior de la cabecera de a tiene que ser la nueva cabecera que de aux*
+stack_a.head = node_aux; *asignamos valor final de cabecera de a*
+
+*faltan condiciones de si algo esta vacío etc*
+
+write (1, “pa\n”, 3); *siempre hay que hacer un write de cada ft que usemos*
+}
+

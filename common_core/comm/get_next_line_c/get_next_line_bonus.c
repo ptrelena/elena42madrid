@@ -32,9 +32,10 @@ char	*ft_read_and_join(int fd, char *buff)//fd & buff from gnl
 	{
 		bytes_read = read(fd, temp_buff, BUFFER_SIZE); //start reading
 		if (bytes_read == -1) //if reading errors
-			return (free(buff), free(temp_buff), NULL); //free space & NULL
+			return (free(temp_buff), free(buff), NULL); //free space & NULL
 		temp_buff[bytes_read] = '\0'; //null-terminated
 		temp_read = ft_strjoin(buff, temp_buff); //join first & just read bytes
+		free(buff);
 		buff = temp_read; //assign full reading to main buffer
 	}
 	return (free(temp_buff), buff); //free temp_buff as not in use anymore
@@ -80,8 +81,7 @@ char	*ft_latest_buffer(char *buff) //buff from gnl
 	//nl_i = 0 if '\n' not found / = '\n'[i] if '\n' found
 	latest_buff = ft_substr(buff, line_length, newline_index);
 	//define l_b in buff, from beginning (l_l), newline_index long
-	free(buff); //free old buffer
-	return (latest_buff); //return updated buffer
+	return (free(buff), latest_buff); //return updated buffer
 }
 
 /// @brief read fd line by line with a given buffer & individuals fds

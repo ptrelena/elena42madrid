@@ -32,13 +32,13 @@ char	*ft_read_and_join(int fd, char *buff)//fd & buff from gnl
 	{
 		bytes_read = read(fd, temp_buff, BUFFER_SIZE); //start reading
 		if (bytes_read == -1) //if reading errors
-			return (free(buff), free(temp_buff), NULL); //free space & NULL
+			return (free(temp_buff), free(buff), NULL); //free space & NULL
 		temp_buff[bytes_read] = '\0'; //null-terminated
 		temp_read = ft_strjoin(buff, temp_buff); //join first & just read bytes
-		free(temp_buff);
+		free(buff);
 		buff = temp_read; //assign full reading to main buffer
 	}
-	return (free(temp_read), buff); //free temp_buff as not in use anymore
+	return (free(temp_buff), buff); //free temp_buff as not in use anymore
 }
 
 /// @brief identify newline
@@ -81,8 +81,7 @@ char	*ft_latest_buffer(char *buff) //buff from gnl
 	//nl_i = 0 if '\n' not found / = '\n'[i] if '\n' found
 	latest_buff = ft_substr(buff, line_length, newline_index);
 	//define l_b in buff, from beginning (l_l), newline_index long
-	free(buff); //free old buffer
-	return (latest_buff); //return updated buffer
+	return (free(buff), latest_buff); //return updated buffer
 }
 
 /// @brief read fd line by line with a given buffer
@@ -90,16 +89,15 @@ char	*ft_latest_buffer(char *buff) //buff from gnl
 /// @return fd
 char	*get_next_line(int fd)
 {
-	static char	*st_buff; //buff to save bytes read
-	char		*line_found; //line to return
+	static char	*st_buff;
+	char		*line_found;
 
-	if (fd < 0 || BUFFER_SIZE <= 0) //failure check
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	st_buff = ft_read_and_join(fd, st_buff); //start reading + join read bytes
-	line_found = ft_find_newline(st_buff); //look for newline
-	st_buff = ft_latest_buffer(st_buff); //check buff beggining each gnl call
-	if (!st_buff || !*st_buff) //if buff not exists or empty
+	st_buff = ft_read_and_join(fd, st_buff);
+	line_found = ft_find_newline(st_buff);
+	st_buff = ft_latest_buffer(st_buff);
+	if (!st_buff || !*st_buff)
 		return (free(st_buff), st_buff = NULL, line_found);
-		//free & clean buff if nothing found
 	return (line_found);
 }
