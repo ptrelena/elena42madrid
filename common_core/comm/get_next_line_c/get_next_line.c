@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elenpere <elenpere@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 10:31:21 by elenpere          #+#    #+#             */
-/*   Updated: 2025/04/03 13:44:22 by elenpere         ###   ########.fr       */
+/*   Created: 2025-04-21 09:39:05 by elenpere          #+#    #+#             */
+/*   Updated: 2025-04-21 09:39:05 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 /// @param fd - from where to read
 /// @param buff - where bytes are stored
 /// @return final buff
-char	*ft_read_and_join(int fd, char *buff)//fd & buff from gnl
+char	*ft_read_and_join(int fd, char *buff) //fd & buff from gnl
 {
-	char		*temp_buff; //temporary buffer
-	char		*temp_read; //join initial and just read bytes
-	int			bytes_read; //bytes read by read()
+	char	*temp_buff; //temporary buffer
+	char	*temp_read; //join initial and just read bytes
+	int		bytes_read; //bytes read by read()
 
 	temp_buff = malloc(BUFFER_SIZE + 1); //spaces for temp_buff + NULL
-	if (!temp_buff)
-		return (NULL);
+	if (!temp_buff) //failure check
+		return (free(buff), NULL);
 	if (!buff) //create empty buff if not initialized
 		buff = ft_strdup("");
 	bytes_read = 1; //b_r = 1 so following while can start
@@ -84,20 +84,21 @@ char	*ft_latest_buffer(char *buff) //buff from gnl
 	return (free(buff), latest_buff); //return updated buffer
 }
 
-/// @brief read fd line by line with a given buffer
+/// @brief read fd line by line with a given buffer & individuals fds
 /// @param fd from where to read
 /// @return fd
 char	*get_next_line(int fd)
 {
-	static char	*st_buff;
-	char		*line_found;
+	static char	*st_buff; //static buff to save bytes read
+	char		*line_found; //line to return
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0) //failure check
 		return (NULL);
-	st_buff = ft_read_and_join(fd, st_buff);
-	line_found = ft_find_newline(st_buff);
-	st_buff = ft_latest_buffer(st_buff);
-	if (!st_buff || !*st_buff)
+	st_buff = ft_read_and_join(fd, st_buff); //start reading + join read bytes
+	line_found = ft_find_newline(st_buff); //look for newline
+	st_buff = ft_latest_buffer(st_buff); //check buff beggining each gnl call
+	if (!st_buff || !*st_buff) //if buff not exists or empty
 		return (free(st_buff), st_buff = NULL, line_found);
-	return (line_found);
+		//free & clean buff if nothing found
+	return (line_found); //return line found
 }

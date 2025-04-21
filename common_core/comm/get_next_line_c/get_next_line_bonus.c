@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elenpere <elenpere@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 10:31:21 by elenpere          #+#    #+#             */
-/*   Updated: 2025/04/03 13:44:22 by elenpere         ###   ########.fr       */
+/*   Created: 2025-04-21 09:38:10 by elenpere          #+#    #+#             */
+/*   Updated: 2025-04-21 09:38:10 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 /// @param fd - from where to read
 /// @param buff - where bytes are stored
 /// @return final buff
-char	*ft_read_and_join(int fd, char *buff)//fd & buff from gnl
+char	*ft_read_and_join(int fd, char *buff) //fd & buff from gnl
 {
-	char		*temp_buff; //temporary buffer
-	char		*temp_read; //join initial and just read bytes
-	int			bytes_read; //bytes read by read()
+	char	*temp_buff; //temporary buffer
+	char	*temp_read; //join initial and just read bytes
+	int		bytes_read; //bytes read by read()
 
 	temp_buff = malloc(BUFFER_SIZE + 1); //spaces for temp_buff + NULL
-	if (!temp_buff)
-		return (NULL);
+	if (!temp_buff) //failure check
+		return (free(buff), NULL);
 	if (!buff) //create empty buff if not initialized
 		buff = ft_strdup("");
 	bytes_read = 1; //b_r = 1 so following while can start
@@ -89,7 +89,7 @@ char	*ft_latest_buffer(char *buff) //buff from gnl
 /// @return fd
 char	*get_next_line(int fd)
 {
-	static char	*st_buff[4096]; //buff to save bytes read
+	static char	*st_buff[4096]; //static buff to save bytes read
 	//4096 max num of fd a program can manage simultaneously 
 	char		*line_found; //line to return
 
@@ -106,5 +106,5 @@ char	*get_next_line(int fd)
 	if (!st_buff[fd] || !*st_buff[fd]) //if buff not exists or empty
 		return (free(st_buff[fd]), st_buff[fd] = NULL, line_found);
 		//free & clean buff if nothing found
-	return (line_found);
+	return (line_found); //return line found
 }
