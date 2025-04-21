@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elenpere <elenpere@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 10:31:21 by elenpere          #+#    #+#             */
-/*   Updated: 2025/04/03 13:43:41 by elenpere         ###   ########.fr       */
+/*   Created: 2025-04-21 09:38:10 by elenpere          #+#    #+#             */
+/*   Updated: 2025-04-21 09:38:10 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
+/// @brief read fd + join first & just read bytes
+/// @param fd - from where to read
+/// @param buff - where bytes are stored
+/// @return final buff
 char	*ft_read_and_join(int fd, char *buff)
 {
 	char	*temp_buff;
-	int		bytes_read;
 	char	*temp_read;
+	int		bytes_read;
 
 	temp_buff = malloc(BUFFER_SIZE + 1);
 	if (!temp_buff)
@@ -37,55 +41,64 @@ char	*ft_read_and_join(int fd, char *buff)
 	return (free(temp_buff), buff);
 }
 
-char	*ft_find_newline(char *buffer)
+/// @brief identify newline
+/// @param buff from gnl ft
+/// @return line if identified one
+char	*ft_find_newline(char *buff)
 {
-	char	*newline;
+	char	*line_found;
+	char	*final_line;
 	int		line_length;
-	char	*extracted_line;
 
-	if (!buffer || *buffer == '\0')
+	if (!buff || *buff == '\0')
 		return (NULL);
-	newline = ft_strchr(buffer, '\n');
-	if (newline)
-		line_length = newline - buffer + 1;
+	line_found = ft_strchr(buff, '\n');
+	if (line_found)
+		line_length = line_found - buff + 1;
 	else
-		line_length = ft_strlen(buffer);
-	extracted_line = ft_substr(buffer, 0, line_length);
-	return (extracted_line);
+		line_length = ft_strlen(buff);
+	final_line = ft_substr(buff, 0, line_length);
+	return (final_line);
 }
 
-char	*ft_latest_buffer(char *buffer)
+/// @brief update buffer starting point
+/// @param buff from gnl ft
+/// @return ptr to actual buffer starting point
+char	*ft_latest_buffer(char *buff)
 {
-	char	*new_buffer;
+	char	*latest_buff;
+	char	*new_start;
 	int		line_length;
-	char	*line_position;
+	int		newline_index;
 
-	line_position = ft_strchr(buffer, '\n');
-	if (line_position)
-		line_length = line_position - buffer + 1;
+	new_start = ft_strchr(buff, '\n');
+	if (new_start)
+		line_length = new_start - buff + 1;
 	else
-		line_length = ft_strlen(buffer);
-	new_buffer = ft_substr(buffer, line_length, ft_strlen(buffer)
-			- line_length);
-	free(buffer);
-	return (new_buffer);
+		line_length = ft_strlen(buff);
+	newline_index = ft_strlen(buff) - line_length;
+	latest_buff = ft_substr(buff, line_length, newline_index);
+	return (free(buff), latest_buff);
 }
 
+/// @brief read fd line by line with a given buffer & individuals fds
+/// @param fd from where to read
+/// @return fd
 char	*get_next_line(int fd)
 {
-	static char	*buffer[4096];
-	char		*line;
+	static char	*st_buff[4096];
+	char		*line_found;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer[fd] = ft_read_and_join(fd, buffer[fd]);
-	if (!buffer[fd])
+	st_buff[fd] = ft_read_and_join(fd, st_buff[fd]);
+	if (!st_buff[fd])
 		return (NULL);
-	if (!*buffer[fd])
-		return (free(buffer[fd]), buffer[fd] = NULL, NULL);
-	line = ft_find_newline(buffer[fd]);
-	buffer[fd] = ft_latest_buffer(buffer[fd]);
-	if (!buffer[fd] || !*buffer[fd])
-		return (free(buffer[fd]), buffer[fd] = NULL, line);
-	return (line);
+	if (!*st_buff[fd])
+		return (free(st_buff[fd]), st_buff[fd] = NULL, NULL);
+	line_found = ft_find_newline(st_buff[fd]);
+	st_buff[fd] = ft_latest_buffer(st_buff[fd]);
+	if (!st_buff[fd] || !*st_buff[fd])
+		return (free(st_buff[fd]), st_buff[fd] = NULL, line_found);
+	return (line_found);
 }

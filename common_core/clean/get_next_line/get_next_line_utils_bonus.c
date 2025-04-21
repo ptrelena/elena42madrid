@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-03-13 14:28:32 by elenpere          #+#    #+#             */
-/*   Updated: 2025-03-13 14:28:32 by elenpere         ###   ########.fr       */
+/*   Created: 2025-04-21 09:38:52 by elenpere          #+#    #+#             */
+/*   Updated: 2025-04-21 09:38:52 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,26 +53,27 @@ size_t	ft_strlen(const char *s)
 /// @return new ptr w resulting join
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		size_s1;
-	int		size_s2;
-	char	*str;
-	int		i;
-	int		j;
+	size_t	s1_len;
+	size_t	s2_len;
+	size_t	total_len;
+	size_t	i;
+	char	*s3;
 
-	size_s1 = ft_strlen(s1);
-	size_s2 = ft_strlen(s2);
-	str = malloc(sizeof(char) * (size_s1 + size_s2 + 1));
-	if (str == NULL)
+	if (!s1 || !s2)
+		return (NULL);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	total_len = s1_len + s2_len + 1;
+	s3 = malloc(total_len);
+	if (!s3)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (i < size_s1)
-		str[i++] = s1[j++];
-	j = 0;
-	while (j < size_s2)
-		str[i++] = s2[j++];
-	str[i] = '\0';
-	return (str);
+	while (*s1)
+		s3[i++] = *s1++;
+	while (*s2)
+		s3[i++] = *s2++;
+	s3[i] = '\0';
+	return (s3);
 }
 
 /// @brief allocates mem for s1 + copies it

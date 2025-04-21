@@ -95,9 +95,11 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0) //failure check
 		return (NULL);
 	st_buff = ft_read_and_join(fd, st_buff); //start reading + join read bytes
+	if (!st_buff) //failure check
+		return (free(st_buff), st_buff = NULL, st_buff);
 	line_found = ft_find_newline(st_buff); //look for newline
 	st_buff = ft_latest_buffer(st_buff); //check buff beggining each gnl call
-	if (!st_buff || !*st_buff) //if buff not exists or empty
+	if (!st_buff) //if buff not exists or empty
 		return (free(st_buff), st_buff = NULL, line_found);
 		//free & clean buff if nothing found
 	return (line_found); //return line found
