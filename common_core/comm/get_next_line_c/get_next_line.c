@@ -31,7 +31,7 @@ char	*ft_read_and_join(int fd, char *buff) //fd & buff from gnl
 	while (!ft_strchr(buff, '\n') && bytes_read > 0) //no '\n' & nthn to read
 	{
 		bytes_read = read(fd, temp_buff, BUFFER_SIZE); //start reading
-		if (bytes_read == -1) //if reading errors
+		if (bytes_read == -1 || bytes_read == 0) //error or finished reading
 			return (free(temp_buff), free(buff), NULL); //free space & NULL
 		temp_buff[bytes_read] = '\0'; //null-terminated
 		temp_read = ft_strjoin(buff, temp_buff); //join first & just read bytes
