@@ -81,7 +81,7 @@ char	*ft_latest_buffer(char *buff)
 	return (free(buff), latest_buff);
 }
 
-/// @brief read fd line by line with a given buffer & individuals fds
+/* /// @brief read fd line by line with a given buffer & individuals fds
 /// @param fd from where to read
 /// @return fd
 char	*get_next_line(int fd)
@@ -100,5 +100,34 @@ char	*get_next_line(int fd)
 	st_buff[fd] = ft_latest_buffer(st_buff[fd]);
 	if (!st_buff[fd] || !*st_buff[fd])
 		return (free(st_buff[fd]), st_buff[fd] = NULL, line_found);
+	return (line_found);
+} */
+
+/// @brief read fd line by line with a given buffer & individuals fds
+/// @param fd from where to read
+/// @return fd
+char	*get_next_line(int fd)
+{
+	static char	*st_buff[4096];
+	char		*line_found;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	st_buff[fd] = ft_read_and_join(fd, st_buff[fd]);
+	if (!st_buff[fd])
+		return (NULL);
+	line_found = ft_find_newline(st_buff[fd]);
+	if (!line_found)
+	{
+		free(st_buff[fd]);
+		st_buff[fd] = NULL;
+		return (NULL);
+	}
+	st_buff[fd] = ft_latest_buffer(st_buff[fd]);
+	if (!st_buff[fd])
+	{
+		free(line_found);
+		return (NULL);
+	}
 	return (line_found);
 }

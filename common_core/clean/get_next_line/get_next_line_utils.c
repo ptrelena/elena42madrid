@@ -87,7 +87,9 @@ char	*ft_strdup(const char *s1)
 
 	t1 = (char *)s1;
 	i = 0;
-	p = (char *)malloc(ft_strlen(s1) * sizeof(char));
+	p = (char *)malloc(ft_strlen(s1) * sizeof(char) + 1);
+	if (!s1)
+    return (NULL);
 	if (!t1)
 		return (NULL);
 	if (!p)
