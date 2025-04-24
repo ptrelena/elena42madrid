@@ -31,8 +31,10 @@ char	*ft_read_and_join(int fd, char *buff) //fd & buff from gnl
 	while (!ft_strchr(buff, '\n') && bytes_read > 0) //no '\n' & nthn to read
 	{
 		bytes_read = read(fd, temp_buff, BUFFER_SIZE); //start reading
-		if (bytes_read == -1 || bytes_read == 0) //error or finished reading
-			return (free(temp_buff), free(buff), NULL); //free space & NULL
+		if (bytes_read == -1) //reading errors
+			return (free(temp_buff), free(buff), NULL);
+		if (bytes_read == 0) //reading EOL
+			return (free(temp_buff), buff);
 		temp_buff[bytes_read] = '\0'; //null-terminated
 		temp_read = ft_strjoin(buff, temp_buff); //join first & just read bytes
 		free(buff);
@@ -102,9 +104,17 @@ char	*get_next_line(int fd)
 	if (!*st_buff[fd]) //fd array failure check
 		return (free(st_buff[fd]), st_buff[fd] = NULL, NULL);
 	line_found = ft_find_newline(st_buff[fd]); //look for newline
+	if (!line_found)
+	{//free all and return NULL if nothing to read
+		free(st_buff[fd]);
+		st_buff[fd] = NULL;
+		return (NULL);
+	}
 	st_buff[fd] = ft_latest_buffer(st_buff[fd]); //check buff beggining each gnl call
 	if (!st_buff[fd] || !*st_buff[fd]) //if buff not exists or empty
-		return (free(st_buff[fd]), st_buff[fd] = NULL, line_found);
-		//free & clean buff if nothing found
+	{
+		free(line_found); //free all 
+		return (NULL);
+	}
 	return (line_found); //return line found
 }
