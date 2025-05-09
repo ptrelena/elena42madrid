@@ -9,3 +9,5 @@
 /*   Updated: 2025-05-09 11:36:50 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//redirigir entradas/salidas + ejecutar comandos
