@@ -11,3 +11,16 @@
 /* ************************************************************************** */
 
 //declaración de funciones/structs/globals
+
+#ifndef PIPEX_H
+# define PIPEX_H
+
+//needed libraries
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+//used ft
+
+#endif

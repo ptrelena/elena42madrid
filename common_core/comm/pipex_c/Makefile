@@ -11,3 +11,28 @@
 # ************************************************************************** #
 
 ##hay que añadir la libft + el resto igual
+
+NAME = pipex.a
+
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+A_C = ar rcs
+
+SRC = 
+
+OBJ = $(SRC:.C=.O)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(A_C) $(NAME) $(OBJ)
+
+clean:
+	rm -f $(OBJ)
+
+fclean:
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

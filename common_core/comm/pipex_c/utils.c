@@ -10,4 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "pipex.h"
+
 //parsear comandos, errores, abrir archivos
+
+//error management ft
+
+//free ft
+
+//find command path
+
+//execute command managing errors
