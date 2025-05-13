@@ -12,12 +12,19 @@
 
 #include "pipex.h"
 
-//parsear comandos, errores, abrir archivos
+/// @brief find command path
+/// @param envp 
+/// @return ptr to PATH absolute rutes (def only)
+char	*cmd_path(char **envp)
+{
+	int	i;
 
-//error management ft
-
-//free ft
-
-//find command path
-
-//execute command managing errors
+	i = 0;
+	while (envp[i])
+	{
+		if(ft_strncmp(envp[i], "PATH=", 5))
+			return(envp[i] + 5);
+		i++;
+	}
+	return (NULL);
+}

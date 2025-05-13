@@ -22,5 +22,7 @@
 #include <stdlib.h>
 
 //used ft
+char	**ft_split(char const *s, char c);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
