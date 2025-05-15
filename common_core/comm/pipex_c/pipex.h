@@ -10,18 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//declaración de funciones/structs/globals
-
 #ifndef PIPEX_H
 # define PIPEX_H
 
 //needed libraries
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <fcntl.h> //file management
+#include <unistd.h> //dup2, pipe, fork...
+#include <stdio.h> //perror
+#include <stdlib.h> //malloc, free, exit
+# include <sys/wait.h> //waitpid
 
-//used ft
+//ft declaration
 char	**ft_split(char const *s, char c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_extract_path(char **envp);

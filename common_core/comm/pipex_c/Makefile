@@ -12,27 +12,49 @@
 
 ##hay que añadir la libft + el resto igual
 
-NAME = pipex.a
+#executable file name
+NAME = pipex
 
+#compilation
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 A_C = ar rcs
 
-SRC = 
+#libft rute & .a capture
+LIBFT_DIR = /libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
-OBJ = $(SRC:.C=.O)
+#src & obj definition
+SRC = pipex_path.c pipex_utils.c
+OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
+#make lib first then pipex
+all: $(LIBFT) $(NAME)
 
+#if libft not created, enters directory (-C) & creates it
+$(LIBFT):
+    @$(MAKE) -C $(LIBFT_DIR)
+
+#compile pipex's obj + libft.a
 $(NAME): $(OBJ)
-	$(A_C) $(NAME) $(OBJ)
+	$(A_C) $(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
+#compiles .c files in every .o in case pipex.h or .c file changes
+%.o: %.c pipex.h
+    $(CC) $(CFLAGS) -c $< -o $@
+
+#erase .o only + create libft if not created
 clean:
 	rm -f $(OBJ)
+	@$(MAKE) -C $(LIBFT_DIR) clean
 
+#erase .o & .a + create libft if not created
 fclean:
 	rm -f $(NAME)
+	@$(MAKE) -C $(LIBFT_DIR) fclean
 
+#erase .o & .a + recompile
 re: fclean all
 
+#command reserved words
 .PHONY: all clean fclean re
