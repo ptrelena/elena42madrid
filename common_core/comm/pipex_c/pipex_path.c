@@ -43,7 +43,7 @@ char	*ft_extract_path(char **envp)
 	i = 0;
 	while (envp[i])
 	{
-		if(ft_strncmp(envp[i], "PATH=", 5))
+		if(ft_strncmp(envp[i], "PATH=", 5) == 0)
 			return(envp[i] + 5);
 		i++;
 	}
@@ -64,8 +64,10 @@ char	*ft_cmd_path(char **cmd, char **envp)
 	{
 		final_path = ft_slashjoin(all_paths[i], cmd[0]);
 		if (access(final_path, X_OK) == 0) //X_OK->execution access ok
+		{
 			ft_free_array(all_paths); //avoid mem leaks
 			return(final_path);
+		}
 		free(final_path);
 		i++;
 	}
